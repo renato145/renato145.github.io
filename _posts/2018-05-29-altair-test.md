@@ -1,8 +1,8 @@
 ---
-title: "Altair plot test"
+title: "Plotting with altair"
 date: 2018-05-28
 tags: [dataviz, altair]
-excerpt: "Testing altair plots on jekyll."
+excerpt: "Testing an altair interactive plot on jekyll."
 custom-javascript-list:
     - https://cdn.jsdelivr.net/npm//vega@3.2
     - https://cdn.jsdelivr.net/npm//vega-lite@2.4.1
