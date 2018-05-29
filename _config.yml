@@ -102,8 +102,8 @@ analytics:
 # Site Author
 author:
   name             : "Renato Hermoza"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "TODO."
+  avatar           : "/images/pic1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Data scientist, Machine Learning researcher and passionate about food."
   location         : "Lima, Perú"
   email            :
   uri              :
