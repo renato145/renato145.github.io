@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-29T12:17:38-05:00</updated><id>http://localhost:4000/</id><title type="html">Renato Hermoza</title><subtitle>Data Science Portfolio</subtitle><author><name>Renato Hermoza</name></author><entry><title type="html">Altair plot test</title><link href="http://localhost:4000/altair-test/" rel="alternate" type="text/html" title="Altair plot test" /><published>2018-05-28T00:00:00-05:00</published><updated>2018-05-28T00:00:00-05:00</updated><id>http://localhost:4000/altair-test</id><content type="html" xml:base="http://localhost:4000/altair-test/">&lt;div id=&quot;vis&quot;&gt;&lt;/div&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-29T14:33:39-05:00</updated><id>http://localhost:4000/</id><title type="html">Renato Hermoza</title><subtitle>Data Science Portfolio</subtitle><author><name>Renato Hermoza</name></author><entry><title type="html">Plotting with altair</title><link href="http://localhost:4000/altair-test/" rel="alternate" type="text/html" title="Plotting with altair" /><published>2018-05-28T00:00:00-05:00</published><updated>2018-05-28T00:00:00-05:00</updated><id>http://localhost:4000/altair-test</id><content type="html" xml:base="http://localhost:4000/altair-test/">&lt;div id=&quot;vis&quot;&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;code-for-plot&quot;&gt;Code for plot:&lt;/h2&gt;
 
@@ -55,19 +55,4 @@
     const el = document.getElementById('vis');
     vegaEmbed(&quot;#vis&quot;, spec, embed_opt)
         .catch(error =&gt; showError(el, error));
-&lt;/script&gt;</content><author><name>Renato Hermoza</name></author><category term="dataviz" /><category term="altair" /><summary type="html">Testing altair plots on jekyll.</summary></entry><entry><title type="html">Some post test</title><link href="http://localhost:4000/test/" rel="alternate" type="text/html" title="Some post test" /><published>2018-05-28T00:00:00-05:00</published><updated>2018-05-28T00:00:00-05:00</updated><id>http://localhost:4000/test</id><content type="html" xml:base="http://localhost:4000/test/">&lt;h1 id=&quot;hello&quot;&gt;Hello&lt;/h1&gt;
-
-&lt;p&gt;kasdasdasdadssadasd.
-asdasdasdasdsdasd.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;asd&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;x = a + b^2 + \sum\limits_{i=0}^k c_k&lt;/script&gt;
-
-&lt;p&gt;asd &lt;code class=&quot;highlighter-rouge&quot;&gt;x+t&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The end :)&lt;/p&gt;</content><author><name>Renato Hermoza</name></author><category term="machine learning" /><category term="neural networks" /><summary type="html">llallalalalalala.</summary></entry></feed>
+&lt;/script&gt;</content><author><name>Renato Hermoza</name></author><category term="dataviz" /><category term="altair" /><summary type="html">Testing an altair interactive plot on jekyll.</summary></entry></feed>
