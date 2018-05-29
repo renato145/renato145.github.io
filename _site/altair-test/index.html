@@ -1,0 +1,519 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Altair plot test - Renato Hermoza</title>
+<meta name="description" content="Testing altair plots on jekyll.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Renato Hermoza">
+<meta property="og:title" content="Altair plot test">
+<meta property="og:url" content="http://localhost:4000/altair-test/">
+
+
+  <meta property="og:description" content="Testing altair plots on jekyll.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-05-28T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/altair-test/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Renato Hermoza",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Renato Hermoza Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm//vega@3.2"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm//vega-lite@2.4.1"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm//vega-embed@3.0"></script>
+
+
+
+    <link href="/assets/css/altair.css" rel="stylesheet">
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Home</a>
+        <!-- <a class="site-title" href="/">Renato Hermoza</a> -->
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/articles/" >Articles</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/projects/" >Projects</a>
+            </li>
+          
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/images/pic1.jpg" alt="Renato Hermoza" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Renato Hermoza</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Data scientist, Machine Learning researcher and passionate about food.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Lima, Perú</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/renato145" itemprop="sameAs">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/renato145" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Altair plot test">
+    <meta itemprop="description" content="Testing altair plots on jekyll.">
+    <meta itemprop="datePublished" content="May 28, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Altair plot test
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <div id="vis"></div>
+
+<h2 id="code-for-plot">Code for plot:</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="n">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s">'notebook'</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iris</span><span class="p">()</span>
+
+<span class="n">brush1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_interval</span><span class="p">()</span>
+<span class="n">brush2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_interval</span><span class="p">()</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s">'petalLength'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'petalWidth'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">brush2</span><span class="p">,</span> <span class="s">'species'</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s">'lightgray'</span><span class="p">))</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">selection</span><span class="o">=</span><span class="n">brush1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span>
+<span class="p">)</span>
+
+<span class="n">p2</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s">'sepalLength'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sepalWidth'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">brush1</span><span class="p">,</span> <span class="s">'species'</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s">'lightgray'</span><span class="p">))</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">selection</span><span class="o">=</span><span class="n">brush2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span>
+<span class="p">)</span>
+
+<span class="n">bars</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="s">'species'</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s">'count(species)'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s">'species'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">'and'</span><span class="p">:</span> <span class="p">[</span><span class="n">brush1</span><span class="o">.</span><span class="n">ref</span><span class="p">(),</span> <span class="n">brush2</span><span class="o">.</span><span class="n">ref</span><span class="p">()]}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">660</span>
+<span class="p">)</span>
+
+<span class="n">chart</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span> <span class="o">|</span> <span class="n">p2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">bars</span>
+<span class="n">chart</span>
+</code></pre></div></div>
+
+<script type="text/javascript">
+    var spec = {"config": {"view": {"width": 400, "height": 300}}, "vconcat": [{"hconcat": [{"data": {"values": [{"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.9, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.7, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.9, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 4.6, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 2.9, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.1, "sepalLength": 4.9, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.4, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.1, "sepalLength": 4.8, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.1, "petalWidth": 0.1, "sepalLength": 4.3, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.2, "petalWidth": 0.2, "sepalLength": 5.8, "sepalWidth": 4.0, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.7, "sepalWidth": 4.4, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.9, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 5.1, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.30000000000000004, "sepalLength": 5.7, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.30000000000000004, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.2, "sepalLength": 5.4, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.1, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.0, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.5, "sepalLength": 5.1, "sepalWidth": 3.3, "species": "setosa"}, {"petalLength": 1.9, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.4, "sepalLength": 5.0, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.2, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.2, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.7, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.1, "sepalLength": 5.2, "sepalWidth": 4.1, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.5, "sepalWidth": 4.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 4.9, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.2, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 5.5, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.1, "sepalLength": 4.9, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.30000000000000004, "sepalLength": 5.0, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.30000000000000004, "sepalLength": 4.5, "sepalWidth": 2.3, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.6000000000000001, "sepalLength": 5.0, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.9, "petalWidth": 0.4, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 4.8, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.3, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.3, "species": "setosa"}, {"petalLength": 4.7, "petalWidth": 1.4, "sepalLength": 7.0, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.4, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.9, "petalWidth": 1.5, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 5.5, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.5, "sepalLength": 6.5, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.6, "sepalLength": 6.3, "sepalWidth": 3.3, "species": "versicolor"}, {"petalLength": 3.3, "petalWidth": 1.0, "sepalLength": 4.9, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.3, "sepalLength": 6.6, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.4, "sepalLength": 5.2, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 3.5, "petalWidth": 1.0, "sepalLength": 5.0, "sepalWidth": 2.0, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.5, "sepalLength": 5.9, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.0, "sepalLength": 6.0, "sepalWidth": 2.2, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.6, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.4, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 5.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.0, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.2, "sepalWidth": 2.2, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.1, "sepalLength": 5.6, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 5.9, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 6.1, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.9, "petalWidth": 1.5, "sepalLength": 6.3, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.2, "sepalLength": 6.1, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.3, "petalWidth": 1.3, "sepalLength": 6.4, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.4, "sepalLength": 6.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.8, "petalWidth": 1.4, "sepalLength": 6.8, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 5.0, "petalWidth": 1.7000000000000002, "sepalLength": 6.7, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.0, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.5, "petalWidth": 1.0, "sepalLength": 5.7, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 3.8, "petalWidth": 1.1, "sepalLength": 5.5, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 3.7, "petalWidth": 1.0, "sepalLength": 5.5, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.2, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 5.1, "petalWidth": 1.6, "sepalLength": 6.0, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 5.4, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.6, "sepalLength": 6.0, "sepalWidth": 3.4, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.5, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.3, "sepalLength": 6.3, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 5.5, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.2, "sepalLength": 5.5, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.2, "sepalLength": 5.8, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 3.3, "petalWidth": 1.0, "sepalLength": 5.0, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.2, "sepalLength": 5.7, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.3, "petalWidth": 1.3, "sepalLength": 6.2, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.0, "petalWidth": 1.1, "sepalLength": 5.1, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 6.0, "petalWidth": 2.5, "sepalLength": 6.3, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.9, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.9, "petalWidth": 2.1, "sepalLength": 7.1, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 1.8, "sepalLength": 6.3, "sepalWidth": 2.9, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 2.2, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.6, "petalWidth": 2.1, "sepalLength": 7.6, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 4.5, "petalWidth": 1.7000000000000002, "sepalLength": 4.9, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 6.3, "petalWidth": 1.8, "sepalLength": 7.3, "sepalWidth": 2.9, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 1.8, "sepalLength": 6.7, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 2.5, "sepalLength": 7.2, "sepalWidth": 3.6, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.0, "sepalLength": 6.5, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.3, "petalWidth": 1.9, "sepalLength": 6.4, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 2.1, "sepalLength": 6.8, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 2.0, "sepalLength": 5.7, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.4, "sepalLength": 5.8, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.3, "petalWidth": 2.3, "sepalLength": 6.4, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 1.8, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.7, "petalWidth": 2.2, "sepalLength": 7.7, "sepalWidth": 3.8, "species": "virginica"}, {"petalLength": 6.9, "petalWidth": 2.3, "sepalLength": 7.7, "sepalWidth": 2.6, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 1.5, "sepalLength": 6.0, "sepalWidth": 2.2, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.3, "sepalLength": 6.9, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 2.0, "sepalLength": 5.6, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 6.7, "petalWidth": 2.0, "sepalLength": 7.7, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 1.8, "sepalLength": 6.3, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.1, "sepalLength": 6.7, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 6.0, "petalWidth": 1.8, "sepalLength": 7.2, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 6.2, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 1.8, "sepalLength": 6.1, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.1, "sepalLength": 6.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 1.6, "sepalLength": 7.2, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 1.9, "sepalLength": 7.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 6.4, "petalWidth": 2.0, "sepalLength": 7.9, "sepalWidth": 3.8, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.2, "sepalLength": 6.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.5, "sepalLength": 6.3, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 2.6, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 2.3, "sepalLength": 7.7, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.4, "sepalLength": 6.3, "sepalWidth": 3.4, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 1.8, "sepalLength": 6.4, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 6.0, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.4, "petalWidth": 2.1, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.4, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.3, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.9, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.9, "petalWidth": 2.3, "sepalLength": 6.8, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.5, "sepalLength": 6.7, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 5.2, "petalWidth": 2.3, "sepalLength": 6.7, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 1.9, "sepalLength": 6.3, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 5.2, "petalWidth": 2.0, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.4, "petalWidth": 2.3, "sepalLength": 6.2, "sepalWidth": 3.4, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.8, "sepalLength": 5.9, "sepalWidth": 3.0, "species": "virginica"}]}, "mark": "point", "encoding": {"color": {"condition": {"type": "nominal", "field": "species", "selection": "selector129"}, "value": "lightgray"}, "x": {"type": "quantitative", "field": "petalLength"}, "y": {"type": "quantitative", "field": "petalWidth"}}, "height": 300, "selection": {"selector128": {"type": "interval"}}, "width": 300}, {"data": {"values": [{"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.9, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.7, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.9, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 4.6, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 2.9, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.1, "sepalLength": 4.9, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.4, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.1, "sepalLength": 4.8, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.1, "petalWidth": 0.1, "sepalLength": 4.3, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.2, "petalWidth": 0.2, "sepalLength": 5.8, "sepalWidth": 4.0, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.7, "sepalWidth": 4.4, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.9, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 5.1, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.30000000000000004, "sepalLength": 5.7, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.30000000000000004, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.2, "sepalLength": 5.4, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.1, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.0, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.5, "sepalLength": 5.1, "sepalWidth": 3.3, "species": "setosa"}, {"petalLength": 1.9, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.4, "sepalLength": 5.0, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.2, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.2, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.7, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.1, "sepalLength": 5.2, "sepalWidth": 4.1, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.5, "sepalWidth": 4.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 4.9, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.2, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 5.5, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.1, "sepalLength": 4.9, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.30000000000000004, "sepalLength": 5.0, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.30000000000000004, "sepalLength": 4.5, "sepalWidth": 2.3, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.6000000000000001, "sepalLength": 5.0, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.9, "petalWidth": 0.4, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 4.8, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.3, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.3, "species": "setosa"}, {"petalLength": 4.7, "petalWidth": 1.4, "sepalLength": 7.0, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.4, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.9, "petalWidth": 1.5, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 5.5, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.5, "sepalLength": 6.5, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.6, "sepalLength": 6.3, "sepalWidth": 3.3, "species": "versicolor"}, {"petalLength": 3.3, "petalWidth": 1.0, "sepalLength": 4.9, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.3, "sepalLength": 6.6, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.4, "sepalLength": 5.2, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 3.5, "petalWidth": 1.0, "sepalLength": 5.0, "sepalWidth": 2.0, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.5, "sepalLength": 5.9, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.0, "sepalLength": 6.0, "sepalWidth": 2.2, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.6, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.4, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 5.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.0, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.2, "sepalWidth": 2.2, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.1, "sepalLength": 5.6, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 5.9, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 6.1, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.9, "petalWidth": 1.5, "sepalLength": 6.3, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.2, "sepalLength": 6.1, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.3, "petalWidth": 1.3, "sepalLength": 6.4, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.4, "sepalLength": 6.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.8, "petalWidth": 1.4, "sepalLength": 6.8, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 5.0, "petalWidth": 1.7000000000000002, "sepalLength": 6.7, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.0, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.5, "petalWidth": 1.0, "sepalLength": 5.7, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 3.8, "petalWidth": 1.1, "sepalLength": 5.5, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 3.7, "petalWidth": 1.0, "sepalLength": 5.5, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.2, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 5.1, "petalWidth": 1.6, "sepalLength": 6.0, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 5.4, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.6, "sepalLength": 6.0, "sepalWidth": 3.4, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.5, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.3, "sepalLength": 6.3, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 5.5, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.2, "sepalLength": 5.5, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.2, "sepalLength": 5.8, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 3.3, "petalWidth": 1.0, "sepalLength": 5.0, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.2, "sepalLength": 5.7, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.3, "petalWidth": 1.3, "sepalLength": 6.2, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.0, "petalWidth": 1.1, "sepalLength": 5.1, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 6.0, "petalWidth": 2.5, "sepalLength": 6.3, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.9, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.9, "petalWidth": 2.1, "sepalLength": 7.1, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 1.8, "sepalLength": 6.3, "sepalWidth": 2.9, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 2.2, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.6, "petalWidth": 2.1, "sepalLength": 7.6, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 4.5, "petalWidth": 1.7000000000000002, "sepalLength": 4.9, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 6.3, "petalWidth": 1.8, "sepalLength": 7.3, "sepalWidth": 2.9, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 1.8, "sepalLength": 6.7, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 2.5, "sepalLength": 7.2, "sepalWidth": 3.6, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.0, "sepalLength": 6.5, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.3, "petalWidth": 1.9, "sepalLength": 6.4, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 2.1, "sepalLength": 6.8, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 2.0, "sepalLength": 5.7, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.4, "sepalLength": 5.8, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.3, "petalWidth": 2.3, "sepalLength": 6.4, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 1.8, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.7, "petalWidth": 2.2, "sepalLength": 7.7, "sepalWidth": 3.8, "species": "virginica"}, {"petalLength": 6.9, "petalWidth": 2.3, "sepalLength": 7.7, "sepalWidth": 2.6, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 1.5, "sepalLength": 6.0, "sepalWidth": 2.2, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.3, "sepalLength": 6.9, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 2.0, "sepalLength": 5.6, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 6.7, "petalWidth": 2.0, "sepalLength": 7.7, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 1.8, "sepalLength": 6.3, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.1, "sepalLength": 6.7, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 6.0, "petalWidth": 1.8, "sepalLength": 7.2, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 6.2, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 1.8, "sepalLength": 6.1, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.1, "sepalLength": 6.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 1.6, "sepalLength": 7.2, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 1.9, "sepalLength": 7.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 6.4, "petalWidth": 2.0, "sepalLength": 7.9, "sepalWidth": 3.8, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.2, "sepalLength": 6.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.5, "sepalLength": 6.3, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 2.6, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 2.3, "sepalLength": 7.7, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.4, "sepalLength": 6.3, "sepalWidth": 3.4, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 1.8, "sepalLength": 6.4, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 6.0, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.4, "petalWidth": 2.1, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.4, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.3, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.9, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.9, "petalWidth": 2.3, "sepalLength": 6.8, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.5, "sepalLength": 6.7, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 5.2, "petalWidth": 2.3, "sepalLength": 6.7, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 1.9, "sepalLength": 6.3, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 5.2, "petalWidth": 2.0, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.4, "petalWidth": 2.3, "sepalLength": 6.2, "sepalWidth": 3.4, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.8, "sepalLength": 5.9, "sepalWidth": 3.0, "species": "virginica"}]}, "mark": "point", "encoding": {"color": {"condition": {"type": "nominal", "field": "species", "selection": "selector128"}, "value": "lightgray"}, "x": {"type": "quantitative", "field": "sepalLength"}, "y": {"type": "quantitative", "field": "sepalWidth"}}, "height": 300, "selection": {"selector129": {"type": "interval"}}, "width": 300}]}, {"data": {"values": [{"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.9, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.7, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.9, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 4.6, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 2.9, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.1, "sepalLength": 4.9, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.4, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.1, "sepalLength": 4.8, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.1, "petalWidth": 0.1, "sepalLength": 4.3, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.2, "petalWidth": 0.2, "sepalLength": 5.8, "sepalWidth": 4.0, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.7, "sepalWidth": 4.4, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.9, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 5.1, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.30000000000000004, "sepalLength": 5.7, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.30000000000000004, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.2, "sepalLength": 5.4, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.1, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.0, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.7000000000000002, "petalWidth": 0.5, "sepalLength": 5.1, "sepalWidth": 3.3, "species": "setosa"}, {"petalLength": 1.9, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.4, "sepalLength": 5.0, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.2, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.2, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.7, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 4.8, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.4, "sepalLength": 5.4, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.1, "sepalLength": 5.2, "sepalWidth": 4.1, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.5, "sepalWidth": 4.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 4.9, "sepalWidth": 3.1, "species": "setosa"}, {"petalLength": 1.2, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 5.5, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.1, "sepalLength": 4.9, "sepalWidth": 3.6, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.4, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.30000000000000004, "sepalLength": 5.0, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.30000000000000004, "sepalLength": 4.5, "sepalWidth": 2.3, "species": "setosa"}, {"petalLength": 1.3, "petalWidth": 0.2, "sepalLength": 4.4, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.6000000000000001, "sepalLength": 5.0, "sepalWidth": 3.5, "species": "setosa"}, {"petalLength": 1.9, "petalWidth": 0.4, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.30000000000000004, "sepalLength": 4.8, "sepalWidth": 3.0, "species": "setosa"}, {"petalLength": 1.6, "petalWidth": 0.2, "sepalLength": 5.1, "sepalWidth": 3.8, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 4.6, "sepalWidth": 3.2, "species": "setosa"}, {"petalLength": 1.5, "petalWidth": 0.2, "sepalLength": 5.3, "sepalWidth": 3.7, "species": "setosa"}, {"petalLength": 1.4, "petalWidth": 0.2, "sepalLength": 5.0, "sepalWidth": 3.3, "species": "setosa"}, {"petalLength": 4.7, "petalWidth": 1.4, "sepalLength": 7.0, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.4, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.9, "petalWidth": 1.5, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 5.5, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.5, "sepalLength": 6.5, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.6, "sepalLength": 6.3, "sepalWidth": 3.3, "species": "versicolor"}, {"petalLength": 3.3, "petalWidth": 1.0, "sepalLength": 4.9, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.3, "sepalLength": 6.6, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.4, "sepalLength": 5.2, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 3.5, "petalWidth": 1.0, "sepalLength": 5.0, "sepalWidth": 2.0, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.5, "sepalLength": 5.9, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.0, "sepalLength": 6.0, "sepalWidth": 2.2, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.6, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.4, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 5.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.0, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.2, "sepalWidth": 2.2, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.1, "sepalLength": 5.6, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 5.9, "sepalWidth": 3.2, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 6.1, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.9, "petalWidth": 1.5, "sepalLength": 6.3, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.2, "sepalLength": 6.1, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 4.3, "petalWidth": 1.3, "sepalLength": 6.4, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.4, "sepalLength": 6.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.8, "petalWidth": 1.4, "sepalLength": 6.8, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 5.0, "petalWidth": 1.7000000000000002, "sepalLength": 6.7, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 6.0, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.5, "petalWidth": 1.0, "sepalLength": 5.7, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 3.8, "petalWidth": 1.1, "sepalLength": 5.5, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 3.7, "petalWidth": 1.0, "sepalLength": 5.5, "sepalWidth": 2.4, "species": "versicolor"}, {"petalLength": 3.9, "petalWidth": 1.2, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 5.1, "petalWidth": 1.6, "sepalLength": 6.0, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.5, "sepalLength": 5.4, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.5, "petalWidth": 1.6, "sepalLength": 6.0, "sepalWidth": 3.4, "species": "versicolor"}, {"petalLength": 4.7, "petalWidth": 1.5, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.3, "sepalLength": 6.3, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.3, "sepalLength": 5.5, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.4, "petalWidth": 1.2, "sepalLength": 5.5, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 4.6, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.0, "petalWidth": 1.2, "sepalLength": 5.8, "sepalWidth": 2.6, "species": "versicolor"}, {"petalLength": 3.3, "petalWidth": 1.0, "sepalLength": 5.0, "sepalWidth": 2.3, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.3, "sepalLength": 5.6, "sepalWidth": 2.7, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.2, "sepalLength": 5.7, "sepalWidth": 3.0, "species": "versicolor"}, {"petalLength": 4.2, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 4.3, "petalWidth": 1.3, "sepalLength": 6.2, "sepalWidth": 2.9, "species": "versicolor"}, {"petalLength": 3.0, "petalWidth": 1.1, "sepalLength": 5.1, "sepalWidth": 2.5, "species": "versicolor"}, {"petalLength": 4.1, "petalWidth": 1.3, "sepalLength": 5.7, "sepalWidth": 2.8, "species": "versicolor"}, {"petalLength": 6.0, "petalWidth": 2.5, "sepalLength": 6.3, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.9, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.9, "petalWidth": 2.1, "sepalLength": 7.1, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 1.8, "sepalLength": 6.3, "sepalWidth": 2.9, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 2.2, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.6, "petalWidth": 2.1, "sepalLength": 7.6, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 4.5, "petalWidth": 1.7000000000000002, "sepalLength": 4.9, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 6.3, "petalWidth": 1.8, "sepalLength": 7.3, "sepalWidth": 2.9, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 1.8, "sepalLength": 6.7, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 2.5, "sepalLength": 7.2, "sepalWidth": 3.6, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.0, "sepalLength": 6.5, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.3, "petalWidth": 1.9, "sepalLength": 6.4, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 2.1, "sepalLength": 6.8, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 2.0, "sepalLength": 5.7, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.4, "sepalLength": 5.8, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.3, "petalWidth": 2.3, "sepalLength": 6.4, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 1.8, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.7, "petalWidth": 2.2, "sepalLength": 7.7, "sepalWidth": 3.8, "species": "virginica"}, {"petalLength": 6.9, "petalWidth": 2.3, "sepalLength": 7.7, "sepalWidth": 2.6, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 1.5, "sepalLength": 6.0, "sepalWidth": 2.2, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.3, "sepalLength": 6.9, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 2.0, "sepalLength": 5.6, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 6.7, "petalWidth": 2.0, "sepalLength": 7.7, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 1.8, "sepalLength": 6.3, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.1, "sepalLength": 6.7, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 6.0, "petalWidth": 1.8, "sepalLength": 7.2, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 6.2, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 4.9, "petalWidth": 1.8, "sepalLength": 6.1, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.1, "sepalLength": 6.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.8, "petalWidth": 1.6, "sepalLength": 7.2, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 1.9, "sepalLength": 7.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 6.4, "petalWidth": 2.0, "sepalLength": 7.9, "sepalWidth": 3.8, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.2, "sepalLength": 6.4, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.5, "sepalLength": 6.3, "sepalWidth": 2.8, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 1.4, "sepalLength": 6.1, "sepalWidth": 2.6, "species": "virginica"}, {"petalLength": 6.1, "petalWidth": 2.3, "sepalLength": 7.7, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.4, "sepalLength": 6.3, "sepalWidth": 3.4, "species": "virginica"}, {"petalLength": 5.5, "petalWidth": 1.8, "sepalLength": 6.4, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 4.8, "petalWidth": 1.8, "sepalLength": 6.0, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.4, "petalWidth": 2.1, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.6, "petalWidth": 2.4, "sepalLength": 6.7, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 2.3, "sepalLength": 6.9, "sepalWidth": 3.1, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.9, "sepalLength": 5.8, "sepalWidth": 2.7, "species": "virginica"}, {"petalLength": 5.9, "petalWidth": 2.3, "sepalLength": 6.8, "sepalWidth": 3.2, "species": "virginica"}, {"petalLength": 5.7, "petalWidth": 2.5, "sepalLength": 6.7, "sepalWidth": 3.3, "species": "virginica"}, {"petalLength": 5.2, "petalWidth": 2.3, "sepalLength": 6.7, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.0, "petalWidth": 1.9, "sepalLength": 6.3, "sepalWidth": 2.5, "species": "virginica"}, {"petalLength": 5.2, "petalWidth": 2.0, "sepalLength": 6.5, "sepalWidth": 3.0, "species": "virginica"}, {"petalLength": 5.4, "petalWidth": 2.3, "sepalLength": 6.2, "sepalWidth": 3.4, "species": "virginica"}, {"petalLength": 5.1, "petalWidth": 1.8, "sepalLength": 5.9, "sepalWidth": 3.0, "species": "virginica"}]}, "mark": "bar", "encoding": {"color": {"type": "nominal", "field": "species"}, "x": {"type": "nominal", "aggregate": "count", "field": "species"}, "y": {"type": "nominal", "field": "species"}}, "transform": [{"filter": {"and": [{"selection": "selector128"}, {"selection": "selector129"}]}}], "width": 660}], "$schema": "https://vega.github.io/schema/vega-lite/v2.4.1.json"};
+    var embed_opt = {"mode": "vega-lite"};
+
+    function showError(el, error){
+        el.innerHTML = ('<div class="error">'
+                        + '<p>JavaScript Error: ' + error.message + '</p>'
+                        + "<p>This usually means there's a typo in your chart specification. "
+                        + "See the javascript console for the full traceback.</p>"
+                        + '</div>');
+        throw error;
+    }
+    const el = document.getElementById('vis');
+    vegaEmbed("#vis", spec, embed_opt)
+        .catch(error => showError(el, error));
+</script>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#altair" class="page__taxonomy-item" rel="tag">altair</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#dataviz" class="page__taxonomy-item" rel="tag">dataviz</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-05-28T00:00:00-05:00">May 28, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Altair+plot+test%20http%3A%2F%2Flocalhost%3A4000%2Faltair-test%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Faltair-test%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Faltair-test%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Faltair-test%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/test/" class="pagination--pager" title="Some post test
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/test/" rel="permalink">Some post test
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">llallalalalalala.
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="https://github.com/renato145"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Renato Hermoza. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
+
+
+
+
+
+
+
+
+<!-- src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> -->
+
+  </body>
+</html>
