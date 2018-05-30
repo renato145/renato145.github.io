@@ -2,10 +2,10 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Articles"
-    url: /articles/
-  - title: "Projects"
-    url: /projects/
+  # - title: "Articles"
+    # url: /articles/
+  # - title: "Projects"
+    # url: /projects/
   # - title: "Machine Learning"
   #  url: /machine-learning/
   # - title: "Quick-Start Guide"

@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Renato Hermoza"
   avatar           : "/images/pic1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data scientist, Machine Learning researcher and passionate about food."
+  bio              : "Data scientist, ML researcher."
   location         : "Lima, Perú"
   email            :
   uri              :
