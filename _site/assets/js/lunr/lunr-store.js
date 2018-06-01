@@ -4,8 +4,8 @@ var store = [{
         "tags": ["dataviz","altair"],
         "url": "http://localhost:4000/plotting-with-altair/",
         "teaser":"http://localhost:4000/images/plotting-with-altair/altair_ico.png"},{
-        "title": "INEI Criminality Data",
-        "excerpt":"Data obtained from http://criminalidad.inei.gob.pe. As the data is given in number of criminal complaints, ratios were calculated using data from INEI series. Here is a view of the numbers and ratio of complaints by city and type: ","categories": [],
+        "title": "INEI Crime Data",
+        "excerpt":"In Perú, the Instituto Nacional de Estadística e Informática (INEN) is the government agency in charge of statistical information. In this post, we will be looking at crime data from http://criminalidad.inei.gob.pe. We can download the number of crime complaints by type and region. As we would like to compare different...","categories": [],
         "tags": ["dataviz","altair","inei"],
         "url": "http://localhost:4000/inei-criminality-data/",
         "teaser":null}]
