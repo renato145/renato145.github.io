@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-01T12:26:37-05:00</updated><id>http://localhost:4000/</id><title type="html">Renato Hermoza</title><subtitle>Data Science Portfolio</subtitle><author><name>Renato Hermoza</name></author><entry><title type="html">INEI Crime Data</title><link href="http://localhost:4000/inei-criminality-data/" rel="alternate" type="text/html" title="INEI Crime Data" /><published>2018-05-31T00:00:00-05:00</published><updated>2018-05-31T00:00:00-05:00</updated><id>http://localhost:4000/inei-criminality-data</id><content type="html" xml:base="http://localhost:4000/inei-criminality-data/">&lt;p&gt;In Perú, the Instituto Nacional de Estadística e Informática (&lt;a href=&quot;https://www.inei.gob.pe/&quot;&gt;INEN&lt;/a&gt;) is the government agency in charge of statistical information. In this post, we will be looking at crime data from &lt;a href=&quot;http://criminalidad.inei.gob.pe&quot;&gt;http://criminalidad.inei.gob.pe&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-01T18:14:55-05:00</updated><id>http://localhost:4000/</id><title type="html">Renato Hermoza</title><subtitle>Data Science Portfolio</subtitle><author><name>Renato Hermoza</name></author><entry><title type="html">INEI Crime Data</title><link href="http://localhost:4000/inei-criminality-data/" rel="alternate" type="text/html" title="INEI Crime Data" /><published>2018-05-31T00:00:00-05:00</published><updated>2018-05-31T00:00:00-05:00</updated><id>http://localhost:4000/inei-criminality-data</id><content type="html" xml:base="http://localhost:4000/inei-criminality-data/">&lt;p&gt;In Perú, the Instituto Nacional de Estadística e Informática (&lt;a href=&quot;https://www.inei.gob.pe/&quot;&gt;INEN&lt;/a&gt;) is the government agency in charge of statistical information. In this post, we will be looking at crime data from &lt;a href=&quot;http://criminalidad.inei.gob.pe&quot;&gt;http://criminalidad.inei.gob.pe&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;We can download the number of crime complaints by type and region. As we would like to compare different regions it’s important to express the numbers as a population ratio rather than absolute counts. We can find the population by region on &lt;a href=&quot;http://webapp.inei.gob.pe:8080/sirtod-series&quot;&gt;INEI series&lt;/a&gt;.&lt;/p&gt;
 
@@ -28,10 +28,10 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Finally we can show maps for the most recurrent crimes:&lt;/p&gt;
+&lt;p&gt;Finally we can show maps for the most recurrent crimes types:&lt;/p&gt;
 
 &lt;figure class=&quot;&quot;&gt;
-  &lt;img src=&quot;/images/inei-criminality-data/delitos-crim-maps.png&quot; alt=&quot;crime complaint map&quot; /&gt;
+  &lt;img src=&quot;/images/inei-criminality-data/delitos-crim-maps.png&quot; alt=&quot;crime complaint maps&quot; /&gt;
   
 &lt;/figure&gt;
 
@@ -63,7 +63,7 @@
       .catch(error =&gt; showError(el_1, error));
     vegaEmbed(&quot;#vis_2&quot;, spec_2, embed_opt)
       .catch(error =&gt; showError(el_2, error));
-&lt;/script&gt;</content><author><name>Renato Hermoza</name></author><category term="dataviz" /><category term="altair" /><category term="inei" /><summary type="html">Exploring crime data from INEI.</summary></entry><entry><title type="html">Plotting with altair</title><link href="http://localhost:4000/plotting-with-altair/" rel="alternate" type="text/html" title="Plotting with altair" /><published>2018-05-28T00:00:00-05:00</published><updated>2018-05-28T00:00:00-05:00</updated><id>http://localhost:4000/plotting-with-altair</id><content type="html" xml:base="http://localhost:4000/plotting-with-altair/">&lt;p&gt;This library has recently caught my attention: &lt;a href=&quot;https://altair-viz.github.io&quot;&gt;Altair&lt;/a&gt;. So here is a test check the interactive behavior on a post, I can’t wait to use it more in here :).&lt;/p&gt;
+&lt;/script&gt;</content><author><name>Renato Hermoza</name></author><category term="dataviz" /><category term="altair" /><category term="inei" /><summary type="html">Exploring crime data from INEI.</summary></entry><entry><title type="html">Plotting with altair</title><link href="http://localhost:4000/plotting-with-altair/" rel="alternate" type="text/html" title="Plotting with altair" /><published>2018-05-28T00:00:00-05:00</published><updated>2018-05-28T00:00:00-05:00</updated><id>http://localhost:4000/plotting-with-altair</id><content type="html" xml:base="http://localhost:4000/plotting-with-altair/">&lt;p&gt;This library has recently caught my attention: &lt;a href=&quot;https://altair-viz.github.io&quot;&gt;Altair&lt;/a&gt;. So here is a test check the interactive behavior on a post, can’t wait to use more of it :).&lt;/p&gt;
 
 &lt;div id=&quot;vis&quot;&gt;&lt;/div&gt;
 

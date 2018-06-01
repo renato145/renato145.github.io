@@ -9,8 +9,8 @@ custom-javascript-list:
     - https://cdn.jsdelivr.net/npm//vega-embed@3.0
 custom-css-list:
     - /assets/css/altair.css
-# header:
-    # teaser: "images/plotting-with-altair/altair_ico.png"
+header:
+    teaser: "/images/inei-criminality-data/delitos-ratio-map.png"
 toc: true
 toc_label: "Contents"
 toc_icon: "align-justify"
@@ -44,9 +44,9 @@ Now, using geopandas and matplotlib, we can plot some maps. Here we have the cri
 
 <br>
 
-Finally we can show maps for the most recurrent crimes:
+Finally we can show maps for the most recurrent crimes types:
 
-{% include figure image_path="/images/inei-criminality-data/delitos-crim-maps.png" alt="crime complaint map" %}
+{% include figure image_path="/images/inei-criminality-data/delitos-crim-maps.png" alt="crime complaint maps" %}
 
 <br>
 

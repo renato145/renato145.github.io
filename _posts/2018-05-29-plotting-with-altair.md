@@ -13,7 +13,7 @@ header:
     teaser: "images/plotting-with-altair/altair_ico.png"
 ---
 
-This library has recently caught my attention: [Altair](https://altair-viz.github.io). So here is a test check the interactive behavior on a post, I can't wait to use it more in here :).
+This library has recently caught my attention: [Altair](https://altair-viz.github.io). So here is a test check the interactive behavior on a post, can't wait to use more of it :).
 
 <div id="vis"></div>
 
