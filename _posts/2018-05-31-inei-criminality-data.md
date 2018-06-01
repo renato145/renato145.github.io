@@ -11,6 +11,9 @@ custom-css-list:
     - /assets/css/altair.css
 # header:
     # teaser: "images/plotting-with-altair/altair_ico.png"
+toc: true
+toc_label: "Contents"
+toc_icon: "align-justify"
 ---
 
 In Perú, the Instituto Nacional de Estadística e Informática ([INEN](https://www.inei.gob.pe/)) is the government agency in charge of statistical information. In this post, we will be looking at crime data from <http://criminalidad.inei.gob.pe>.
@@ -23,7 +26,7 @@ Here is a view of the numbers and ratio of complaints by region and type:
 
 <br>
 
-# Region similarities
+## Region similarities
 
 Now let's use some dimensionality reduction like PCA to see how similar are the different regions by crime types.
 
@@ -33,8 +36,7 @@ Now let's use some dimensionality reduction like PCA to see how similar are the 
 
 <br>
 
-
-# Maps
+## Maps
 
 Now, using geopandas and matplotlib, we can plot some maps. Here we have the crime complaints / population by region:
 
@@ -42,12 +44,14 @@ Now, using geopandas and matplotlib, we can plot some maps. Here we have the cri
 
 <br>
 
-And finally maps for the most recurrent crimes:
+Finally we can show maps for the most recurrent crimes:
 
 {% include figure image_path="/images/inei-criminality-data/delitos-crim-maps.png" alt="crime complaint map" %}
 
 <br>
----
+
+## Source
+
 You can find the code for the post in this [notebook](https://nbviewer.jupyter.org/github/renato145/peru-stats/blob/master/nbs/explore-delitos.ipynb).
 
 

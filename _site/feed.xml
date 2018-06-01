@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-01T03:04:52-05:00</updated><id>http://localhost:4000/</id><title type="html">Renato Hermoza</title><subtitle>Data Science Portfolio</subtitle><author><name>Renato Hermoza</name></author><entry><title type="html">INEI Crime Data</title><link href="http://localhost:4000/inei-criminality-data/" rel="alternate" type="text/html" title="INEI Crime Data" /><published>2018-05-31T00:00:00-05:00</published><updated>2018-05-31T00:00:00-05:00</updated><id>http://localhost:4000/inei-criminality-data</id><content type="html" xml:base="http://localhost:4000/inei-criminality-data/">&lt;p&gt;In Perú, the Instituto Nacional de Estadística e Informática (&lt;a href=&quot;https://www.inei.gob.pe/&quot;&gt;INEN&lt;/a&gt;) is the government agency in charge of statistical information. In this post, we will be looking at crime data from &lt;a href=&quot;http://criminalidad.inei.gob.pe&quot;&gt;http://criminalidad.inei.gob.pe&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-01T12:26:37-05:00</updated><id>http://localhost:4000/</id><title type="html">Renato Hermoza</title><subtitle>Data Science Portfolio</subtitle><author><name>Renato Hermoza</name></author><entry><title type="html">INEI Crime Data</title><link href="http://localhost:4000/inei-criminality-data/" rel="alternate" type="text/html" title="INEI Crime Data" /><published>2018-05-31T00:00:00-05:00</published><updated>2018-05-31T00:00:00-05:00</updated><id>http://localhost:4000/inei-criminality-data</id><content type="html" xml:base="http://localhost:4000/inei-criminality-data/">&lt;p&gt;In Perú, the Instituto Nacional de Estadística e Informática (&lt;a href=&quot;https://www.inei.gob.pe/&quot;&gt;INEN&lt;/a&gt;) is the government agency in charge of statistical information. In this post, we will be looking at crime data from &lt;a href=&quot;http://criminalidad.inei.gob.pe&quot;&gt;http://criminalidad.inei.gob.pe&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;We can download the number of crime complaints by type and region. As we would like to compare different regions it’s important to express the numbers as a population ratio rather than absolute counts. We can find the population by region on &lt;a href=&quot;http://webapp.inei.gob.pe:8080/sirtod-series&quot;&gt;INEI series&lt;/a&gt;.&lt;/p&gt;
 
@@ -8,7 +8,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;region-similarities&quot;&gt;Region similarities&lt;/h1&gt;
+&lt;h2 id=&quot;region-similarities&quot;&gt;Region similarities&lt;/h2&gt;
 
 &lt;p&gt;Now let’s use some dimensionality reduction like PCA to see how similar are the different regions by crime types.&lt;/p&gt;
 
@@ -20,7 +20,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;maps&quot;&gt;Maps&lt;/h1&gt;
+&lt;h2 id=&quot;maps&quot;&gt;Maps&lt;/h2&gt;
 
 &lt;p&gt;Now, using geopandas and matplotlib, we can plot some maps. Here we have the crime complaints / population by region:&lt;/p&gt;
 
@@ -28,14 +28,17 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;And finally maps for the most recurrent crimes:&lt;/p&gt;
+&lt;p&gt;Finally we can show maps for the most recurrent crimes:&lt;/p&gt;
 
 &lt;figure class=&quot;&quot;&gt;
   &lt;img src=&quot;/images/inei-criminality-data/delitos-crim-maps.png&quot; alt=&quot;crime complaint map&quot; /&gt;
   
 &lt;/figure&gt;
 
-&lt;h2&gt;&lt;br /&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;source&quot;&gt;Source&lt;/h2&gt;
+
 &lt;p&gt;You can find the code for the post in this &lt;a href=&quot;https://nbviewer.jupyter.org/github/renato145/peru-stats/blob/master/nbs/explore-delitos.ipynb&quot;&gt;notebook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;script type=&quot;text/javascript&quot;&gt;

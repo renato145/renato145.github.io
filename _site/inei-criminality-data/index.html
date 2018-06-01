@@ -296,6 +296,17 @@
 
       <section class="page__content" itemprop="text">
         
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-align-justify"></i> Contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#region-similarities">Region similarities</a></li>
+  <li><a href="#maps">Maps</a></li>
+  <li><a href="#source">Source</a></li>
+</ul>
+            </nav>
+          </aside>
+        
         <p>In Perú, the Instituto Nacional de Estadística e Informática (<a href="https://www.inei.gob.pe/">INEN</a>) is the government agency in charge of statistical information. In this post, we will be looking at crime data from <a href="http://criminalidad.inei.gob.pe">http://criminalidad.inei.gob.pe</a>.</p>
 
 <p>We can download the number of crime complaints by type and region. As we would like to compare different regions it’s important to express the numbers as a population ratio rather than absolute counts. We can find the population by region on <a href="http://webapp.inei.gob.pe:8080/sirtod-series">INEI series</a>.</p>
@@ -306,7 +317,7 @@
 
 <p><br /></p>
 
-<h1 id="region-similarities">Region similarities</h1>
+<h2 id="region-similarities">Region similarities</h2>
 
 <p>Now let’s use some dimensionality reduction like PCA to see how similar are the different regions by crime types.</p>
 
@@ -318,7 +329,7 @@
 
 <p><br /></p>
 
-<h1 id="maps">Maps</h1>
+<h2 id="maps">Maps</h2>
 
 <p>Now, using geopandas and matplotlib, we can plot some maps. Here we have the crime complaints / population by region:</p>
 
@@ -326,14 +337,17 @@
 
 <p><br /></p>
 
-<p>And finally maps for the most recurrent crimes:</p>
+<p>Finally we can show maps for the most recurrent crimes:</p>
 
 <figure class="">
   <img src="/images/inei-criminality-data/delitos-crim-maps.png" alt="crime complaint map" />
   
 </figure>
 
-<h2><br /></h2>
+<p><br /></p>
+
+<h2 id="source">Source</h2>
+
 <p>You can find the code for the post in this <a href="https://nbviewer.jupyter.org/github/renato145/peru-stats/blob/master/nbs/explore-delitos.ipynb">notebook</a>.</p>
 
 <script type="text/javascript">
