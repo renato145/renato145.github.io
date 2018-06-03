@@ -50,9 +50,9 @@ Finally we can show maps for the most recurrent crimes types:
 
 <br>
 
-## Source
+## Code used in the post
 
-You can find the code for the post in this [notebook](https://nbviewer.jupyter.org/github/renato145/peru-stats/blob/master/nbs/explore-delitos.ipynb).
+[Notebook](https://nbviewer.jupyter.org/github/renato145/peru-stats/blob/master/nbs/explore-delitos.ipynb){:target="_blank"}.
 
 
 

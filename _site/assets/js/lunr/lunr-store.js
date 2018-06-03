@@ -7,5 +7,5 @@ var store = [{
         "title": "INEI Crime Data",
         "excerpt":"In Perú, the Instituto Nacional de Estadística e Informática (INEN) is the government agency in charge of statistical information. In this post, we will be looking at crime data from http://criminalidad.inei.gob.pe. We can download the number of crime complaints by type and region. As we would like to compare different...","categories": [],
         "tags": ["dataviz","altair","inei"],
-        "url": "http://localhost:4000/inei-criminality-data/",
+        "url": "http://localhost:4000/inei-crime-data/",
         "teaser":"http://localhost:4000/images/inei-criminality-data/delitos-ratio-map.png"}]
