@@ -12,4 +12,4 @@ Things I like, in no particular order:
 - Movies (Kieślowski, Tarkovsky, Jodorowsky, ...sky).
 - Cooking.
 - Books, a little bit of everything. One particular favorite: The Museum of Eterna's Novel.
-- Camping.
+- Outdoors, camping.

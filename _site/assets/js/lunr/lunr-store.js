@@ -12,5 +12,5 @@ var store = [{
         "title": "Violence against women in Perú",
         "excerpt":"Peru has one of the highest rates of violence against women in the region1. How bad is the problem? let’s take a look at some public data. Public data The Demographic and Family Health Survey: ENDES2, is one of the most important statistical research carried out continuously in Perú. It...","categories": [],
         "tags": ["dataviz","altair","inei","vaw"],
-        "url": "http://localhost:4000/slope-graphs-and-altair/",
-        "teaser":"http://localhost:4000/images/inei-criminality-data/delitos-ratio-map.png"}]
+        "url": "http://localhost:4000/violence-against-women-in-peru/",
+        "teaser":"http://localhost:4000/images/violence-against-women-in-peru/vaw.png"}]
