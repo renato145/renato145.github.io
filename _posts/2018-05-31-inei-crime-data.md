@@ -72,7 +72,7 @@ Finally we can show maps for the most recurrent crimes types:
     }
 
     const el_1 = document.getElementById('vis_1');
-    const el_2 = document.getElementById('vis');
+    const el_2 = document.getElementById('vis_2');
     
     vegaEmbed("#vis_1", spec_1, embed_opt)
       .catch(error => showError(el_1, error));
