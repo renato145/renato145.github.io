@@ -5,7 +5,7 @@ const Posts = () => {
   const posts = useStaticQuery(
     graphql`
     query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
         excerpt
@@ -21,7 +21,7 @@ const Posts = () => {
       }
       }
     }`
-  ).allMarkdownRemark.edges;
+  ).allMdx.edges;
 
   return (
     <>
