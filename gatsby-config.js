@@ -1,13 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Renato Hermoza`,
+    title: `Renato's Blog`,
     author: `Renato Hermoza`,
     shortName: `Renato`,
+    mail: `renato.hermoza@pucp.edu.pe`,
     description: `Personal portfolio / blog.`,
     siteUrl: `https://renato145.github.io`,
     social: {
       twitter: `renato145`,
       github: `renato145`,
+      linkedin: `lala`,
     },
   },
   plugins: [

@@ -18,14 +18,14 @@ const Navigation = () => {
 
   return (
     <Navbar bg='light' expand='lg'>
+    {/* <Navbar bg='dark' variant='dark' expand='lg'> */}
       <Link to={`/`} className='navbar-brand' >{shortName}</Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className='mr-auto'>
           <Link to={`/`} className='nav-link' >Home</Link>
           <Link to={`/blog`} className='nav-link' >Blog</Link>
-          <Link to={`/projects`} className='nav-link' >Projects</Link>
-          <Link to={`/publications`} className='nav-link' >Publications</Link>
+          <Link to={`/experiments`} className='nav-link' >Experiments</Link>
           <Link to={`/about`} className='nav-link' >About</Link>
         </Nav>
       </Navbar.Collapse>

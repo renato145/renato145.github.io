@@ -1,29 +1,27 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/Layout';
 
-import Bio from "../components/Bio"
-import Layout from "../components/Layout"
-
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
+const Index = ({ data, location }) => {
+  const { title, description } = data.site.siteMetadata;
   const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout
       location={location}
-      title={siteTitle}
-      description='main page content'
-      headerConfig={{ title: 'Main' }}
+      title={title}
+      description={description}
+      headerConfig={{ title: 'Home' }}
     >
-      <Bio />
+      <h2>Posts</h2>
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const postTitle = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
             <header>
               <h3>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
+                  {postTitle}
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
@@ -36,19 +34,20 @@ const BlogIndex = ({ data, location }) => {
               />
             </section>
           </article>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default Index;
 
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -67,4 +66,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

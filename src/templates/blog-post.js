@@ -1,7 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -29,9 +27,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         {/* <hr /> */}
-        <footer>
-          <Bio />
-        </footer>
       </article>
 
       <nav>

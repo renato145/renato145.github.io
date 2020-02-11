@@ -11,3 +11,10 @@ const Footer = () => {
 
 export default Footer;
 
+      // <p>
+      //   Written by <strong>{author}</strong> some info.
+      //   {` `}
+      //   <a href={`https://twitter.com/${social.twitter}`}>
+      //     Follow me
+      //   </a>
+      // </p>

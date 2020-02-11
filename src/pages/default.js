@@ -3,13 +3,14 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 
 const DefaultPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
+  const title = data.site.siteMetadata.title;
 
   return (
     <Layout
       location={location}
-      title={siteTitle}
+      title={title}
       description='some description'
+      headerConfig={{ title: 'header' }}
     >
     </Layout>
   )
