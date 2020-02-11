@@ -1,7 +1,6 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/Seo"
 
 const DefaultPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;

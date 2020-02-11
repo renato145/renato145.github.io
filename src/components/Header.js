@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 const Header = ({ location, title, description }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
+  // const rootPath = `${__PATH_PREFIX__}/`;
 
   return (
     <header>
