@@ -1,61 +1,39 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import SEO from './Seo';
 import Navigation from './Navigation';
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
+import './general.css';
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
-  let header;
-
-  if (location.pathname === rootPath) {
-    header = (
-      <h1>
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    );
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    );
-  }
+const Layout = ({ location, title, description, children, headerConfig }) => {
+  const seo = typeof headerConfig === 'undefined'
+    ? { title: location.pathname.split('/').reverse()[1] }
+    : headerConfig;
   return (
-    <Container>
-      <header>
+    <Container className='main-container'>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+      />
+      <Row className='navigation-top-bar'>
         <Navigation />
-        {header}
-      </header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      </Row>
+      <Row className='main-content'>
+        <Header
+          location={location}
+          title={title}
+          description={description}
+        />
+        <Content
+          children={children}
+        />
+      </Row>
+      <Row className='main-footer align-items-end justify-content-end'>
+        <Footer />
+      </Row>
     </Container>
   );
 };

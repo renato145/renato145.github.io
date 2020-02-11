@@ -16,9 +16,9 @@ const SEO = ({ description, lang, meta, title }) => {
       query {
         site {
           siteMetadata {
-            title
             description
             author
+            shortName
           }
         }
       }
@@ -33,7 +33,7 @@ const SEO = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.shortName}`}
       meta={[
         {
           name: `description`,

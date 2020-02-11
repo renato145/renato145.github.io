@@ -3,15 +3,18 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
-import SEO from "../components/Seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+    <Layout
+      location={location}
+      title={siteTitle}
+      description='here will contain all blogs'
+      headerConfig={{ title: 'Main' }}
+    >
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
