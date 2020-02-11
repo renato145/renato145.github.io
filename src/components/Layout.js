@@ -6,7 +6,7 @@ import Content from './Content';
 import Footer from './Footer';
 import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './general.css';
+import './Layout.css';
 
 const Layout = ({ location, title, description, children, headerConfig }) => {
   const seo = typeof headerConfig === 'undefined'
@@ -31,7 +31,7 @@ const Layout = ({ location, title, description, children, headerConfig }) => {
           children={children}
         />
       </Row>
-      <Row className='main-footer align-items-end justify-content-end'>
+      <Row className='main-footer align-items-end'>
         <Footer />
       </Row>
     </Container>

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Renato's Blog`,
+    title: `Renato Hermoza`,
     author: `Renato Hermoza`,
     shortName: `Renato`,
     mail: `renato.hermoza@pucp.edu.pe`,
