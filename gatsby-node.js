@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  console.log(blogPost)
   const result = await graphql(
     `
       {
@@ -57,7 +58,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const value = createFilePath({
       node,
       getNode,
-      basePath: 'blog/',
+      // basePath: 'blog/',
     })
     createNodeField({
       name: `slug`,
