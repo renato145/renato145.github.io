@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import vegaEmbed from 'vega-embed';
-import './altair.css';
+import './AltairPlot.css';
 
 const showError = (el, error) => {
   el.innerHTML = ('<div class="error">'
@@ -21,7 +21,12 @@ const AltairPlot = ({ data, id }) => {
   }, [ data, id ]);
 
   return (
-    <div id={id} ref={ref}></div>
+    <div className='altair-plot overflow-auto'>
+      <div
+        id={id}
+        ref={ref}
+      />
+    </div>
   );
 };
 
