@@ -33,7 +33,10 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "vega": "^5.9.1",
+    "vega-embed": "^6.2.2",
+    "vega-lite": "^4.2.0"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",

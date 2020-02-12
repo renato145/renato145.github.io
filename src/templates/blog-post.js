@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
+  console.log(data);
   const post = data.mdx;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
