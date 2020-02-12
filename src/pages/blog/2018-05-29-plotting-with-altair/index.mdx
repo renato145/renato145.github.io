@@ -1,0 +1,56 @@
+---
+title: "Plotting with altair"
+date: 2018-05-28
+tags: [dataviz, altair]
+description: "Testing an altair interactive plot on jekyll."
+---
+
+import Footer from "../../../components/Footer.js";
+
+<Footer />
+
+This library has recently caught my attention: [Altair](https://altair-viz.github.io). So here is a test check the interactive behavior on a post, can't wait to use more of it :).
+
+<div id="vis"></div>
+
+
+### Code for the plot:
+
+```python
+import altair as alt
+from vega_datasets import data
+alt.renderers.enable('notebook')
+
+d = data.iris()
+
+brush1 = alt.selection_interval()
+brush2 = alt.selection_interval()
+
+base = alt.Chart(d)
+p1 = base.mark_point().encode(
+    x='petalLength', y='petalWidth',
+    color=alt.condition(brush2, 'species', alt.value('lightgray'), legend=None)
+).properties(
+    selection=brush1, width=240, height=240
+)
+
+p2 = base.mark_point().encode(
+    x='sepalLength', y='sepalWidth',
+    color=alt.condition(brush1, 'species', alt.value('lightgray'), legend=None)
+).properties(
+    selection=brush2, width=240, height=240
+)
+
+bars = base.mark_bar().encode(
+    y='species',
+    x='count()',
+    color=alt.Color('species', legend=None)
+).transform_filter(
+    {'and': [brush1.ref(), brush2.ref()]}
+).properties(
+    width=549
+)
+
+chart = (p1 | p2) & bars
+chart
+```
