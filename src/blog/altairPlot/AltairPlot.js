@@ -18,7 +18,7 @@ const AltairPlot = ({ data, id }) => {
   useEffect(() => {
     vegaEmbed(`#${id}`, data, embed_opt)
         .catch(error => showError(ref.current, error));
-  }, [ data ]);
+  }, [ data, id ]);
 
   return (
     <div id={id} ref={ref}></div>

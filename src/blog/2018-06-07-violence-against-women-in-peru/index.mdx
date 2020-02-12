@@ -1,0 +1,39 @@
+---
+title: "Violence against women in Perú"
+date: 2018-06-07
+tags: [dataviz, altair, inei, vaw]
+description: "Visualizing statistics on violence against women in Perú."
+---
+
+import AltairPlot from '../altairPlot/AltairPlot.js';
+import data from './data.js';
+
+Peru has one of the highest rates of violence against women in the region[^1]. How bad is the problem? let's take a look at some public data.
+
+
+## Public data
+
+The Demographic and Family Health Survey: ENDES[^2], is one of the most important statistical research carried out continuously in Perú. It provides information on reproductive, maternal and child health, and family violence.
+
+In this post we will be looking at some of the family violence variables that were publicly available[^3]:
+* **Physical violence:** percentage of women between 15 and 49 who have suffered physical violence from their husbands or partners.
+* **Psychological violence:** percentage of women between 15 and 49 who have suffered psychological violence from their husbands or partners.
+* **Sexual violence:** percentage of women between 15 and 49 who have suffered sexual violence from their husbands or partners.
+
+## Violence variables by region
+
+<AltairPlot data={data} id={'vis'} />
+
+<br />
+The numbers are quite high: in 2016, on average, 65% of women have suffered some kind of abuse, in some regions nearly half of the women have been victims of physical abuse and 7 regions have more than 10% victims of sexual violence. There is certainly a lot of work to do.
+
+
+## Code used in the post
+
+You can check the [notebook](https://nbviewer.jupyter.org/github/renato145/peru-stats/blob/master/nbs/explore-vaw-endes.ipynb) and also the functions used to make this and other useful plots [here](https://github.com/renato145/peru-stats/blob/master/perustats/plots.py).
+
+---
+
+[^1]: United Nations (UN). 26 June 2015. Human Rights Council. [Report of the Working Group on the Issue of Discrimination Against Women in Law and in Practice. Addendum: Mission to Peru.](https://www.ecoi.net/en/file/local/1420557/1930_1514988190_g1513451.pdf).
+[^2]: Encuesta Demográfica y de Salud Familiar [ENDES](https://proyectos.inei.gob.pe/endes/).
+[^3]: [Sistema Integrado de Estadísticas de la Criminalidad y Seguridad Ciudadana](http://criminalidad.inei.gob.pe).
