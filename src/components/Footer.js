@@ -28,10 +28,10 @@ const Footer = () => {
           <Nav.Link href={`mailto:${mail}`}>{mail}</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href={`https://twitter.com/${social.twitter}`}>Twitter</Nav.Link>
+          <Nav.Link href={`https://twitter.com/${social.twitter}`} target='_black'>Twitter</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href={`https://github.com/${social.github}`}>GitHub</Nav.Link>
+          <Nav.Link href={`https://github.com/${social.github}`} target='_black'>GitHub</Nav.Link>
         </Nav.Item>
       </Nav>
     </footer>

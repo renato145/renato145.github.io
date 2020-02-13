@@ -1,0 +1,9 @@
+.experiment-card {
+  height: 100%;
+}
+
+.experiment-card-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 1.25rem;
+}

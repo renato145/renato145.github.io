@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from "gatsby"
 import './Posts.css';
 
-const Posts = () => {
+const Posts = ({ title=false }) => {
   const posts = useStaticQuery(
     graphql`
     query {
@@ -26,7 +26,7 @@ const Posts = () => {
 
   return (
     <>
-      <h2 className='post-title'>Posts</h2>
+      { title && ( <h2 className='general-title'>Posts</h2> ) }
       {posts.map(({ node }) => {
         const postTitle = node.frontmatter.title || node.fields.slug;
         return (
