@@ -40,7 +40,9 @@ const GithubPreview = ({ user, repo }) => {
                 { data.homepage && (<Card.Link href={data.homepage} target='_black'>View</Card.Link>) }
               </div>
               <Card.Footer>
-                <small className='text-muted'>Last updated: {moment(data.updated_at).calendar()}</small>
+                <small className='text-muted'>
+                  Last updated: {moment(data.updated_at).calendar(null, { sameElse: 'DD/MM/YYYY' })}
+                </small>
               </Card.Footer>
             </>)
           : <Card.Body className='experiment-card-spinner'><Spinner animation='border' /></Card.Body>
