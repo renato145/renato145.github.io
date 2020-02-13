@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-flow: column;
   background-color: white;
+  max-width: 980px;
   border-radius: 10px;
   box-shadow: 4px 4px 8px 0px #adadad;
   margin-top: 5px;
