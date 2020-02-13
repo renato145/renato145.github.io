@@ -2,8 +2,16 @@
   height: 100%;
 }
 
+.experiment-card-title {
+  font-weight: bold;
+}
+
 .experiment-card-links {
   display: flex;
   justify-content: space-between;
   padding: 0.25rem 1.25rem;
+}
+
+.experiment-card-spinner {
+  text-align: center;
 }
