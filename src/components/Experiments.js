@@ -5,20 +5,20 @@ import './Experiments.css';
 import { Button } from 'react-bootstrap';
 
 const repos = [
-  'show_evolution',
-  'show_evolution3d',
-  'd3sims',
-  'react_tests',
-  'gcn',
-  'parallel_ex',
-  'ClassificationUncertainty',
-  'fastai_scans',
-  'stn',
-  'peru-stats',
-  'bayesian-opt',
-  'waimlap2017',
-  '3D-ORGAN',
-];
+  {name: 'show_evolution'},
+  {name: 'show_evolution3d', showName: 'Show Evolution 3D'},
+  {name: 'gcn', showName: 'GCN'},
+  {name: 'parallel_ex'},
+  {name: 'ClassificationUncertainty'},
+  {name: 'fastai_scans'},
+  {name: 'd3sims', showName: 'D3 simulations'},
+  {name: 'react_tests'},
+  {name: 'stn', showName: 'STN'},
+  {name: 'peru-stats'},
+  {name: 'bayesian-opt'},
+  {name: 'waimlap2017', showName: 'Waimlap 2017'},
+  {name: '3D-ORGAN', showName: '3D-ORGAN'},
+ ];
 
 const Experiments = ({
   title=false,

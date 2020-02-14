@@ -11,7 +11,7 @@ const apiUrl = 'https://api.github.com/repos';
 const GithubPreview = ({ user, repo }) => {
   const [ data, setData ] = useState();
   useEffect(() => {
-    fetch(`${apiUrl}/${user}/${repo}`)
+    fetch(`${apiUrl}/${user}/${repo.name}`)
       .then(resolve => ( 
         resolve.ok
         ? resolve.json()
@@ -22,7 +22,7 @@ const GithubPreview = ({ user, repo }) => {
       ))
       .then(d => {
         setData({
-          name: formatName(d.name),
+          name: repo.showName || formatName(d.name),
           url: d.html_url,
           homepage: d.homepage,
           description: d.description,
