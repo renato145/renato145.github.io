@@ -12,7 +12,14 @@ const GithubPreview = ({ user, repo }) => {
   const [ data, setData ] = useState();
   useEffect(() => {
     fetch(`${apiUrl}/${user}/${repo}`)
-      .then(resolve => resolve.json())
+      .then(resolve => ( 
+        resolve.ok
+        ? resolve.json()
+        : {
+          name: 'Not found',
+          description: <Card.Link href={`https://github.com/${user}/${repo}`}>{`${user}/${repo}`}</Card.Link>,
+        }
+      ))
       .then(d => {
         setData({
           name: formatName(d.name),
@@ -36,13 +43,18 @@ const GithubPreview = ({ user, repo }) => {
                 <Card.Text>{data.description}</Card.Text>
               </Card.Body>
               <div className='experiment-card-links'>
-                <Card.Link href={data.url} target='_black'>Go to code</Card.Link>
+                { data.url && (<Card.Link href={data.url} target='_black'>Go to code</Card.Link>) }
                 { data.homepage && (<Card.Link href={data.homepage} target='_black'>View</Card.Link>) }
               </div>
               <Card.Footer>
-                <small className='text-muted'>
-                  Last updated: {moment(data.updated_at).calendar(null, { sameElse: 'DD/MM/YYYY' })}
-                </small>
+                { data.updated_at 
+                  ? (
+                    <small className='text-muted'>
+                      Last updated: {moment(data.updated_at).calendar(null, { sameElse: 'DD/MM/YYYY' })}
+                    </small>
+                  )
+                  : <small className='text-muted'>-</small>
+                }
               </Card.Footer>
             </>)
           : <Card.Body className='experiment-card-spinner'><Spinner animation='border' /></Card.Body>
