@@ -3,9 +3,10 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import PostFooter from '../components/PostFooter';
+import Comments from '../components/Comments';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const { excerpt, frontmatter, body } = data.mdx;
+  const { id, excerpt, frontmatter, body } = data.mdx;
   const { previous, next } = pageContext;
 
   return (
@@ -26,6 +27,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         previous={previous}
         next={next}
       />
+
+      <Comments id={id} title={frontmatter.title} />
+
     </Layout>
   );
 };
