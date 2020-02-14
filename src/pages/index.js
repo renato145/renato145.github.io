@@ -15,7 +15,7 @@ const Index = ({ data, location }) => {
       headerConfig={{ title: 'Home' }}
     >
       <Posts title />
-      <hr />
+      <hr className='mb-4' />
       <Experiments title />
     </Layout>
   );
