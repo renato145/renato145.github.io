@@ -22,15 +22,17 @@ const DefaultPage = ({ data, location }) => {
       <p>
         Hi! this is {author}. I'm a second year PhD student at the University of
         Adelaide, my work focuses on applying machine learning to medical
-        images. I am currently working on weakly supervised localization.
+        images and currently working on weakly supervised localization.
       </p>
+
       <p>
-        Things I'm interested, in no particular order: machine learning, data
+        Things I'm interested in no particular order: machine learning: data
         visualization, optimization, simulation, open source...
       </p>
+      
       <p>
         I'm always up to apply my knowledge on impactful and social projects, if
-        you are interested in doing a collaboration, send me a mail to:{' '}
+        you are interested in doing a collaboration, send me a mail:{' '}
         <a href={`mailto:${mail}`}>{mail}</a>.
       </p>
 
@@ -44,13 +46,13 @@ const DefaultPage = ({ data, location }) => {
         <li>
           Renato Hermoza and Ivan Sipiran.
           <b> “3D Reconstruction of Incomplete Archaeological Objects Using a Generative Adversarial Network.” </b>
-          Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11. DOI: 
+          Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11. DOI:{' '}
           <a href='https://doi.org/10.1145/3208159.3208173' target='_black'>10.1145/3208159.3208173</a>
         </li>
         <li>
           E. Garcia, R. Hermoza, C. B. Castanon, L. Cano, M. Castillo and C. Castanñeda,
           <b> "Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning," </b>
-          2017 IEEE 30th International Symposium on Computer-Based Medical Systems (CBMS), Thessaloniki, 2017, pp. 200-204. doi: 
+          2017 IEEE 30th International Symposium on Computer-Based Medical Systems (CBMS), Thessaloniki, 2017, pp. 200-204. doi:{' '}
           <a href='https://ieeexplore.ieee.org/abstract/document/8104187' target='_black'>10.1109/CBMS.2017.94</a>
         </li>
       </ul>
