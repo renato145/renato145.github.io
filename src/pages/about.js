@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 
 const news = [
   { date: '201811', text: 'Started Phd at the University of Adelaide.' },
-  { date: '201807', text: 'Finished master of computer science at the Pontificia Universidad Catolica del Perú.' },
+  { date: '201807', text: 'Finished MS in computer science at the Pontificia Universidad Catolica del Perú.' },
 ];
 
 const DefaultPage = ({ data, location }) => {
@@ -38,22 +38,23 @@ const DefaultPage = ({ data, location }) => {
       <ul>
         { news.map(({ text, date }, i) => <li key={i}>{moment(date, 'YYYYMM').format('MMM YYYY')}: {text}</li>)}
       </ul>
-      {/* 
-      <h4>Research</h4>
+      
+      <h4>Publications</h4>
       <ul>
-        <li>papers</li>
-      </ul> */}
+        <li>
+          Renato Hermoza and Ivan Sipiran.
+          <b> “3D Reconstruction of Incomplete Archaeological Objects Using a Generative Adversarial Network.” </b>
+          Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11. DOI: 
+          <a href='https://doi.org/10.1145/3208159.3208173' target='_black'>10.1145/3208159.3208173</a>
+        </li>
+        <li>
+          E. Garcia, R. Hermoza, C. B. Castanon, L. Cano, M. Castillo and C. Castanñeda,
+          <b> "Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning," </b>
+          2017 IEEE 30th International Symposium on Computer-Based Medical Systems (CBMS), Thessaloniki, 2017, pp. 200-204. doi: 
+          <a href='https://ieeexplore.ieee.org/abstract/document/8104187' target='_black'>10.1109/CBMS.2017.94</a>
+        </li>
+      </ul>
 
-      {/* Data scientist and machine learning researcher at the Artificial Intelligence Group at PUCP [(iapucp)]
-        (http://ia.inf.pucp.edu.pe/). I studied a MS in Computer Science at the Pontifical Catholic University of Perú 
-        (PUCP).
-
-        Things I like, in no particular order:
-        - Teaching.
-        - Movies (Kieślowski, Tarkovsky, Jodorowsky, ...sky).
-        - Cooking.
-        - Books, a little bit of everything. One particular favorite: The Museum of Eterna's Novel.
-        - Outdoors, camping. */}
     </Layout>
   );
 };
