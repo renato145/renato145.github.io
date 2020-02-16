@@ -20,7 +20,7 @@ const GithubPreview = ({ user, repo }) => {
           name: 'Not found',
           description: (
             <Card.Link href={`https://github.com/${gitPath}`}>
-              {`${user}/${repo.name}`}
+              {gitPath}
             </Card.Link>
           ),
         }
@@ -35,19 +35,24 @@ const GithubPreview = ({ user, repo }) => {
           language: d.language,
         });
       });
-  }, [ gitPath ]);
+  }, [ gitPath, repo ]);
 
   return (
     <div className='col mb-3'>
       <Card className='experiment-card'>
-        <Card.Img
-          style={{ display : showImg ? 'inherit' : 'none' }}
-          variant='top'
-          src={`https://github.com/${gitPath}/raw/master/img.png`}
-          onLoad={() => setShowImg(true)}
-        />
         { data 
           ? (<>
+              <a
+                style={{ display : showImg ? 'inherit' : 'none' }}
+                href={ data.homepage || data.url }
+                target='_black'
+              >
+                <Card.Img
+                  variant='top'
+                  src={`https://github.com/${gitPath}/raw/master/img.png`}
+                  onLoad={() => setShowImg(true)}
+                />
+              </a>
               <Card.Body>
                 <Card.Title className='experiment-card-title'>{data.name}</Card.Title>
                 <Card.Text>{data.description}</Card.Text>
