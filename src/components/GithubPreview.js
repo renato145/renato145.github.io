@@ -6,18 +6,23 @@ import './GithubPreview.css';
 
 const formatName = name => titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
 
-const apiUrl = 'https://api.github.com/repos';
-
 const GithubPreview = ({ user, repo }) => {
   const [ data, setData ] = useState();
+  const gitPath = `${user}/${repo.name}`;
+  const [ showImg, setShowImg] = useState(false);
+
   useEffect(() => {
-    fetch(`${apiUrl}/${user}/${repo.name}`)
+    fetch(`https://api.github.com/repos/${gitPath}`)
       .then(resolve => ( 
         resolve.ok
         ? resolve.json()
         : {
           name: 'Not found',
-          description: <Card.Link href={`https://github.com/${user}/${repo}`}>{`${user}/${repo}`}</Card.Link>,
+          description: (
+            <Card.Link href={`https://github.com/${gitPath}`}>
+              {`${user}/${repo.name}`}
+            </Card.Link>
+          ),
         }
       ))
       .then(d => {
@@ -30,12 +35,17 @@ const GithubPreview = ({ user, repo }) => {
           language: d.language,
         });
       });
-  }, [ user, repo ]);
+  }, [ gitPath ]);
 
   return (
     <div className='col mb-3'>
       <Card className='experiment-card'>
-        {/* <Card.Img variant='top' src='...' /> */}
+        <Card.Img
+          style={{ display : showImg ? 'inherit' : 'none' }}
+          variant='top'
+          src={`https://github.com/${gitPath}/raw/master/img.png`}
+          onLoad={() => setShowImg(true)}
+        />
         { data 
           ? (<>
               <Card.Body>
