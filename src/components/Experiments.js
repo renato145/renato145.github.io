@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import GithubPreview from './GithubPreview';
 import './Experiments.css';
 import { Button } from 'react-bootstrap';
 
-const repos = [
-  { name: 'show_evolution' },
-  { name: 'show_evolution3d', showName: 'Show Evolution 3D' },
+export const gitRepos = [
+  {
+    name: 'show_evolution',
+    tags: ['threejs', 'reactjs', 'evolutionary-algorithms', 'visualization'],
+  },
+  {
+    name: 'show_evolution3d',
+    showName: 'Show Evolution 3D',
+    tags: [
+      'threejs',
+      'reactjs',
+      'evolutionary-algorithms',
+      'visualization',
+      '3d',
+    ],
+  },
   { name: 'gcn', showName: 'GCN' },
   { name: 'parallel_ex' },
   { name: 'ClassificationUncertainty' },
@@ -25,6 +38,7 @@ const Experiments = ({
   showLimit = 6,
   showLoadMore = true,
   loadMoreTitle = 'Load more',
+  customRepos,
 }) => {
   const user = useStaticQuery(
     graphql`
@@ -40,6 +54,7 @@ const Experiments = ({
     `
   ).site.siteMetadata.social.github;
   const [limit, setLimit] = useState(showLimit);
+  const repos = customRepos || gitRepos;
   const visibleRepos = repos.slice(0, limit || repos.length);
 
   return (
