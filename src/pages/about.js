@@ -8,7 +8,7 @@ const news = [
   { date: '201807', text: 'Finished MS in computer science at the Pontificia Universidad Catolica del Perú.' },
 ];
 
-const DefaultPage = ({ data, location }) => {
+const About = ({ data, location }) => {
   const title = 'About';
   const { author, mail } = data.site.siteMetadata;
 
@@ -61,7 +61,7 @@ const DefaultPage = ({ data, location }) => {
   );
 };
 
-export default DefaultPage;
+export default About;
 
 export const pageQuery = graphql`
   query {

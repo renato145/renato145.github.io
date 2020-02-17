@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Experiments from '../components/Experiments';
 
-const DefaultPage = ({ data, location }) => {
+const Experiments = ({ data, location }) => {
   const title = 'Experiments';
 
   return (
@@ -17,4 +17,4 @@ const DefaultPage = ({ data, location }) => {
   );
 };
 
-export default DefaultPage;
+export default Experiments;
