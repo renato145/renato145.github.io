@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Experiments from '../components/Experiments';
 
-const Experiments = ({ data, location }) => {
+const ExperimentIndex = ({ data, location }) => {
   const title = 'Experiments';
 
   return (
@@ -17,4 +17,4 @@ const Experiments = ({ data, location }) => {
   );
 };
 
-export default Experiments;
+export default ExperimentIndex;

@@ -3,12 +3,14 @@ import Layout from '../components/Layout';
 import Posts from '../components/Posts';
 
 const BlogIndex = ({ location }) => {
+  const title = 'Blog';
+
   return (
     <Layout
       location={location}
-      title='Blog'
+      title={title}
       // description={title}
-      headerConfig={{ title: 'Blog' }}
+      headerConfig={{ title }}
     >
       <Posts />
     </Layout>
