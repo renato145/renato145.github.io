@@ -1,30 +1,24 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+import React, { useMemo } from 'react';
+import Layout from '../components/Layout';
+import Tags from '../components/Tags';
 
-const Tags = ({ data, location }) => {
-  const title = data.site.siteMetadata.title;
+const TagsIndex = ({ location }) => {
+  console.log(location);
+  const tag = useMemo(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    return searchParams.get('tag');
+  });
 
   return (
     <Layout
       location={location}
-      title={title}
-      description='some description'
-      headerConfig={{ title: 'header' }}
+      title={tag}
+      // description='some description'
+      headerConfig={{ tag }}
     >
-      <div>have to read tags from url query and show here</div>
+      <Tags tag={tag} />
     </Layout>
-  )
-}
+  );
+};
 
-export default Tags
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+export default TagsIndex;
