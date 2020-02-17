@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Spinner } from 'react-bootstrap';
 import moment from 'moment';
-import { unCamelCase, singleSpace, titleCase } from './utils';
+import { unCamelCase, singleSpace, titleCase, strJoin } from './utils';
 import './GithubPreview.css';
 
 const formatName = name => titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
@@ -20,7 +20,8 @@ const sendRequest = ({ url, opts, fallback, onSuccess, onError }) => {
 const GithubPreview = ({ user, repo }) => {
   const [ data, setData ] = useState();
   const gitPath = `${user}/${repo.name}`;
-  const [ showImg, setShowImg] = useState(false);
+  const [ showImg, setShowImg ] = useState(false);
+  const [ tags, setTags ] = useState(); // TODO: locally read tags
 
   useEffect(() => {
     sendRequest({
@@ -62,6 +63,7 @@ const GithubPreview = ({ user, repo }) => {
               </a>
               <Card.Body>
                 <Card.Title className='experiment-card-title'>{data.name}</Card.Title>
+                { tags && ( tags.length>0 && (<Card.Subtitle className='text-muted mb-2'>{strJoin(tags)}</Card.Subtitle>)) }
                 <Card.Text>{data.description}</Card.Text>
               </Card.Body>
               <div className='experiment-card-links'>
