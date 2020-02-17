@@ -5,7 +5,7 @@ const Tags = ({ tag }) => {
   const tagRepos = useMemo(() => {
     return gitRepos.filter(d => d.tags)
                 .filter(({ tags }) => tags.indexOf(tag) >= 0);
-  });
+  }, [ tag ]);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import GithubPreview from './GithubPreview';
 import './Experiments.css';
@@ -20,7 +20,11 @@ export const gitRepos = [
       '3d',
     ],
   },
-  { name: 'gcn', showName: 'GCN' },
+  {
+    name: 'gcn',
+    showName: 'GCN',
+    tags: ['pytorch', 'graph-neural-networks', 'machine-learning'],
+  },
   { name: 'parallel_ex' },
   { name: 'ClassificationUncertainty' },
   { name: 'fastai_scans' },
