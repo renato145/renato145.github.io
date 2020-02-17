@@ -6,35 +6,52 @@ import './GithubPreview.css';
 
 const formatName = name => titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
 
+const sendRequest = ({ url, opts, fallback, onSuccess, onError }) => {
+  return fetch(url, opts)
+    .then(res => ( 
+      res.ok
+      ? res.json()
+      : fallback
+    ))
+    .then(onSuccess)
+    .catch(onError);
+};
+
 const GithubPreview = ({ user, repo }) => {
   const [ data, setData ] = useState();
   const gitPath = `${user}/${repo.name}`;
   const [ showImg, setShowImg] = useState(false);
 
   useEffect(() => {
-    fetch(`https://api.github.com/repos/${gitPath}`)
-      .then(resolve => ( 
-        resolve.ok
-        ? resolve.json()
-        : {
-          name: 'Not found',
-          description: (
-            <Card.Link href={`https://github.com/${gitPath}`}>
-              {gitPath}
-            </Card.Link>
-          ),
-        }
-      ))
-      .then(d => {
-        setData({
-          name: repo.showName || formatName(d.name),
-          url: d.html_url,
-          homepage: d.homepage,
-          description: d.description,
-          updated_at: d.updated_at,
-          language: d.language,
-        });
-      });
+    sendRequest({
+      url: `https://api.github.com/repos/${gitPath}`,
+      onSuccess: d => setData({
+        name: repo.showName || formatName(d.name),
+        url: d.html_url,
+        homepage: d.homepage,
+        description: d.description,
+        updated_at: d.updated_at,
+        language: d.language,
+      }),
+      fallback: {
+        name: 'Not found',
+        description: (
+          <Card.Link href={`https://github.com/${gitPath}`}>
+            {gitPath}
+          </Card.Link>
+        ),
+      }
+    });
+  }, [ gitPath, repo ]);
+
+  useEffect(() => {
+    sendRequest({
+      url: `https://api.github.com/repos/${gitPath}/topics`,
+      opts: {
+        headers: { 'Accept': 'application/vnd.github.mercy-preview+json' },
+      },
+      onSuccess: d => console.log(d),
+    })
   }, [ gitPath, repo ]);
 
   return (
