@@ -1,13 +1,17 @@
-import React, { useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import Experiments, { gitRepos } from './Experiments';
 import { Spinner } from 'react-bootstrap';
 
 const Tags = ({ tag }) => {
-  const tagRepos = useMemo(() => ( 
-    gitRepos
-      .filter(d => d.tags)
-      .filter(({ tags }) => tags.indexOf(tag) >= 0)
-  ), [ tag ]);
+  const [ tagRepos, setTagRepos ] = useState();
+  useEffect(() => { 
+    setTagRepos(
+      gitRepos
+        .filter(d => d.tags)
+        .filter(({ tags }) => tags.indexOf(tag) >= 0)
+    );
+  }, [ tag ]);
+  console.log(tagRepos);
 
   return (
     <>
