@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Card, Spinner } from 'react-bootstrap';
 import moment from 'moment';
 import { unCamelCase, singleSpace, titleCase } from './utils';
@@ -7,7 +7,7 @@ import './GithubPreview.css';
 const formatName = name => titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
 
 const sendRequest = ({ url, opts, fallback, onSuccess, onError }) => {
-  return fetch(url, opts)
+  fetch(url, opts)
     .then(res => ( 
       res.ok
       ? res.json()
@@ -21,7 +21,19 @@ const GithubPreview = ({ user, repo }) => {
   const [ data, setData ] = useState();
   const gitPath = `${user}/${repo.name}`;
   const [ showImg, setShowImg ] = useState(false);
-  const tags = repo.tags;
+
+  const tags = useMemo(() => { 
+    if ( typeof repo.tags  !== 'undefined' ) {
+      if ( repo.tags.length > 0 ) {
+        return (
+          repo.tags.sort().map((tag, i) => (
+            <a href={`/tags?tag=${tag}`} className='text-muted mb-2 card-subtitle' key={i}>
+                {`${tag} `}
+              </a>
+        )));
+      }
+    }
+  }, [ repo.tags ]);
 
   useEffect(() => {
     sendRequest({
@@ -35,13 +47,10 @@ const GithubPreview = ({ user, repo }) => {
         language: d.language,
       }),
       fallback: {
-        name: 'Not found',
-        description: (
-          <Card.Link href={`https://github.com/${gitPath}`}>
-            {gitPath}
-          </Card.Link>
-        ),
-      }
+        name: repo.showName || formatName(repo.name),
+        html_url: `https://github.com/${gitPath}`,
+        description: 'Github repository not found.',
+      },
     });
   }, [ gitPath, repo ]);
 
@@ -63,11 +72,7 @@ const GithubPreview = ({ user, repo }) => {
               </a>
               <Card.Body>
                 <Card.Title className='experiment-card-title'>{data.name}</Card.Title>
-                { tags && ( tags.length>0 && tags.sort().map((tag, i) => (
-                  <a href={`/tags?tag=${tag}`} className='text-muted mb-2 card-subtitle' key={i}>
-                   {`${tag} `}
-                  </a>
-                )))}
+                {tags}
                 <Card.Text>{data.description}</Card.Text>
               </Card.Body>
               <div className='experiment-card-links'>
@@ -85,7 +90,23 @@ const GithubPreview = ({ user, repo }) => {
                 }
               </Card.Footer>
             </>)
-          : <Card.Body className='experiment-card-spinner'><Spinner animation='border' /></Card.Body>
+          : (
+            <>
+              <Card.Body>
+                <Card.Title className='experiment-card-title'>{repo.showName || repo.name}</Card.Title>
+                {tags}
+                <div className='experiment-card-spinner'>
+                  <Spinner animation='border' />
+                </div>
+              </Card.Body>
+              <div className='experiment-card-links'>
+                <Card.Link href={`https://github.com/${gitPath}`} target='_black'>Go to code</Card.Link>
+              </div>
+              <Card.Footer>
+                <small className='text-muted'>-</small>
+              </Card.Footer>
+            </>
+          )
         }
       </Card>
     </div>
