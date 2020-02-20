@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Spinner } from 'react-bootstrap';
 import moment from 'moment';
+import TagList from './TagList';
 import { unCamelCase, singleSpace, titleCase } from './utils';
 import './GithubPreview.css';
 
@@ -21,19 +22,6 @@ const GithubPreview = ({ user, repo }) => {
   const [ data, setData ] = useState();
   const gitPath = `${user}/${repo.name}`;
   const [ showImg, setShowImg ] = useState(false);
-
-  const tags = useMemo(() => { 
-    if ( typeof repo.tags  !== 'undefined' ) {
-      if ( repo.tags.length > 0 ) {
-        return (
-          repo.tags.sort().map((tag, i) => (
-            <a href={`/tags?tag=${tag}`} className='text-muted mb-2 card-subtitle' key={i}>
-                {`${tag} `}
-              </a>
-        )));
-      }
-    }
-  }, [ repo.tags ]);
 
   useEffect(() => {
     sendRequest({
@@ -71,9 +59,9 @@ const GithubPreview = ({ user, repo }) => {
                 />
               </a>
               <Card.Body>
-                <Card.Title className='experiment-card-title'>{data.name}</Card.Title>
-                {tags}
-                <Card.Text>{data.description}</Card.Text>
+                <Card.Title className='experiment-card-title mb-0'>{data.name}</Card.Title>
+                <TagList tags={repo.tags} />
+                <Card.Text className='mt-2'>{data.description}</Card.Text>
               </Card.Body>
               <div className='experiment-card-links'>
                 { data.url && (<Card.Link href={data.url} target='_black'>Go to code</Card.Link>) }
@@ -93,8 +81,8 @@ const GithubPreview = ({ user, repo }) => {
           : (
             <>
               <Card.Body>
-                <Card.Title className='experiment-card-title'>{repo.showName || repo.name}</Card.Title>
-                {tags}
+                <Card.Title className='experiment-card-title mb-0'>{repo.showName || repo.name}</Card.Title>
+                <TagList tags={repo.tags} />
                 <div className='experiment-card-spinner'>
                   <Spinner animation='border' />
                 </div>

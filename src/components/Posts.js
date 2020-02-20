@@ -1,54 +1,48 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby';
+import PostPreview from './PostPreview';
+import { contains } from './utils';
 import './Posts.css';
 
-const Posts = ({ title=false }) => {
+const Posts = ({ title = false, tag }) => {
   const posts = useStaticQuery(
     graphql`
-    query {
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
+      query {
+        allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+          edges {
+            node {
+              excerpt
+              fields {
+                slug
+              }
+              frontmatter {
+                date(formatString: "MMMM DD, YYYY")
+                title
+                description
+                tags
+              }
+            }
+          }
         }
       }
-      }
-    }`
+    `
   ).allMdx.edges;
+
+  const filteredPosts = tag
+    ? posts.filter(({ node }) => contains(node.frontmatter.tags, tag) )
+    : typeof tag === 'undefined' ? posts : [];
 
   return (
     <>
-      { title && ( <h2 className='general-title'>Posts</h2> ) }
-      {posts.map(({ node }) => {
-        const postTitle = node.frontmatter.title || node.fields.slug;
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {postTitle}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        );
-      })}
+      {title && <h2 className="general-title">Posts</h2>}
+      {filteredPosts.map(({ node }) => (
+        <PostPreview node={node} key={node.fields.slug} />
+      ))}
+      {filteredPosts.length === 0 && (
+        <div>...</div>
+      )}
     </>
   );
 };

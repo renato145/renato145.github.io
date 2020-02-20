@@ -7,7 +7,13 @@ import { Button } from 'react-bootstrap';
 export const gitRepos = [
   {
     name: 'show_evolution',
-    tags: ['threejs', 'reactjs', 'evolutionary-algorithms', 'visualization'],
+    tags: [
+      'threejs',
+      'reactjs',
+      'evolutionary-algorithms',
+      'visualization',
+      'javascript',
+    ],
   },
   {
     name: 'show_evolution3d',
@@ -18,23 +24,61 @@ export const gitRepos = [
       'evolutionary-algorithms',
       'visualization',
       '3d',
+      'javascript',
     ],
   },
   {
     name: 'gcn',
     showName: 'GCN',
-    tags: ['pytorch', 'graph-neural-networks', 'machine-learning'],
+    tags: ['pytorch', 'graph-neural-networks', 'machine-learning', 'python'],
   },
-  { name: 'parallel_ex' },
-  { name: 'ClassificationUncertainty' },
-  { name: 'fastai_scans' },
-  { name: 'd3sims', showName: 'D3 simulations' },
-  { name: 'react_tests' },
-  { name: 'stn', showName: 'STN' },
-  { name: 'peru-stats' },
-  { name: 'bayesian-opt' },
-  { name: 'waimlap2017', showName: 'Waimlap 2017' },
-  { name: '3D-ORGAN', showName: '3D-ORGAN' },
+  {
+    name: 'DENN',
+    showName: 'DENN',
+    tags: ['pytorch', 'evolutionary-algorithms', 'machine-learning', 'python'],
+  },
+  { name: 'parallel_ex', tags: ['python', 'utilities'] },
+  {
+    name: 'ClassificationUncertainty',
+    tags: ['pytorch', 'machine-learning', 'python'],
+  },
+  {
+    name: 'fastai_scans',
+    tags: ['pytorch', 'machine-learning', 'python', 'medical-imaging'],
+  },
+  {
+    name: 'd3sims',
+    showName: 'D3 simulations',
+    tags: [
+      'pytorch',
+      'simulation',
+      'sockets',
+      'python',
+      'javascript',
+      'visualization',
+    ],
+  },
+  {
+    name: 'react_tests',
+    tags: ['reactjs', 'visualization', 'javascript', 'visualization'],
+  },
+  {
+    name: 'stn',
+    showName: 'STN',
+    tags: ['pytorch', 'machine-learning', 'python'],
+  },
+  { name: 'peru-stats', tags: ['python', 'data-scrapping'] },
+  { name: 'bayesian-opt', tags: ['pytorch', 'machine-learning', 'python'] },
+  {
+    name: 'waimlap2017',
+    showName: 'Waimlap 2017',
+    tags: ['machine-learning', 'python', 'tutorial'],
+  },
+  {
+    name: '3D-ORGAN',
+    showName: '3D-ORGAN',
+    tags: ['tensorflow', '3d', 'gan', 'machine-learning', 'python'],
+  },
 ];
 
 const Experiments = ({
@@ -78,6 +122,9 @@ const Experiments = ({
             {loadMoreTitle}
           </Button>
         </div>
+      )}
+      { repos.length === 0 && (
+        <div>...</div>
       )}
     </>
   );
