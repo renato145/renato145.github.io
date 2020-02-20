@@ -8,7 +8,7 @@ import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Layout.css';
 
-const Layout = ({ location, title, description, children, headerConfig }) => {
+const Layout = ({ location, title, description, children, headerConfig, tags }) => {
   const seo = typeof headerConfig === 'undefined'
     ? { title: location.pathname.split('/').reverse()[1] }
     : headerConfig;
@@ -26,6 +26,7 @@ const Layout = ({ location, title, description, children, headerConfig }) => {
           location={location}
           title={title}
           description={description}
+          tags={tags}
         />
         <Content
           children={children}

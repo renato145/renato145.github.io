@@ -1,17 +1,13 @@
-import React from 'react';
-import { DiscussionEmbed } from 'disqus-react';
+import React, { useRef } from 'react';
+import { Utteranc } from './Utteranc';
 import './Comments.css';
 
-const Comments = ({ id, title }) => {
-  const disqusShortname = 'renato145';
-  const disqusConfig = {
-    identifier: id,
-    title: title,
-  }
+const Comments = () => {
+  const ref = useRef();
 
   return (
     <div className='comments-container'>
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      <Utteranc ref={ref}/>
     </div>
   );
 };

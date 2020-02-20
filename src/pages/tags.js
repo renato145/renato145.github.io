@@ -5,13 +5,18 @@ import Tags from '../components/Tags';
 const TagsIndex = ({ location }) => {
   const tag = useMemo(() => {
     const searchParams = new URLSearchParams(location.search);
-    return searchParams.get('tag');
+    const res = searchParams.get('tag');
+    return (
+      ( res === null || typeof res === 'undefined' )
+        ? ''
+        : res
+    );
   }, [ location ]);
 
   return (
     <Layout
       location={location}
-      title={tag}
+      title={tag ? tag : ''}
       // description='some description'
       headerConfig={{ title: tag }}
     >

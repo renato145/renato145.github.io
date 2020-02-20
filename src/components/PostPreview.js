@@ -14,8 +14,10 @@ const PostPreview = ({ node }) => {
             {postTitle}
           </Link>
         </h3>
-        <small className='text-muted'>{node.frontmatter.date}</small>
-        <TagList tags={tags} prefix=' - ' />
+        <small className='text-muted'>
+          {node.frontmatter.date}
+          <TagList tags={tags} prefix=' - ' />
+        </small>
       </header>
       <section>
         <p

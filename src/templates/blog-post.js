@@ -6,7 +6,7 @@ import PostFooter from '../components/PostFooter';
 import Comments from '../components/Comments';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const { id, excerpt, frontmatter, body } = data.mdx;
+  const { excerpt, frontmatter, body } = data.mdx;
   const { previous, next } = pageContext;
 
   return (
@@ -18,6 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title: frontmatter.title,
         description: frontmatter.description || excerpt,
       }}
+      tags={frontmatter.tags}
     >
       <article>
         <MDXRenderer>{body}</MDXRenderer>
@@ -28,7 +29,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         next={next}
       />
 
-      <Comments id={id} title={frontmatter.title} />
+      <Comments />
 
     </Layout>
   );
@@ -46,6 +47,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }

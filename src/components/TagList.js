@@ -1,12 +1,12 @@
 import React from 'react';
 
 const TagList = ({ tags, prefix }) => {
-  if (tags === null || typeof tags === 'undefined') return <div />;
+  if (tags === null || typeof tags === 'undefined') return <></>;
 
-  if (tags.lenght === 0) return <div />;
+  if (tags.lenght === 0) return <></>;
 
   return (
-    <small>
+    <>
       {prefix}
       {tags.sort().map((tag, i) => (
         <a
@@ -17,7 +17,7 @@ const TagList = ({ tags, prefix }) => {
           {`${tag} `}
         </a>
       ))}
-    </small>
+    </>
   );
 };
 
