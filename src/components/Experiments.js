@@ -8,6 +8,7 @@ export const gitRepos = [
   {
     name: 'show_evolution',
     tags: [
+      'd3',
       'threejs',
       'reactjs',
       'evolutionary-algorithms',
@@ -56,11 +57,12 @@ export const gitRepos = [
       'python',
       'javascript',
       'visualization',
+      'd3',
     ],
   },
   {
     name: 'react_tests',
-    tags: ['reactjs', 'visualization', 'javascript', 'visualization'],
+    tags: ['d3', 'reactjs', 'visualization', 'javascript', 'visualization'],
   },
   {
     name: 'stn',
