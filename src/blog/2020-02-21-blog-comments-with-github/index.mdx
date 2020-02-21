@@ -1,0 +1,74 @@
+---
+title: "Blog comments with GitHub"
+date: 2020-02-21
+tags: [reactjs, javascript]
+description: "Using Utterances to manage post comments as GitHub issues."
+---
+
+As I'm using GitHub in many aspects for this blog (is hosted by [GitHub pages](https://pages.github.com) and most of the [experiments](/experiments)
+information is being fetched from GitHub), using [Disqus](https://disqus.com) to manage post comments felt out of place.
+
+Recently, looking at how [fastpages](https://github.com/fastai/fastpages) manages comments, I noticed the use of [Utterances](utteranc.es).
+This great tools allows to use GitHub issues to manage blog comments 😃, let's look at how we can incorporate it as a [React](https://reactjs.org)
+component:
+
+1. First, we need to create a `Comments` component that we can add to any page. This will serve as a container for the `Utterances` component
+we will create in the next step:
+```javascript
+// Comments.js
+import React, { useRef } from 'react';
+import Utterances from './Utterances';
+
+const Comments  () => {
+  const ref = useRef();
+
+  return (
+    <div>
+    <Utterances repo='yourGitUser/yourGitRepo' ref={ref} />
+    </div>
+  );
+};
+
+export default Comments;
+```
+
+2. The `Utterances` component needs to receive the repository location `repo` and a reference `ref`. Note the use `forwardRef`, since we are not
+using React to create the DOM element that will hold the Utterances script.
+```javascript
+// Utterances.js
+import React, { useEffect, forwardRef, useState } from 'react';
+
+const Utterances = forwardRef( ( { repo }, ref ) => {
+  const [ status, setStatus ] = useState('pending');
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.onload = () => setStatus('success');
+    script.onerror = () => setStatus('failed');
+    script.async = true;
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', repo);
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('label', 'blog');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+    ref.current.appendChild(script);
+  }, [ ref ])
+
+  return (
+    <div>
+      {status === 'failed' && <div>Error. Please try again.</div>}
+      {status === 'pending' && <div>Loading script...</div>}
+      <div ref={ref} />
+    </div>
+  );
+});
+
+export default Utterances;
+```
+You can check all configuration parameters on [Utterances website](utteranc.es).
+
+
+<br />
+
+> Note: The code was inspired by this [post](https://cergos.io/blog-comments-powered-by-github).
