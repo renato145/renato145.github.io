@@ -6,6 +6,7 @@ module.exports = {
     mail: `renato.hermoza@pucp.edu.pe`,
     description: `Personal portfolio / blog.`,
     siteUrl: `https://renato145.github.io`,
+    git: `renato145/renato145.github.io`,
     social: {
       twitter: `renato145`,
       github: `renato145`,

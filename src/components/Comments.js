@@ -1,13 +1,25 @@
 import React, { useRef } from 'react';
-import { Utteranc } from './Utteranc';
+import { useStaticQuery, graphql } from 'gatsby';
+import Utterances from './Utterances';
 import './Comments.css';
 
 const Comments = () => {
   const ref = useRef();
+  const repo = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            git
+          }
+        }
+      }
+    `
+  ).site.siteMetadata.git;
 
   return (
     <div className='comments-container'>
-      <Utteranc ref={ref}/>
+      <Utterances repo={repo} ref={ref}/>
     </div>
   );
 };

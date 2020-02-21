@@ -1,6 +1,6 @@
 import React, { useEffect, forwardRef, useState } from 'react';
 
-export const Utteranc = forwardRef( ( props, ref ) => {
+const Utterances = forwardRef( ( { repo }, ref ) => {
   const [ status, setStatus ] = useState('pending');
 
   useEffect(() => {
@@ -9,7 +9,7 @@ export const Utteranc = forwardRef( ( props, ref ) => {
     script.onerror = () => setStatus('failed');
     script.async = true;
     script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'renato145/renato145.github.io');
+    script.setAttribute('repo', repo);
     script.setAttribute('issue-term', 'pathname');
     script.setAttribute('label', 'blog');
     script.setAttribute('theme', 'github-light');
@@ -25,3 +25,5 @@ export const Utteranc = forwardRef( ( props, ref ) => {
     </div>
   );
 });
+
+export default Utterances;
