@@ -39,7 +39,7 @@ export default Comments;
 
 ## Utterances component
 The `Utterances` component needs to receive the repository location `repo` and a reference `ref`. Note the use `forwardRef`, since we are not
-using React to create the DOM element that will hold the Utterances script.
+using React to create the DOM element that will hold the Utterances script:
 ```javascript
 // Utterances.js
 import React, { useEffect, forwardRef, useState } from 'react';
@@ -55,7 +55,6 @@ const Utterances = forwardRef( ( { repo }, ref ) => {
     script.src = 'https://utteranc.es/client.js';
     script.setAttribute('repo', repo);
     script.setAttribute('issue-term', 'pathname');
-    script.setAttribute('label', 'blog');
     script.setAttribute('theme', 'github-light');
     script.setAttribute('crossorigin', 'anonymous');
     ref.current.appendChild(script);
@@ -73,3 +72,28 @@ const Utterances = forwardRef( ( { repo }, ref ) => {
 export default Utterances;
 ```
 You can check all configuration parameters on [Utterances website](utteranc.es).
+
+<br />
+
+## Using it
+Finally, to use it just import the component and place it in your layout. This is how I use it on my blog post template:
+```javascript
+// blog-post.js
+// ...
+import Comments from '../components/Comments';
+// ...
+
+const BlogPostTemplate = () => {
+  // ...
+
+  return (
+    <div>
+      {/* ... */}
+      <Comments />
+    </div>
+  );
+};
+```
+
+<br />
+Cheers!
