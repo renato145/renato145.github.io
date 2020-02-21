@@ -1,7 +1,7 @@
 ---
 title: "Blog comments with GitHub"
 date: 2020-02-21
-tags: [reactjs, javascript]
+tags: [reactjs, javascript, github]
 description: "Using Utterances to manage post comments as GitHub issues."
 ---
 
@@ -12,7 +12,10 @@ Recently, looking at how [fastpages](https://github.com/fastai/fastpages) manage
 This great tools allows to use GitHub issues to manage blog comments 😃, let's look at how we can incorporate it as a [React](https://reactjs.org)
 component:
 
-1. First, we need to create a `Comments` component that we can add to any page. This will serve as a container for the `Utterances` component
+<br />
+
+## Comments component
+First, we need to create a `Comments` component that we can add to any page. This will serve as a container for the `Utterances` component
 we will create in the next step:
 ```javascript
 // Comments.js
@@ -32,7 +35,10 @@ const Comments  () => {
 export default Comments;
 ```
 
-2. The `Utterances` component needs to receive the repository location `repo` and a reference `ref`. Note the use `forwardRef`, since we are not
+<br />
+
+## Utterances component
+The `Utterances` component needs to receive the repository location `repo` and a reference `ref`. Note the use `forwardRef`, since we are not
 using React to create the DOM element that will hold the Utterances script.
 ```javascript
 // Utterances.js
@@ -67,8 +73,3 @@ const Utterances = forwardRef( ( { repo }, ref ) => {
 export default Utterances;
 ```
 You can check all configuration parameters on [Utterances website](utteranc.es).
-
-
-<br />
-
-> Note: The code was inspired by this [post](https://cergos.io/blog-comments-powered-by-github).
