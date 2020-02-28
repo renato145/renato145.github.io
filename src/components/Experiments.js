@@ -6,6 +6,15 @@ import { Button } from 'react-bootstrap';
 
 export const gitRepos = [
   {
+    name: 'tfjs_test',
+    tags: [
+      'reactjs',
+      'machine-learning',
+      'tfjs',
+      'javascript',
+    ],
+  },
+  {
     name: 'show_evolution',
     tags: [
       'd3',
