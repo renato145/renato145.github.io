@@ -31,7 +31,7 @@ const About = ({ data, location }) => {
       </p>
       
       <p>
-        I'm always up to apply my knowledge on impactful and social projects, if
+        I'm always up to apply my knowledge on impactful and social projects. If
         you are interested in doing a collaboration, send me a mail:{' '}
         <a href={`mailto:${mail}`}>{mail}</a>.
       </p>
