@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{eIir:function(e,n,t){"use strict";t.r(n);var i=t("q1tI"),o=t.n(i),r=t("7oih");n.default=function(e){var n=e.location;return o.a.createElement(r.a,{location:n,title:"Experiments",description:"Playground",headerConfig:{title:"Experiments"}})}}}]);
-//# sourceMappingURL=component---src-pages-experiments-js-35a092f561975848df13.js.map
