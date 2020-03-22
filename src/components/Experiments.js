@@ -6,13 +6,12 @@ import { Button } from 'react-bootstrap';
 
 export const gitRepos = [
   {
+    name: 'covid2019',
+    tags: ['reactjs', 'javascript', 'visualization', 'covid2019', 'd3'],
+  },
+  {
     name: 'tfjs_test',
-    tags: [
-      'reactjs',
-      'machine-learning',
-      'tfjs',
-      'javascript',
-    ],
+    tags: ['reactjs', 'machine-learning', 'tfjs', 'javascript'],
   },
   {
     name: 'show_evolution',
@@ -134,9 +133,7 @@ const Experiments = ({
           </Button>
         </div>
       )}
-      { repos.length === 0 && (
-        <div>...</div>
-      )}
+      {repos.length === 0 && <div>...</div>}
     </>
   );
 };
