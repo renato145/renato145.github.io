@@ -100,7 +100,7 @@ export const useGitRepos = () => {
           repositoryOwner(login: "renato145") {
             repositories(
               last: 100
-              orderBy: { field: UPDATED_AT, direction: DESC }
+              orderBy: { field: UPDATED_AT, direction: ASC }
             ) {
               nodes {
                 name
@@ -124,11 +124,10 @@ export const useGitRepos = () => {
       const url = repo['openGraphImageUrl'];
       if (url.indexOf('https://repository-images') > -1) repo['imgUrl'] = url;
       repo['name'] = repo['showName'] ? repo['showName'] : formatName(repo['name'])
-      console.log(repo);
       data.push(repo);
     });
     return data;
-  }, []);
+  }, [allRepos]);
 
   return repos;
 };

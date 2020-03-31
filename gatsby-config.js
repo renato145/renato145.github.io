@@ -56,34 +56,11 @@ module.exports = {
             fetch,
           }),
         // createSchema: async () => {
-          // const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
-          // return buildClientSchema(json.data)
+        //   const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
+        //   return buildClientSchema(json.data)
         // },
       },
     },
-
-    // {
-    //   resolve: `gatsby-source-graphql`,
-    //   options: {
-    //     typeName: `GitHub`,
-    //     fieldName: `github`,
-    //     url: `https://api.github.com/graphql`,
-    //     // HTTP headers
-    //     headers: {
-    //       // Learn about environment variables: https://gatsby.dev/env-vars
-    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    //     },
-    //     // HTTP headers alternatively accepts a function (allows async)
-    //     headers: async () => {
-    //       return {
-    //         Authorization: await getAuthorizationToken(),
-    //       }
-    //     },
-    //     // Additional options to pass to node-fetch
-    //     fetchOptions: {},
-    //   },
-    // },
-
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
