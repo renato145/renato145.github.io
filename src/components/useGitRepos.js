@@ -44,7 +44,7 @@ export const useGitRepos = ({ tag }) => {
   const repos = useMemo(() => {
     let data = [];
     gitRepos.forEach(d => {
-      if (tag && (d.tags.indexOf(tag) == -1)) return;
+      if (tag && (d.tags.indexOf(tag) === -1)) return;
       const repoInfo = { ...allRepos.find(o => o.name === d.name) };
       const repo = Object.assign(repoInfo, d);
       const url = repo['openGraphImageUrl'];

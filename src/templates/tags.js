@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Posts from '../components/Posts';
 import Experiments from '../components/Experiments';
+import { graphql } from 'gatsby';
 
 const TagsTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
