@@ -1,14 +1,14 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 
-const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const NotFoundPage = ({ location }) => {
+  const title = 'uh oh';
+  console.log(location);
 
   return (
     <Layout
       location={location}
-      title={siteTitle}
+      title={title}
       headerConfig={{ title: '404: Not Found' }}
     >
       <h1>Not Found</h1>
@@ -18,13 +18,3 @@ const NotFoundPage = ({ data, location }) => {
 }
 
 export default NotFoundPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
