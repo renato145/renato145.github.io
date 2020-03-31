@@ -13,7 +13,6 @@ const Experiments = ({
 }) => {
   const repos = useGitRepos();
   const [limit, setLimit] = useState(showLimit);
-  // const repos = customRepos || gitRepos;
   const visibleRepos = repos.slice(0, limit || repos.length);
 
   return (
