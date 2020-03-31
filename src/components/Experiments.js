@@ -9,11 +9,11 @@ const Experiments = ({
   showLimit = 6,
   showLoadMore = true,
   loadMoreTitle = 'Load more',
-  customRepos,
+  tag
 }) => {
-  const repos = useGitRepos();
+  const gitRepos = useGitRepos({tag});
   const [limit, setLimit] = useState(showLimit);
-  const visibleRepos = repos.slice(0, limit || repos.length);
+  const visibleRepos = gitRepos.slice(0, limit || gitRepos.length);
 
   return (
     <>
@@ -23,7 +23,7 @@ const Experiments = ({
           <GithubPreview key={i} data={repo} />
         ))}
       </div>
-      {showLoadMore && visibleRepos.length < repos.length && (
+      {showLoadMore && visibleRepos.length < gitRepos.length && (
         <div className="experiments-load-more">
           <Button
             variant="link"
@@ -33,7 +33,7 @@ const Experiments = ({
           </Button>
         </div>
       )}
-      {repos.length === 0 && <div>...</div>}
+      {gitRepos.length === 0 && <div>...</div>}
     </>
   );
 };

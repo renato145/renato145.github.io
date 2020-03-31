@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Experiments from '../components/Experiments';
 
-const ExperimentIndex = ({ data, location }) => {
+const ExperimentIndex = ({ location }) => {
   const title = 'Experiments';
 
   return (

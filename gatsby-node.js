@@ -1,14 +1,17 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const _ = require('lodash');
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const tagTemplate = path.resolve('src/templates/tags.js');
+
   const result = await graphql(
     `
       {
-        allMdx(
+        postsRemark: allMdx(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -23,20 +26,34 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        tagsGroup: allMdx(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
+        gitRepos: site {
+          siteMetadata {
+            gitRepos {
+              name
+              showName
+              tags
+            }
+          }
+        }
       }
     `
-  )
+  );
 
   if (result.errors) {
-    throw result.errors
+    throw result.errors;
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMdx.edges
+  const posts = result.data.postsRemark.edges;
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+    const next = index === 0 ? null : posts[index - 1].node;
 
     createPage({
       path: post.node.fields.slug,
@@ -46,23 +63,38 @@ exports.createPages = async ({ graphql, actions }) => {
         previous,
         next,
       },
-    })
-  })
-}
+    });
+  });
+
+  // Create tag pages.
+  const blogTags = result.data.tagsGroup.group.map(d => d.fieldValue);
+  const gitTags = result.data.gitRepos.siteMetadata.gitRepos.map(d => d.tags).flat();
+  const tags = [...new Set(blogTags.concat(gitTags))];
+
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag,
+      },
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({
       node,
       getNode,
       // basePath: 'blog/',
-    })
+    });
     createNodeField({
       name: `slug`,
       node,
       value: `/blog${value}`,
-    })
+    });
   }
-}
+};

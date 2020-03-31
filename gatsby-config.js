@@ -1,15 +1,14 @@
 // const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
-const activeEnv = "development"
-console.log(`Using environment config: '${activeEnv}'`)
-require("dotenv").config({
+const activeEnv = 'development';
+console.log(`Using environment config: '${activeEnv}'`);
+require('dotenv').config({
   path: `.env.${activeEnv}`,
-})
+});
 
-const fs = require(`fs`)
-const fetch = require(`node-fetch`)
-const { buildClientSchema, getAuthorizationToken } = require(`graphql`)
-const { createHttpLink } = require(`apollo-link-http`)
-
+const fs = require(`fs`);
+const fetch = require(`node-fetch`);
+const { buildClientSchema, getAuthorizationToken } = require(`graphql`);
+const { createHttpLink } = require(`apollo-link-http`);
 
 module.exports = {
   siteMetadata: {
@@ -25,6 +24,102 @@ module.exports = {
       github: `renato145`,
       linkedin: `lala`,
     },
+    gitRepos: [
+      {
+        name: 'covid2019',
+        tags: ['reactjs', 'javascript', 'visualization', 'covid2019', 'd3'],
+      },
+      {
+        name: 'tfjs_test',
+        tags: ['reactjs', 'machine-learning', 'tfjs', 'javascript'],
+      },
+      {
+        name: 'show_evolution',
+        tags: [
+          'd3',
+          'threejs',
+          'reactjs',
+          'evolutionary-algorithms',
+          'visualization',
+          'javascript',
+        ],
+      },
+      {
+        name: 'show_evolution3d',
+        showName: 'Show Evolution 3D',
+        tags: [
+          'threejs',
+          'reactjs',
+          'evolutionary-algorithms',
+          'visualization',
+          '3d',
+          'javascript',
+        ],
+      },
+      {
+        name: 'gcn',
+        showName: 'GCN',
+        tags: [
+          'pytorch',
+          'graph-neural-networks',
+          'machine-learning',
+          'python',
+        ],
+      },
+      {
+        name: 'DENN',
+        showName: 'DENN',
+        tags: [
+          'pytorch',
+          'evolutionary-algorithms',
+          'machine-learning',
+          'python',
+        ],
+      },
+      { name: 'parallel_ex', tags: ['python', 'utilities'] },
+      {
+        name: 'ClassificationUncertainty',
+        tags: ['pytorch', 'machine-learning', 'python'],
+      },
+      {
+        name: 'fastai_scans',
+        tags: ['pytorch', 'machine-learning', 'python', 'medical-imaging'],
+      },
+      {
+        name: 'd3sims',
+        showName: 'D3 simulations',
+        tags: [
+          'pytorch',
+          'simulation',
+          'sockets',
+          'python',
+          'javascript',
+          'visualization',
+          'd3',
+        ],
+      },
+      {
+        name: 'react_tests',
+        tags: ['d3', 'reactjs', 'visualization', 'javascript', 'visualization'],
+      },
+      {
+        name: 'stn',
+        showName: 'STN',
+        tags: ['pytorch', 'machine-learning', 'python'],
+      },
+      { name: 'peru-stats', tags: ['python', 'data-scrapping'] },
+      { name: 'bayesian-opt', tags: ['pytorch', 'machine-learning', 'python'] },
+      {
+        name: 'waimlap2017',
+        showName: 'Waimlap 2017',
+        tags: ['machine-learning', 'python', 'tutorial'],
+      },
+      {
+        name: '3D-ORGAN',
+        showName: '3D-ORGAN',
+        tags: ['tensorflow', '3d', 'gan', 'machine-learning', 'python'],
+      },
+    ],
   },
   plugins: [
     {
@@ -116,4 +211,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

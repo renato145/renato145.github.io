@@ -1,38 +1,35 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Posts from '../components/Posts';
 import Experiments from '../components/Experiments';
 
-const Index = ({ data, location }) => {
-  const { title, description } = data.site.siteMetadata;
-  const posts = data.allMdx.edges;
+const TagsTemplate = ({ pageContext, data, location }) => {
+  const { tag } = pageContext;
+  const posts = data.allMdx?.edges;
 
   return (
     <Layout
       location={location}
-      title={title}
-      description={description}
-      headerConfig={{ title: 'Home' }}
+      title={tag}
+      // description='some description'
+      headerConfig={{ title: tag }}
     >
       <Posts posts={posts} title />
       <hr className="mb-4" />
-      <Experiments title />
+      <Experiments tag={tag} title />
     </Layout>
   );
 };
 
-export default Index;
+export default TagsTemplate;
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+  query($tag: String) {
+    allMdx(
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+    ) {
       edges {
         node {
           fields {

@@ -1,9 +1,11 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Posts from '../components/Posts';
 
-const BlogIndex = ({ location }) => {
+const BlogIndex = ({ data, location }) => {
   const title = 'Blog';
+  const posts = data.allMdx.edges;
 
   return (
     <Layout
@@ -12,9 +14,29 @@ const BlogIndex = ({ location }) => {
       // description={title}
       headerConfig={{ title }}
     >
-      <Posts />
+      <Posts posts={posts} />
     </Layout>
   );
 };
 
 export default BlogIndex;
+
+export const pageQuery = graphql`
+  query {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            tags
+          }
+        }
+      }
+    }
+  }
+`;
