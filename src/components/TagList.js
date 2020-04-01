@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-const _ = require('lodash');
+import kebabCase from 'lodash/kebabCase';
 
 const TagList = ({ tags, prefix }) => {
   if (tags === null || typeof tags === 'undefined') return <></>;
@@ -12,7 +12,7 @@ const TagList = ({ tags, prefix }) => {
       {prefix}
       {tags.sort().map((tag, i) => (
         <Link
-          to={`/tags/${_.kebabCase(tag)}`}
+          to={`/tags/${kebabCase(tag)}`}
           className="text-muted mb-2 card-subtitle"
           key={i}
         >
