@@ -13,6 +13,7 @@ const Navigation = () => {
           <Link to={`/`} className='nav-link' activeClassName='active'>Home</Link>
           <Link to={`/blog`} className='nav-link' activeClassName='active'>Blog</Link>
           <Link to={`/experiments`} className='nav-link' activeClassName='active'>Experiments</Link>
+          <Link to={`/tags`} className='nav-link' activeClassName='active'>Tags</Link>
           <Link to={`/about`} className='nav-link' activeClassName='active'>About</Link>
         </Nav>
       </Navbar.Collapse>

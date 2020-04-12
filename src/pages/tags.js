@@ -4,9 +4,13 @@ import { ascending } from 'd3';
 import moment from 'moment';
 import kebabCase from 'lodash/kebabCase';
 import Layout from '../components/Layout';
-import Posts from '../components/Posts';
-import Experiments from '../components/Experiments';
 import { useGitRepos } from '../components/useGitRepos';
+import './tags.css';
+
+const formatDate = date =>
+  moment(date).calendar(null, {
+    sameElse: 'MMMM DD, YYYY',
+  });
 
 const Tags = ({ data, location }) => {
   const title = 'Tags';
@@ -29,16 +33,10 @@ const Tags = ({ data, location }) => {
     });
     return results;
   }, [allTags, blogData, gitData]);
-  console.log(tagsContent);
 
   return (
-    <Layout
-      location={location}
-      title={title}
-      // description={description}
-      headerConfig={{ title }}
-    >
-      <h3>Content</h3>
+    <Layout location={location} title={title} headerConfig={{ title }}>
+      <h4>Content</h4>
       <ul>
         {allTags.map(tag => (
           <li key={tag}>
@@ -47,56 +45,57 @@ const Tags = ({ data, location }) => {
         ))}
       </ul>
 
-      <div>
+      <ul className="tree-root">
         {allTags.map(tag => (
-          <div key={tag}>
-            <h3 id={tag}>
+          <li key={tag}>
+            <h3 id={tag} className="tag-title">
               <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
             </h3>
-            {tagsContent[tag]['blog'] &&
-              tagsContent[tag]['blog'].map(({ node }, i) => (
-                <p key={i}>
-                  <Link to={node.fields.slug}>
-                    {node.frontmatter.title || node.fields.slug}
-                  </Link>
-                  <span className="text-muted">{node.frontmatter.date}</span>
-                </p>
-              ))}
-            {tagsContent[tag]['git'] &&
-              tagsContent[tag]['git'].map(
-                (
-                  {
-                    homepageUrl,
-                    url,
-                    imgUrl,
-                    name,
-                    tags,
-                    description,
-                    updatedAt,
-                  },
-                  i
-                ) => (
-                  <p key={i}>
-                    <a href={url}>{name}</a>
-                    <span className="text-muted">
-                      {updatedAt && (
-                        <small className="text-muted">
-                          {moment(updatedAt).calendar(null, {
-                            sameElse: 'DD/MM/YYYY',
-                          })}
-                        </small>
-                      )}
-                    </span>
-                  </p>
-                )
+            <ul className="tag-content">
+              {tagsContent[tag]['blog'].length > 0 && (
+                <>
+                  <li>
+                    <p className="tag-type">Blog posts</p>
+                    <ul>
+                      {tagsContent[tag]['blog'].map(({ node }, i) => (
+                        <li key={i} className="tag-line">
+                          <Link to={node.fields.slug}>
+                            {node.frontmatter.title || node.fields.slug}
+                          </Link>
+                          <small className="text-muted">
+                            {formatDate(node.frontmatter.date)}
+                          </small>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                </>
               )}
-          </div>
+              {tagsContent[tag]['git'].length > 0 && (
+                <>
+                  <li>
+                    <p className="tag-type">Github repos</p>
+                    <ul>
+                      {tagsContent[tag]['git'].map(
+                        ({ url, name, updatedAt }, i) => (
+                          <li key={i} className="tag-line">
+                            <a href={url}>{name}</a>
+                            {updatedAt && (
+                              <small className="text-muted">
+                                {formatDate(updatedAt)}
+                              </small>
+                            )}
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </li>
+                </>
+              )}
+            </ul>
+          </li>
         ))}
-      </div>
-
-      {/* <h2 className="general-title">Tags</h2> */}
-      {/* <Posts posts={posts} title /> */}
-      {/* <Experiments title /> */}
+      </ul>
     </Layout>
   );
 };

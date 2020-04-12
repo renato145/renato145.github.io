@@ -22,7 +22,7 @@ export const useGitRepos = ({ tag }) => {
           repositoryOwner(login: "renato145") {
             repositories(
               last: 100
-              orderBy: { field: UPDATED_AT, direction: ASC }
+              orderBy: { field: UPDATED_AT, direction: DESC }
             ) {
               nodes {
                 name
