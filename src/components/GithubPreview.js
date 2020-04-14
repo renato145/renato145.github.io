@@ -21,12 +21,12 @@ const GithubPreview = ({ data }) => {
           <Card.Text className="mt-2">{description}</Card.Text>
         </Card.Body>
         <div className="experiment-card-links">
-          {data.url && (
+          {url && (
             <Card.Link href={url} target="_black">
               Go to code
             </Card.Link>
           )}
-          {data.homepage && (
+          {homepageUrl && (
             <Card.Link href={homepageUrl} target="_black">
               View
             </Card.Link>
