@@ -26,6 +26,10 @@ module.exports = {
     },
     gitRepos: [
       {
+        name: 'gcn-js',
+        tags: ['reactjs', 'javascript', 'visualization', 'graphs', 'd3'],
+      },
+      {
         name: 'covid2019',
         tags: ['reactjs', 'javascript', 'visualization', 'covid2019', 'd3'],
       },
@@ -61,6 +65,7 @@ module.exports = {
         showName: 'GCN',
         tags: [
           'pytorch',
+          'graphs',
           'graph-neural-networks',
           'machine-learning',
           'python',
