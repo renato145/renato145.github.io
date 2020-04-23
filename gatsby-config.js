@@ -26,6 +26,10 @@ module.exports = {
     },
     gitRepos: [
       {
+        name: 'fastexplorer',
+        tags: ['fastai', 'reactjs', 'javascript', 'visualization', 'sockets'],
+      },
+      {
         name: 'gcn-js',
         tags: ['reactjs', 'javascript', 'visualization', 'graphs', 'd3'],
       },
