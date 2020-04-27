@@ -1,7 +1,7 @@
 import React, { useEffect, forwardRef, useState } from 'react';
 
-const Utterances = forwardRef( ( { repo }, ref ) => {
-  const [ status, setStatus ] = useState('pending');
+const Utterances = forwardRef(({ repo }, ref) => {
+  const [status, setStatus] = useState('pending');
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -14,8 +14,16 @@ const Utterances = forwardRef( ( { repo }, ref ) => {
     script.setAttribute('label', 'blog');
     script.setAttribute('theme', 'github-light');
     script.setAttribute('crossorigin', 'anonymous');
-    ref.current.appendChild(script);
-  }, [ ref ])
+    const elem = ref.current;
+    elem.appendChild(script);
+    return () => {
+      while (elem.firstChild) {
+        elem.removeChild(elem.firstChild);
+      }
+    };
+  }, [ref, repo]);
+
+  console.log(ref.current?.children);
 
   return (
     <div>

@@ -5,7 +5,7 @@ import './PostFooter.css';
 
 const PostFooter = ({ previous, next }) => {
   return (
-    <Nav className='post-footer'>
+    <Nav className={`post-footer ${previous ? '' : 'text-right'}`}>
       {previous && (
         <Nav.Item>
           <Link to={previous.fields.slug} rel='prev'>
