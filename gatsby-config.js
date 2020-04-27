@@ -145,7 +145,13 @@ module.exports = {
         name: `assets`,
       },
     },
-
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
+      },
+    },
     {
       resolve: `gatsby-source-graphql`,
       options: {
@@ -210,6 +216,29 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `tags`, `description`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          Mdx: {
+            title: (node) => node.frontmatter.title,
+            tags: (node) => node.frontmatter.tags,
+            description: (node) => node.frontmatter.description,
+            slug: (node) => node.fields.slug,
+          },
+          GitReposJson: {
+            title: (node) => node.name,
+            tags: (node) => node.tags,
+          },
+        },
+        // Optional filter to limit indexed nodes
+        // filter: (node, getNode) => node.frontmatter.tags !== 'exempt',
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-typography`,
     //   options: {

@@ -8,7 +8,7 @@ import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Layout.css';
 
-const Layout = ({ location, title, description, children, headerConfig, tags }) => {
+const Layout = ({ location, title, description, children, headerConfig, tags, showSearch = true }) => {
   const seo = typeof headerConfig === 'undefined'
     ? { title: location.pathname.split('/').reverse()[1] }
     : headerConfig;
@@ -19,7 +19,7 @@ const Layout = ({ location, title, description, children, headerConfig, tags }) 
         description={seo.description}
       />
       <Row className='navigation-top-bar'>
-        <Navigation />
+        <Navigation showSearch={showSearch} />
       </Row>
       <Row className='main-content'>
         <Header
