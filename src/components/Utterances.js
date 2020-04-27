@@ -23,8 +23,6 @@ const Utterances = forwardRef(({ repo }, ref) => {
     };
   }, [ref, repo]);
 
-  console.log(ref.current?.children);
-
   return (
     <div>
       {status === 'failed' && <div>Error. Please try again.</div>}
