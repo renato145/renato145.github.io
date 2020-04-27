@@ -1,11 +1,17 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import { Nav as _Nav } from 'react-bootstrap';
 import { Link } from 'gatsby';
-import './PostFooter.css';
+import styled from 'styled-components';
+
+const Nav = styled(_Nav)`
+  justify-content: ${({previous}) => previous ? "space-between" : "flex-end"};
+  margin-top: 2.5rem;
+`;
+
 
 const PostFooter = ({ previous, next }) => {
   return (
-    <Nav className={`post-footer ${previous ? '' : 'text-right'}`}>
+    <Nav previous={previous}>
       {previous && (
         <Nav.Item>
           <Link to={previous.fields.slug} rel='prev'>
