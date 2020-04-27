@@ -39,7 +39,7 @@
     "react-helmet": "^5.2.1",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
-    "vega": "^5.10.1",
+    "vega": "^5.11.0",
     "vega-embed": "^6.6.0",
     "vega-lite": "^4.11.0"
   },
