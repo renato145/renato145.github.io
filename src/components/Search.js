@@ -6,30 +6,43 @@ import styled from 'styled-components';
 import TagList from './TagList';
 import { Form, FormControl } from 'react-bootstrap';
 
-const SearchResults = styled.div`
-  position: absolute;
-  z-index: 1;
+const SearchInput = styled(Form)`
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+`;
 
-  & > div {
-    background: rgba(241, 248, 255, 0.9);
-    padding: 0.5em 1em;
+const SearchResults = styled.div``;
+
+const OneResult = styled.div`
+  padding: 0.75em 1em;
+  margin: 0.35em 0em;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background: rgb(233, 244, 255);
   }
+`;
 
-  & > div:hover {
-    background: rgb(190, 222, 255);
+const ResultLink = styled.div`
+  & a {
+    font-size: 1.3em;
   }
+`;
 
-  & > div:last-child {
-    border-radius: 0em 0em 0.5em 0.5em;
+const Description = styled.div`
+  margin-top: 0.3em;
+  transition: all 0.2s ease-out;
+  color: #5a5a5a;
+  ${OneResult}:hover & {
+    color: #1a1a1a;
   }
-
 `;
 
 const Tags = styled.div`
-  font-size: 1em;
+  font-size: 0.75em;
 `;
 
-export const Search = (props) => {
+export const Search = () => {
   const indexQuery = useStaticQuery(
     graphql`
       query SearchIndexQuery {
@@ -55,27 +68,30 @@ export const Search = (props) => {
   );
 
   return (
-    <div {...props}>
-      <Form>
-        <FormControl
-          type="text"
-          placeholder="Search"
-          onChange={search}
-          className="mr-sm-2"
-        />
-      </Form>
-      {results.length > 0 && (
-        <SearchResults>
-          {results.map((page) => (
-            <div key={page.id}>
-              <Link to={'/' + page.path}>{page.title}</Link>
+    <>
+      <SearchInput>
+        <FormControl type="text" placeholder="Search" onChange={search} />
+      </SearchInput>
+      <SearchResults>
+        {results.map(({ id, title, name, tags, description, slug }) => {
+          const isRepo = slug === undefined;
+          return (
+            <OneResult key={id}>
+              <ResultLink>
+                {isRepo ? (
+                  <a href={`https://github.com/renato145/${name}`}>{title}</a>
+                ) : (
+                  <Link to={slug}>{title}</Link>
+                )}
+              </ResultLink>
               <Tags>
-                <TagList tags={page.tags} />
+                <TagList tags={tags} />
               </Tags>
-            </div>
-          ))}
-        </SearchResults>
-      )}
-    </div>
+              <Description>{isRepo ? 'Github repository.' : description}</Description>
+            </OneResult>
+          );
+        })}
+      </SearchResults>
+    </>
   );
 };
