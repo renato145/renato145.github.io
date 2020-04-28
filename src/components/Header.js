@@ -2,7 +2,7 @@ import React from 'react';
 import TagList from './TagList';
 import './Header.css';
 
-const Header = ({ location, title, description, tags }) => {
+const Header = ({ title, description, tags }) => {
   // const rootPath = `${__PATH_PREFIX__}/`;
 
   return (
