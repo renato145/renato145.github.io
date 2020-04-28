@@ -231,7 +231,8 @@ module.exports = {
             slug: (node) => node.fields.slug,
           },
           GitReposJson: {
-            title: (node) => node.name,
+            title: (node) => node.showName ? node.showName : node.name,
+            name: (node) => node.name,
             tags: (node) => node.tags,
           },
         },
