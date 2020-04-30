@@ -70,6 +70,7 @@ export const Search = () => {
   return (
     <>
       <SearchInput>
+        <Link to="/searchGraph" style={{fontSize: '0.8em'}}>Try search graph</Link>
         <FormControl type="text" placeholder="Search" onChange={search} />
       </SearchInput>
       <SearchResults>

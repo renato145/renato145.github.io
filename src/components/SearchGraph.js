@@ -5,15 +5,15 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { navigate } from '@reach/router'
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import { navigate } from '@reach/router';
 import { Index } from 'elasticlunr';
 import { ForceGraph2D } from 'react-force-graph';
 import styled from 'styled-components';
 import { Form, FormControl } from 'react-bootstrap';
 import { max, forceCollide } from 'd3';
 import kebabCase from 'lodash/kebabCase';
-import {useDimensions} from '../utils/useDimensions';
+import { useDimensions } from '../utils/useDimensions';
 
 const SearchInput = styled(Form)`
   margin-top: 0.5em;
@@ -69,9 +69,11 @@ export const SearchGraph = () => {
       }
     `
   ).siteSearchIndex.index;
-  const { ref: viewRef, width: viewWidth, height: viewHeight } = useDimensions();
+  const { ref: viewRef, width: viewWidth } = useDimensions();
   const ref = useRef();
+  const [graphData, setGraphData] = useState({ nodes: [], links: [] });
   const [results, setResults] = useState([]);
+  const [highlightLinks, setHighlightLinks] = useState([]);
   const index = useMemo(() => Index.load(indexQuery), [indexQuery]);
 
   useEffect(() => {
@@ -90,16 +92,39 @@ export const SearchGraph = () => {
     [index]
   );
 
-  const graphData = useMemo(() => {
-    const nodes = [];
+  useEffect(() => {
+    const { nodes: tmpNodes } = graphData;
+    const newNodes = results.map((d) => d.id);
+    const newTags = [...new Set(results.map((d) => d.tags).flat())];
+    const nodes = tmpNodes.filter(
+      (d) => newNodes.includes(d.id) || newTags.includes(d.id)
+    );
+    const currentNodes = nodes.map((d) => d.id);
+
+    results
+      .filter((d) => !currentNodes.includes(d.id))
+      .forEach((d) => {
+        nodes.push({
+          id: d.id,
+          name: d.title.replace('-', ' '),
+          type: d.slug ? 'blog' : 'repo',
+          link: d.slug ?? `https://github.com/renato145/${d.name}`,
+        });
+      });
+
+    newTags
+      .filter((d) => !currentNodes.includes(d))
+      .forEach((d) => {
+        nodes.push({
+          id: d,
+          name: d.replace('-', ' '),
+          type: 'tag',
+          link: `/tags/${kebabCase(d)}`,
+        });
+      });
+
     const links = [];
     results.forEach((d) => {
-      nodes.push({
-        id: d.id,
-        name: d.title.replace('-', ' '),
-        type: d.slug ? 'blog' : 'repo',
-        link: d.slug ?? `https://github.com/renato145/${d.name}`,
-      });
       d.tags.forEach((tag) => {
         links.push({
           source: tag,
@@ -107,28 +132,31 @@ export const SearchGraph = () => {
         });
       });
     });
-    const tags = new Set(results.map((d) => d.tags).flat());
-    tags.forEach((d) => {
-      nodes.push({
-        id: d,
-        name: d.replace('-', ' '),
-        type: 'tag',
-        link: `/tags/${kebabCase(d)}`,
-      });
-    });
 
-    return { nodes, links };
+    setGraphData({ nodes, links });
   }, [results]);
+
+  const handleNodeHover = (node) => {
+    if (node) {
+      const links = graphData.links
+        .filter((d) => d.source.id === node.id || d.target.id === node.id)
+        .map((d) => d.index);
+      setHighlightLinks(links);
+    } else {
+      setHighlightLinks([]);
+    }
+  };
 
   return (
     <div ref={viewRef}>
       <SearchInput>
+        <Link to="/search" style={{fontSize: '0.8em'}}>Go back to normal search</Link>
         <FormControl type="text" placeholder="Search" onChange={search} />
       </SearchInput>
       <ForceGraph2D
         ref={ref}
         width={viewWidth}
-        height={viewWidth*0.5}
+        height={viewWidth * 0.5}
         backgroundColor="#eee"
         graphData={graphData}
         linkCurvature={0.25}
@@ -136,14 +164,18 @@ export const SearchGraph = () => {
           if (node.type === 'repo') window.open(node.link);
           else navigate(node.link);
         }}
+        onNodeHover={handleNodeHover}
         linkHoverPrecision={15}
+        linkWidth={(d) => (highlightLinks.includes(d.index) ? 3 : 2)}
+        linkColor={(d) => (highlightLinks.includes(d.index) ? '#888' : '#ccc')}
         nodeCanvasObject={(node, ctx, globalScale) => {
           const { x, y, name, type } = node;
           const maxWidth = 60;
           const fontSize = (type === 'tag' ? 14 : 16) / globalScale;
-          const padding = 0.5 * fontSize;
+          const padding = (type === 'tag' ? 0.6 : 0.5) * fontSize;
           const linePadding = 0.1 * fontSize;
-          ctx.font = (type==='tag' ? 'bold ' : '') + `${fontSize}px Sans-Serif`; // This needs to be set before calculating measures
+          ctx.font =
+            (type === 'tag' ? 'bold ' : '') + `${fontSize}px Sans-Serif`; // This needs to be set before calculating measures
           const { lines, measures } = getTextWithMeasures(
             name,
             ctx,
@@ -154,23 +186,21 @@ export const SearchGraph = () => {
           );
 
           ctx.fillStyle =
-            type === 'tag'
-              ? 'rgba(147, 0, 58, 0.7)'
-              : 'rgba(0, 66, 157, 0.7)';
-          ctx.fillRect(
-            x - measures[0] / 2,
-            y - measures[1] / 2,
-            ...measures
-          );
+            type === 'tag' ? 'rgba(147, 0, 58, 0.7)' : 'rgba(0, 66, 157, 0.7)';
+          ctx.fillRect(x - measures[0] / 2, y - measures[1] / 2, ...measures);
 
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillStyle = '#fff';
           lines.forEach((line, i) =>
-            ctx.fillText(line, x, y + padding*2 + i * (linePadding + fontSize) - measures[1]/2)
+            ctx.fillText(
+              line,
+              x,
+              y + padding * 2 + i * (linePadding + fontSize) - measures[1] / 2
+            )
           );
         }}
-        enableZoomPanInteraction={false}
+        enableZoomPanInteraction={true}
       />
     </div>
   );
