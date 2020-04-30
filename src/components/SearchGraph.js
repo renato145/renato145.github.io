@@ -8,12 +8,15 @@ import React, {
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import { navigate } from '@reach/router';
 import { Index } from 'elasticlunr';
-import { ForceGraph2D } from 'react-force-graph';
 import styled from 'styled-components';
 import { Form, FormControl } from 'react-bootstrap';
 import { max, forceCollide } from 'd3';
 import kebabCase from 'lodash/kebabCase';
 import { useDimensions } from '../utils/useDimensions';
+// import { ForceGraph2D } from 'react-force-graph';
+
+// gatsby-check
+const ForceGraph2D = typeof window !== `undefined` ? require('react-force-graph').ForceGraph2D : null;
 
 const SearchInput = styled(Form)`
   margin-top: 0.5em;
@@ -108,6 +111,7 @@ export const SearchGraph = () => {
           id: d.id,
           name: d.title.replace('-', ' '),
           type: d.slug ? 'blog' : 'repo',
+          description: d.description ?? 'Github repository.',
           link: d.slug ?? `https://github.com/renato145/${d.name}`,
         });
       });
@@ -119,6 +123,7 @@ export const SearchGraph = () => {
           id: d,
           name: d.replace('-', ' '),
           type: 'tag',
+          description: 'Tag',
           link: `/tags/${kebabCase(d)}`,
         });
       });
@@ -147,6 +152,8 @@ export const SearchGraph = () => {
     }
   };
 
+  if (ForceGraph2D === null) return <p>gatsby server dummy</p>;
+
   return (
     <div ref={viewRef}>
       <SearchInput>
@@ -159,7 +166,9 @@ export const SearchGraph = () => {
         height={viewWidth * 0.5}
         backgroundColor="#eee"
         graphData={graphData}
+        d3VelocityDecay={0.9}
         linkCurvature={0.25}
+        nodeLabel={node => node.description}
         onNodeClick={(node) => {
           if (node.type === 'repo') window.open(node.link);
           else navigate(node.link);
