@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { Search } from '../components/Search';
 
-const SearchPage = ({ data, location }) => {
+const SearchPage = ({ location }) => {
   const title = 'Search';
 
   return (
@@ -19,13 +18,3 @@ const SearchPage = ({ data, location }) => {
 };
 
 export default SearchPage;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
