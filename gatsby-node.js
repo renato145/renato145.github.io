@@ -31,13 +31,11 @@ exports.createPages = async ({ graphql, actions }) => {
             fieldValue
           }
         }
-        gitRepos: site {
-          siteMetadata {
-            gitRepos {
-              name
-              showName
-              tags
-            }
+        gitRepos: allGitReposJson {
+          nodes {
+            name
+            showName
+            tags
           }
         }
       }
@@ -68,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create tag pages.
   const blogTags = result.data.tagsGroup.group.map(d => d.fieldValue);
-  const gitTags = result.data.gitRepos.siteMetadata.gitRepos.map(d => d.tags).flat();
+  const gitTags = result.data.gitRepos.nodes.map(d => d.tags).flat();
   const tags = [...new Set(blogTags.concat(gitTags))];
 
   tags.forEach(tag => {

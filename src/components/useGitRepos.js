@@ -2,20 +2,18 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { useMemo } from 'react';
 import { unCamelCase, singleSpace, titleCase } from './utils';
 
-const formatName = name =>
+const formatName = (name) =>
   titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
 
 export const useGitRepos = ({ tag }) => {
   const data = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            gitRepos {
-              name
-              showName
-              tags
-            }
+        allGitReposJson {
+          nodes {
+            name
+            showName
+            tags
           }
         }
         github {
@@ -39,13 +37,13 @@ export const useGitRepos = ({ tag }) => {
     `
   );
   const allRepos = data.github.repositoryOwner.repositories.nodes;
-  const gitRepos = data.site.siteMetadata.gitRepos;
+  const gitRepos = data.allGitReposJson.nodes;
 
   const repos = useMemo(() => {
     let data = [];
-    gitRepos.forEach(d => {
-      if (tag && (d.tags.indexOf(tag) === -1)) return;
-      const repoInfo = { ...allRepos.find(o => o.name === d.name) };
+    gitRepos.forEach((d) => {
+      if (tag && d.tags.indexOf(tag) === -1) return;
+      const repoInfo = { ...allRepos.find((o) => o.name === d.name) };
       const repo = Object.assign(repoInfo, d);
       const url = repo['openGraphImageUrl'];
       if (url.indexOf('https://repository-images') > -1) repo['imgUrl'] = url;
