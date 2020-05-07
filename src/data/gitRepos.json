@@ -4,8 +4,9 @@
     "tags": ["fastai", "reactjs", "javascript", "visualization", "sockets"]
   },
   {
-    "name": "gcn-js",
-    "tags": ["reactjs", "javascript", "visualization", "graphs", "d3"]
+    "name": "threejs_playground",
+    "showName": "Threejs Playground",
+    "tags": ["javascript", "threejs"]
   },
   {
     "name": "covid2019",
@@ -37,6 +38,10 @@
       "3d",
       "javascript"
     ]
+  },
+  {
+    "name": "gcn-js",
+    "tags": ["reactjs", "javascript", "visualization", "graphs", "d3"]
   },
   {
     "name": "gcn",
