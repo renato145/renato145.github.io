@@ -4,11 +4,11 @@ import moment from 'moment';
 import TagList from './TagList';
 import './GithubPreview.css';
 
-const GithubPreview = ({ data }) => {
+const GithubPreview = ({ data, ...props }) => {
   const { homepageUrl, url, imgUrl, name, tags, description, updatedAt } = data;
 
   return (
-    <div className="col mb-3">
+    <div className="col mb-3" {...props}>
       <Card className="experiment-card">
         {imgUrl && (
           <a href={homepageUrl || url} target="_black">
