@@ -5,7 +5,7 @@ import { unCamelCase, singleSpace, titleCase } from './utils';
 const formatName = (name) =>
   titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
 
-export const useGitRepos = ({ tag }) => {
+export const useGitRepos = ({ tag, name }) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -42,6 +42,7 @@ export const useGitRepos = ({ tag }) => {
   const repos = useMemo(() => {
     let data = [];
     gitRepos.forEach((d) => {
+      if (name && d.name !== name) return;
       if (tag && d.tags.indexOf(tag) === -1) return;
       const repoInfo = { ...allRepos.find((o) => o.name === d.name) };
       const repo = Object.assign(repoInfo, d);
