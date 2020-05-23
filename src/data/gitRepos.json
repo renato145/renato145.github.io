@@ -18,6 +18,7 @@
   },
   {
     "name": "show_evolution",
+    "showName": "Show Evolution",
     "tags": [
       "d3",
       "threejs",
