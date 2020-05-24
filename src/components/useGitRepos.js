@@ -55,7 +55,7 @@ export const useGitRepos = ({ tag, name }) => {
     });
 
     return data;
-  }, [allRepos, gitRepos, tag]);
+  }, [allRepos, gitRepos, tag, name]);
 
   return repos;
 };
