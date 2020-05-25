@@ -17,7 +17,7 @@ const Experiments = ({
 
   return (
     <>
-      {title && <h2 className="general-title">Experiments</h2>}
+      {title && <h2 tw="mb-5">Experiments</h2>}
       <div className="row row-cols-1 row-cols-md-2">
         {visibleRepos.map((repo, i) => (
           <GithubPreview key={i} data={repo} />
