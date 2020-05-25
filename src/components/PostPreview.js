@@ -1,23 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import TagList from './TagList';
-import styled from 'styled-components';
 
-const PostTitle = styled.h4`
-  margin-bottom: 0px;
-`;
-
-const PostPreview = ({ node }) => {
+export const PostPreview = ({ node }) => {
   const postTitle = node.frontmatter.title || node.fields.slug;
   const tags = node.frontmatter.tags;
 
   return (
-    <article className="mb-4">
-      <header className="mb-1">
-        <PostTitle>
+    <article className="tw-mb-4">
+      <header className="tw-mb-1">
+        <h4 className="tw-mb-0">
           <Link to={node.fields.slug}>{postTitle}</Link>
-        </PostTitle>
-        <small className="text-muted">
+        </h4>
+        <small className="tw-text-gray-600">
           {node.frontmatter.date}
           <TagList tags={tags} prefix=" - " />
         </small>
@@ -32,5 +27,3 @@ const PostPreview = ({ node }) => {
     </article>
   );
 };
-
-export default PostPreview;

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import PostPreview from './PostPreview';
-import 'twin.macro';
+import { PostPreview } from './PostPreview';
 import { LinkButton } from './LinkButton';
 
-const Posts = ({
+export const Posts = ({
   title = false,
   showLimit = 5,
   showLoadMore = true,
@@ -15,12 +14,12 @@ const Posts = ({
 
   return (
     <>
-      {title && <h2 className="general-title">Posts</h2>}
+      {title && <h2 className="tw-mb-5">Posts</h2>}
       {visiblePosts.map(({ node }) => (
         <PostPreview node={node} key={node.fields.slug} />
       ))}
       {showLoadMore && visiblePosts.length < posts.length && (
-        <div tw="ml-2">
+        <div className="tw-ml-2">
           <LinkButton onClick={() => setLimit((limit) => limit + showLimit)}>
             {loadMoreText}
           </LinkButton>
@@ -30,5 +29,3 @@ const Posts = ({
     </>
   );
 };
-
-export default Posts;

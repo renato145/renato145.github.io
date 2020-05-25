@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Posts from '../components/Posts';
+import { Layout } from '../components/Layout';
+import { Posts } from '../components/Posts';
 
 const BlogIndex = ({ data, location }) => {
   const title = 'Blog';

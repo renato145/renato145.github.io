@@ -1,23 +1,23 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import tw, { styled } from 'twin.macro';
+import { Layout } from '../components/Layout';
+import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  ${tw`bg-black text-white`};
-`;
+const Wrapper = styled.div.attrs({
+  className: 'tw-bg-black tw-text-white hover:tw-text-red-500',
+})``;
 
 const TestPage = ({ location }) => {
   return (
     <Layout
       location={location}
-      title={"A test page"}
+      title={'A test page'}
       description="internal tests"
       headerConfig={{ title: 'header' }}
     >
-      <Wrapper>
-        This is a test
-      </Wrapper>
-      <button tw='text-lg px-8 py-2 mt-3 rounded bg-gray-400 hover:bg-black hover:text-white'>Success</button>
+      <Wrapper>This is a test</Wrapper>
+      <button className="tw-text-lg tw-px-8 tw-py-2 tw-mt-3 tw-rounded tw-bg-gray-400 hover:tw-bg-black hover:tw-text-white">
+        Success
+      </button>
     </Layout>
   );
 };

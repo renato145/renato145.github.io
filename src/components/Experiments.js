@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import GithubPreview from './GithubPreview';
-import 'twin.macro';
 import { LinkButton } from './LinkButton';
 import { useGitRepos } from './useGitRepos';
 
@@ -17,14 +16,14 @@ export const Experiments = ({
 
   return (
     <>
-      {title && <h2 tw="mb-5">Experiments</h2>}
+      {title && <h2 className="tw-mb-5">Experiments</h2>}
       <div className="row row-cols-1 row-cols-md-2">
         {visibleRepos.map((repo, i) => (
           <GithubPreview key={i} data={repo} />
         ))}
       </div>
       {showLoadMore && visibleRepos.length < gitRepos.length && (
-        <div tw="mr-2 text-right">
+        <div className="tw-mr-2 text-right">
           <LinkButton onClick={() => setLimit((limit) => limit + showLimit)}>
             {loadMoreText}
           </LinkButton>

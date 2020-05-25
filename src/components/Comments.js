@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Utterances from './Utterances';
-import 'twin.macro';
 
 export const Comments = () => {
   const ref = useRef();
@@ -18,7 +17,7 @@ export const Comments = () => {
   ).site.siteMetadata.git;
 
   return (
-    <div tw="mt-6">
+    <div className="tw-mt-6">
       <Utterances repo={repo} ref={ref}/>
     </div>
   );

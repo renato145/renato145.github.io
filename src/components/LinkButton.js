@@ -1,9 +1,8 @@
 import React from 'react';
-import 'twin.macro';
 
 export const LinkButton = ({ children, ...props }) => (
   <button
-    tw="text-blue-600 hover:text-blue-800 transition duration-150 ease-in-out hover:underline focus:outline-none"
+    className="tw-text-blue-600 hover:tw-text-blue-800 tw-transition tw-duration-150 tw-ease-in-out hover:tw-underline focus:tw-outline-none"
     {...props}
   >
     {children}

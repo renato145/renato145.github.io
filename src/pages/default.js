@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import { Layout } from '../components/Layout';
 
 const DefaultPage = ({ data, location }) => {
   const title = data.site.siteMetadata.title;

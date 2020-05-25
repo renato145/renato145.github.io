@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import 'twin.macro';
 
 export const Footer = () => {
   const { mail, social } = useStaticQuery(
@@ -20,18 +19,18 @@ export const Footer = () => {
   ).site.siteMetadata;
 
   return (
-    <footer tw="container pb-2">
+    <footer className="tw-container tw-pb-2">
       <hr />
-      <div tw="flex justify-center">
-        <div tw="px-4">
+      <div className="tw-flex tw-justify-center">
+        <div className="tw-px-4">
           <a href={`mailto:${mail}`}>{mail}</a>
         </div>
-        <div tw="px-4">
+        <div className="tw-px-4">
           <a href={`https://twitter.com/${social.twitter}`} target="_black">
             Twitter
           </a>
         </div>
-        <div tw="px-4">
+        <div className="tw-px-4">
           <a href={`https://github.com/${social.github}`} target="_black">
             GitHub
           </a>

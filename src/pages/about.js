@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import moment from 'moment';
-import Layout from '../components/Layout';
+import { Layout } from '../components/Layout';
 
 const news = [
   { date: '201811', text: 'Started Phd at the University of Adelaide.' },

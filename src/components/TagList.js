@@ -13,7 +13,7 @@ const TagList = ({ tags, prefix }) => {
       {tags.sort().map((tag, i) => (
         <Link
           to={`/tags/${kebabCase(tag)}`}
-          className="text-muted mb-2 card-subtitle"
+          className="tw-text-gray-600  hover:tw-text-gray-800 tw-mb-2"
           key={i}
         >
           {`${tag} `}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'gatsby';
 
-const Navigation = () => {
+export const Navigation = () => {
   return (
     <>
     <Navbar collapseOnSelect bg="light" expand="lg">
@@ -39,5 +39,3 @@ const Navigation = () => {
     </>
   );
 };
-
-export default Navigation;
