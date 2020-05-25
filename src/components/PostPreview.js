@@ -3,8 +3,7 @@ import { Link } from 'gatsby';
 import TagList from './TagList';
 import styled from 'styled-components';
 
-const PostTitle = styled.h3`
-  font-size: 1.5rem;
+const PostTitle = styled.h4`
   margin-bottom: 0px;
 `;
 

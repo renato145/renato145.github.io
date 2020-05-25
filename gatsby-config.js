@@ -135,6 +135,7 @@ module.exports = {
         // filter: (node, getNode) => node.frontmatter.tags !== 'exempt',
       },
     },
+    `gatsby-plugin-styled-components`,
     // {
     //   resolve: `gatsby-plugin-typography`,
     //   options: {
