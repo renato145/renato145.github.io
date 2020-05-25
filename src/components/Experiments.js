@@ -4,7 +4,7 @@ import 'twin.macro';
 import { LinkButton } from './LinkButton';
 import { useGitRepos } from './useGitRepos';
 
-const Experiments = ({
+export const Experiments = ({
   title = false,
   showLimit = 6,
   showLoadMore = true,
@@ -34,5 +34,3 @@ const Experiments = ({
     </>
   );
 };
-
-export default Experiments;

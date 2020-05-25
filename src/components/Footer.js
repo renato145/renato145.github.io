@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import 'twin.macro';
 
-const Footer = () => {
+export const Footer = () => {
   const { mail, social } = useStaticQuery(
     graphql`
       query {
@@ -40,5 +40,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

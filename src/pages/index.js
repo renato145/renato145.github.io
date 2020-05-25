@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Posts from '../components/Posts';
-import Experiments from '../components/Experiments';
+import { Experiments } from '../components/Experiments';
 
 const Index = ({ data, location }) => {
   const { title, description } = data.site.siteMetadata;

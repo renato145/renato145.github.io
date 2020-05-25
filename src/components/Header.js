@@ -2,7 +2,7 @@ import React from 'react';
 import TagList from './TagList';
 import "twin.macro";
 
-const Header = ({ title, description, tags }) => {
+export const Header = ({ title, description, tags }) => {
   // const rootPath = `${__PATH_PREFIX__}/`;
 
   return (
@@ -18,5 +18,3 @@ const Header = ({ title, description, tags }) => {
     </header>
   );
 };
-
-export default Header;
