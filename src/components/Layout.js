@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from './Seo';
 import Navigation from './Navigation';
 import Header from './Header';
-import Content from './Content';
+import { Content } from './Content';
 import Footer from './Footer';
 import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';

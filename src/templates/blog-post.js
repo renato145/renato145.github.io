@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import PostFooter from '../components/PostFooter';
-import Comments from '../components/Comments';
+import { Comments } from '../components/Comments';
 import './blog-post.css';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {

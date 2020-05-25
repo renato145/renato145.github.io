@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Utterances from './Utterances';
 import 'twin.macro';
 
-const Comments = () => {
+export const Comments = () => {
   const ref = useRef();
   const repo = useStaticQuery(
     graphql`
@@ -23,5 +23,3 @@ const Comments = () => {
     </div>
   );
 };
-
-export default Comments;
