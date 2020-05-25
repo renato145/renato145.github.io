@@ -1,9 +1,9 @@
 import React from 'react';
-import './Content.css';
+import 'twin.macro';
 
 const Content = ({ children }) => {
   return (
-    <main className='general-content'>{children}</main>
+    <main tw="container">{children}</main>
   );
 };
 
