@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{JX1G:function(t,e,n){"use strict";n.r(e);var a=n("q1tI"),o=n.n(a),i=n("7oih");e.default=function(t){var e=t.location;return o.a.createElement(i.a,{location:e,title:"",headerConfig:{title:"Search Graph"}})}}}]);
-//# sourceMappingURL=component---src-pages-search-graph-js-82096cf2279e3fe283c5.js.map
