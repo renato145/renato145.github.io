@@ -17,6 +17,7 @@ const TestPage = ({ location }) => {
       <Wrapper>
         This is a test
       </Wrapper>
+      <button tw='text-lg px-8 py-2 mt-3 rounded bg-gray-400 hover:bg-black hover:text-white'>Success</button>
     </Layout>
   );
 };
