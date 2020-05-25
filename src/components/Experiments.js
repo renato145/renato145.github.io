@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import GithubPreview from './GithubPreview';
-import './Experiments.css';
-import { Button } from 'react-bootstrap';
+import 'twin.macro';
+import { LinkButton } from './LinkButton';
 import { useGitRepos } from './useGitRepos';
 
 const Experiments = ({
   title = false,
   showLimit = 6,
   showLoadMore = true,
-  loadMoreTitle = 'Load more',
-  tag
+  loadMoreText = 'Load more',
+  tag,
 }) => {
-  const gitRepos = useGitRepos({tag});
+  const gitRepos = useGitRepos({ tag });
   const [limit, setLimit] = useState(showLimit);
   const visibleRepos = gitRepos.slice(0, limit || gitRepos.length);
 
@@ -24,13 +24,10 @@ const Experiments = ({
         ))}
       </div>
       {showLoadMore && visibleRepos.length < gitRepos.length && (
-        <div className="experiments-load-more">
-          <Button
-            variant="link"
-            onClick={() => setLimit(limit => limit + showLimit)}
-          >
-            {loadMoreTitle}
-          </Button>
+        <div tw="mr-2 text-right">
+          <LinkButton onClick={() => setLimit((limit) => limit + showLimit)}>
+            {loadMoreText}
+          </LinkButton>
         </div>
       )}
       {gitRepos.length === 0 && <div>...</div>}

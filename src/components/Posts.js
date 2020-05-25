@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import PostPreview from './PostPreview';
-import styled from 'styled-components';
-import { Button } from 'react-bootstrap';
-import './Posts.css';
-
-const LoadMore = styled.div`
-  text-align: start;
-  margin-right: 0.2rem;
-`;
+import 'twin.macro';
+import { LinkButton } from './LinkButton';
 
 const Posts = ({
   title = false,
   showLimit = 5,
   showLoadMore = true,
-  loadMoreTitle = 'Load more',
+  loadMoreText = 'Load more',
   posts,
 }) => {
   const [limit, setLimit] = useState(showLimit);
@@ -26,14 +20,11 @@ const Posts = ({
         <PostPreview node={node} key={node.fields.slug} />
       ))}
       {showLoadMore && visiblePosts.length < posts.length && (
-        <LoadMore>
-          <Button
-            variant="link"
-            onClick={() => setLimit((limit) => limit + showLimit)}
-          >
-            {loadMoreTitle}
-          </Button>
-        </LoadMore>
+        <div tw="ml-2">
+          <LinkButton onClick={() => setLimit((limit) => limit + showLimit)}>
+            {loadMoreText}
+          </LinkButton>
+        </div>
       )}
       {posts.length === 0 && <div>...</div>}
     </>
