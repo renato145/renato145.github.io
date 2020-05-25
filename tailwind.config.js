@@ -1,6 +1,8 @@
 module.exports = {
   prefix: 'tw-',
-  purge: [],
+  purge: [
+    './src/**/*.js'
+  ],
   theme: {
     extend: {},
   },
