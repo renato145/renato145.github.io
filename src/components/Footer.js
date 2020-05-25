@@ -20,7 +20,7 @@ const Footer = () => {
   ).site.siteMetadata;
 
   return (
-    <footer tw="container">
+    <footer tw="container pb-2">
       <hr />
       <div tw="flex justify-center">
         <div tw="px-4">
