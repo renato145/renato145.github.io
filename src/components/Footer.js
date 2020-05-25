@@ -1,7 +1,6 @@
 import React from 'react';
-import { useStaticQuery, graphql } from "gatsby"
-import { Nav } from 'react-bootstrap';
-import './Footer.css';
+import { useStaticQuery, graphql } from 'gatsby';
+import 'twin.macro';
 
 const Footer = () => {
   const { mail, social } = useStaticQuery(
@@ -21,19 +20,23 @@ const Footer = () => {
   ).site.siteMetadata;
 
   return (
-    <footer className='main-footer'>
+    <footer tw="container">
       <hr />
-      <Nav className='justify-content-center'>
-        <Nav.Item>
-          <Nav.Link href={`mailto:${mail}`}>{mail}</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href={`https://twitter.com/${social.twitter}`} target='_black'>Twitter</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href={`https://github.com/${social.github}`} target='_black'>GitHub</Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <div tw="flex justify-center">
+        <div tw="px-4">
+          <a href={`mailto:${mail}`}>{mail}</a>
+        </div>
+        <div tw="px-4">
+          <a href={`https://twitter.com/${social.twitter}`} target="_black">
+            Twitter
+          </a>
+        </div>
+        <div tw="px-4">
+          <a href={`https://github.com/${social.github}`} target="_black">
+            GitHub
+          </a>
+        </div>
+      </div>
     </footer>
   );
 };
