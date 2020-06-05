@@ -2,6 +2,6 @@ import React from 'react';
 
 export const Content = ({ children }) => {
   return (
-    <main className="container">{children}</main>
+    <main className="w-full mt-2">{children}</main>
   );
 };

@@ -3,6 +3,11 @@ module.exports = {
   purge: ['./src/**/*.js'],
   theme: {
     extend: {
+      minHeight: {
+        'screen-50': "50vh",
+        'screen-95': "95vh",
+        'screen-98': "98vh",
+      },
       maxWidth: {
         '1/2': '50%',
         '1/3': '33.333333%',
@@ -33,6 +38,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+  },
   plugins: [],
 };

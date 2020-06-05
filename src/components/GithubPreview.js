@@ -7,7 +7,7 @@ export const GithubPreview = ({ data, ...props }) => {
 
   return (
     <div {...props}>
-      <div className="w-full p-1 transition duration-150 rounded border shadow hover:shadow-md">
+      <div className="w-full p-1 transition duration-150 rounded border shadow-sm hover:shadow-md">
         {imgUrl && (
           <a href={homepageUrl || url} target="_black">
             <img className="" src={imgUrl} />

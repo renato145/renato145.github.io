@@ -2,28 +2,27 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { TagList } from './TagList';
 
-export const PostPreview = ({ node }) => {
+export const PostPreview = ({ node, ...props }) => {
   const postTitle = node.frontmatter.title || node.fields.slug;
   const tags = node.frontmatter.tags;
 
   return (
-    <article className="mb-4">
-      <header className="mb-1">
-        <h4 className="mb-0">
-          <Link to={node.fields.slug}>{postTitle}</Link>
-        </h4>
-        <p className="text-xs text-gray-600">
-          {node.frontmatter.date}
-          <TagList tags={tags} prefix=" - " />
-        </p>
-      </header>
-      <section>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: node.frontmatter.description || node.excerpt,
-          }}
-        />
-      </section>
-    </article>
+    <div {...props}>
+      <div>
+        <Link to={node.fields.slug} className="text-xl font-medium">
+          {postTitle}
+        </Link>
+      </div>
+      <p className="text-xs text-gray-600">
+        {node.frontmatter.date}
+        <TagList tags={tags} prefix=" - " />
+      </p>
+      <p
+        className="mt-1"
+        dangerouslySetInnerHTML={{
+          __html: node.frontmatter.description || node.excerpt,
+        }}
+      />
+    </div>
   );
 };

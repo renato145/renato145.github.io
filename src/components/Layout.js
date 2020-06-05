@@ -18,13 +18,13 @@ export const Layout = ({
       ? { title: location.pathname.split('/').reverse()[1] }
       : headerConfig;
   return (
-    <div className="container mx-auto pb-2 bg-white border shadow-md">
+    <div className="container mx-auto pb-2 bg-white border shadow-md min-h-screen-98">
       <header>
         <SEO title={seo.title} description={seo.description} />
         <Navigation />
       </header>
 
-      <main className="px-4 mt-2 mb-0">
+      <main className="px-6 mt-2">
         {title && (
           <Header
             location={location}
@@ -36,7 +36,7 @@ export const Layout = ({
         <Content children={children} />
       </main>
 
-      <Footer />
+      <Footer className="" />
     </div>
   );
 };
