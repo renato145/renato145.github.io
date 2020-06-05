@@ -65,7 +65,7 @@ export const SearchGraph = () => {
       }
     `
   ).siteSearchIndex.index;
-  const { ref: viewRef, width: viewWidth } = useDimensions();
+  const { ref: viewRef, height: viewHeight, width: viewWidth } = useDimensions();
   const ref = useRef();
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });
   const [results, setResults] = useState([]);
@@ -148,7 +148,7 @@ export const SearchGraph = () => {
   if (ForceGraph2D === null) return <p>gatsby server dummy</p>;
 
   return (
-    <div ref={viewRef}>
+    <div ref={viewRef} className="h-full">
       <Link to="/search" className="text-xs">
         Go back to normal search
       </Link>
@@ -161,7 +161,7 @@ export const SearchGraph = () => {
       <ForceGraph2D
         ref={ref}
         width={viewWidth}
-        height={viewWidth * 0.5}
+        height={viewWidth/2}
         backgroundColor="#eee"
         graphData={graphData}
         d3VelocityDecay={0.9}

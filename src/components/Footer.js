@@ -22,7 +22,7 @@ export const Footer = ({...props}) => {
     <div {...props}>
       <footer className="w-full">
         <hr />
-        <div className="mt-2 flex flex-wrap justify-center">
+        <div className="mt-2 flex flex-wrap flex-col sm:flex-row items-center justify-center">
           <div className="px-4">
             <a href={`mailto:${mail}`}>{mail}</a>
           </div>

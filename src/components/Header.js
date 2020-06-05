@@ -6,7 +6,7 @@ export const Header = ({ title, description, tags }) => {
   return (
     <header>
       <div>
-        <h1 className="font-medium text-gray-900">{title}</h1>
+        <h1 className="font-medium">{title}</h1>
         <p className="pl-2 text-gray-600 text-sm">
           {description}
           <TagList tags={tags} prefix=' - ' />

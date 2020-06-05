@@ -17,7 +17,7 @@ export const Experiments = ({
 
   return (
     <div {...props}>
-      {title && <h2 className="font-medium text-gray-900">Experiments</h2>}
+      {title && <h2 className="font-medium">Experiments</h2>}
       <div className="mt-2 flex flex-wrap items-stretch">
         {visibleRepos.map((repo, i) => (
           <GithubPreview key={i} data={repo} className="flex flex-auto p-2 md:max-w-1/2 xl:max-w-1/3" />

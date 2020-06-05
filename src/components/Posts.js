@@ -15,7 +15,7 @@ export const Posts = ({
 
   return (
     <div {...props}>
-      {title && <h2 className="font-medium text-gray-900">Posts</h2>}
+      {title && <h2 className="font-medium">Posts</h2>}
       <div className="mt-2 flex flex-wrap">
         {visiblePosts.map(({ node }, i) => (
           <PostPreview node={node} key={node.fields.slug} className="w-full lg:w-1/2 mb-4" />
