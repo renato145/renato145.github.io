@@ -1,52 +1,47 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import moment from 'moment';
-import TagList from './TagList';
-import './GithubPreview.css';
+import { TagList } from './TagList';
 
-const GithubPreview = ({ data, ...props }) => {
+export const GithubPreview = ({ data, ...props }) => {
   const { homepageUrl, url, imgUrl, name, tags, description, updatedAt } = data;
 
   return (
-    <div className="col mb-3" {...props}>
-      <Card className="experiment-card">
+    <div {...props}>
+      <div className="w-full p-1 transition duration-150 rounded border shadow hover:shadow-md">
         {imgUrl && (
           <a href={homepageUrl || url} target="_black">
-            <Card.Img variant="top" className="github-image" src={imgUrl} />
+            <img className="" src={imgUrl} />
           </a>
         )}
-        <Card.Body>
-          <Card.Title className="experiment-card-title mb-0">{name}</Card.Title>
+
+        <div className="mt-0 px-3 pb-2">
+          <div>
+            {updatedAt && (
+              <small className="text-gray-600">
+                Last updated:{' '}
+                {moment(updatedAt).calendar(null, {
+                  sameElse: 'DD/MM/YYYY',
+                })}
+              </small>
+            )}
+          </div>
+          <div className="text-xl font-semibold">{name}</div>
           <TagList tags={tags} />
-          <Card.Text className="mt-2">{description}</Card.Text>
-        </Card.Body>
-        <div className="experiment-card-links">
-          {url && (
-            <Card.Link href={url} target="_black">
-              Go to code
-            </Card.Link>
-          )}
-          {homepageUrl && (
-            <Card.Link href={homepageUrl} target="_black">
-              View
-            </Card.Link>
-          )}
+          <div className="mt-1">{description}</div>
+          <div className="mt-4 flex flex-wrap justify-between">
+            {url && (
+              <a href={url} target="_black">
+                Go to code
+              </a>
+            )}
+            {homepageUrl && (
+              <a href={homepageUrl} target="_black">
+                View
+              </a>
+            )}
+          </div>
         </div>
-        <Card.Footer>
-          {updatedAt ? (
-            <small className="text-muted">
-              Last updated:{' '}
-              {moment(updatedAt).calendar(null, {
-                sameElse: 'DD/MM/YYYY',
-              })}
-            </small>
-          ) : (
-            <small className="text-muted">-</small>
-          )}
-        </Card.Footer>
-      </Card>
+      </div>
     </div>
   );
 };
-
-export default GithubPreview;

@@ -4,25 +4,28 @@ import { Navigation } from './Navigation';
 import { Header } from './Header';
 import { Content } from './Content';
 import { Footer } from './Footer';
-import { Container, Row } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Layout.css';
 
-export const Layout = ({ location, title, description, children, headerConfig, tags }) => {
-  const seo = typeof headerConfig === 'undefined'
-    ? { title: location.pathname.split('/').reverse()[1] }
-    : headerConfig;
+export const Layout = ({
+  location,
+  title,
+  description,
+  children,
+  headerConfig,
+  tags,
+}) => {
+  const seo =
+    typeof headerConfig === 'undefined'
+      ? { title: location.pathname.split('/').reverse()[1] }
+      : headerConfig;
   return (
-    <Container className="main-container tw-mb-2">
-      <SEO
-        title={seo.title}
-        description={seo.description}
-      />
-      <Row className='navigation-top-bar'>
+    <div className="container mx-auto pb-2 bg-white border shadow-md">
+      <header>
+        <SEO title={seo.title} description={seo.description} />
         <Navigation />
-      </Row>
-      <Row className='main-content'>
-        { title && (
+      </header>
+
+      <main className="px-4 mt-2 mb-0">
+        {title && (
           <Header
             location={location}
             title={title}
@@ -30,13 +33,10 @@ export const Layout = ({ location, title, description, children, headerConfig, t
             tags={tags}
           />
         )}
-        <Content
-          children={children}
-        />
-      </Row>
-      <Row className='main-footer align-items-end'>
-        <Footer />
-      </Row>
-    </Container>
+        <Content children={children} />
+      </main>
+
+      <Footer />
+    </div>
   );
 };

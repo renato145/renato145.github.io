@@ -8,8 +8,6 @@ import React, {
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import { navigate } from '@reach/router';
 import { Index } from 'elasticlunr';
-import styled from 'styled-components';
-import { Form, FormControl } from 'react-bootstrap';
 import { max, forceCollide } from 'd3';
 import kebabCase from 'lodash/kebabCase';
 import { useDimensions } from '../utils/useDimensions';
@@ -17,11 +15,6 @@ import { useDimensions } from '../utils/useDimensions';
 
 // gatsby-check
 const ForceGraph2D = typeof window !== `undefined` ? require('react-force-graph').ForceGraph2D : null;
-
-const SearchInput = styled(Form)`
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-`;
 
 const getTextWithMeasures = (
   text,
@@ -156,10 +149,15 @@ export const SearchGraph = () => {
 
   return (
     <div ref={viewRef}>
-      <SearchInput>
-        <Link to="/search" style={{fontSize: '0.8em'}}>Go back to normal search</Link>
-        <FormControl type="text" placeholder="Search" onChange={search} />
-      </SearchInput>
+      <Link to="/search" className="text-xs">
+        Go back to normal search
+      </Link>
+      <input
+        class="mt-1 mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal"
+        type="text"
+        placeholder="Search something"
+        onChange={search}
+      />
       <ForceGraph2D
         ref={ref}
         width={viewWidth}

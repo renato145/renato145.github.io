@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GithubPreview from './GithubPreview';
+import { GithubPreview } from './GithubPreview';
 import { LinkButton } from './LinkButton';
 import { useGitRepos } from './useGitRepos';
 
@@ -16,14 +16,14 @@ export const Experiments = ({
 
   return (
     <>
-      {title && <h2 className="tw-mb-5">Experiments</h2>}
-      <div className="row row-cols-1 row-cols-md-2">
+      {title && <h2 className="mb-5">Experiments</h2>}
+      <div className="flex flex-wrap items-stretch">
         {visibleRepos.map((repo, i) => (
-          <GithubPreview key={i} data={repo} />
+          <GithubPreview key={i} data={repo} className="flex flex-auto p-2 md:max-w-1/2" />
         ))}
       </div>
       {showLoadMore && visibleRepos.length < gitRepos.length && (
-        <div className="tw-mr-2 text-right">
+        <div className="mr-2 text-right">
           <LinkButton onClick={() => setLimit((limit) => limit + showLimit)}>
             {loadMoreText}
           </LinkButton>

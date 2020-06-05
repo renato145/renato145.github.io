@@ -17,7 +17,7 @@ export const Comments = () => {
   ).site.siteMetadata.git;
 
   return (
-    <div className="tw-mt-6">
+    <div className="mt-6">
       <Utterances repo={repo} ref={ref}/>
     </div>
   );

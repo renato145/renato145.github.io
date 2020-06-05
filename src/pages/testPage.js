@@ -3,7 +3,7 @@ import { Layout } from '../components/Layout';
 import styled from 'styled-components';
 
 const Wrapper = styled.div.attrs({
-  className: 'tw-bg-black tw-text-white hover:tw-text-red-500',
+  className: 'bg-black text-white hover:text-red-500',
 })``;
 
 const TestPage = ({ location }) => {
@@ -15,7 +15,7 @@ const TestPage = ({ location }) => {
       headerConfig={{ title: 'header' }}
     >
       <Wrapper>This is a test</Wrapper>
-      <button className="tw-text-lg tw-px-8 tw-py-2 tw-mt-3 tw-rounded tw-bg-gray-400 hover:tw-bg-black hover:tw-text-white">
+      <button className="text-lg px-8 py-2 mt-3 rounded bg-gray-400 hover:bg-black hover:text-white">
         Success
       </button>
     </Layout>

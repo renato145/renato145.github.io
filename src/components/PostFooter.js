@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 export const PostFooter = ({ previous, next }) => {
   return (
-    <div className='tw-flex tw-justify-between'>
+    <div className='flex justify-between'>
       <div>
       {previous && (
           <Link to={previous.fields.slug} rel='prev'>

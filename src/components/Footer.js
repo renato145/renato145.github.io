@@ -19,18 +19,18 @@ export const Footer = () => {
   ).site.siteMetadata;
 
   return (
-    <footer className="tw-container tw-pb-2">
+    <footer className="container">
       <hr />
-      <div className="tw-flex tw-justify-center">
-        <div className="tw-px-4">
+      <div className="flex flex-wrap justify-center">
+        <div className="px-4">
           <a href={`mailto:${mail}`}>{mail}</a>
         </div>
-        <div className="tw-px-4">
+        <div className="px-4">
           <a href={`https://twitter.com/${social.twitter}`} target="_black">
             Twitter
           </a>
         </div>
-        <div className="tw-px-4">
+        <div className="px-4">
           <a href={`https://github.com/${social.github}`} target="_black">
             GitHub
           </a>

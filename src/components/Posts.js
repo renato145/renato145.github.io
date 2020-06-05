@@ -14,12 +14,12 @@ export const Posts = ({
 
   return (
     <>
-      {title && <h2 className="tw-mb-5">Posts</h2>}
+      {title && <h2 className="mb-5">Posts</h2>}
       {visiblePosts.map(({ node }) => (
         <PostPreview node={node} key={node.fields.slug} />
       ))}
       {showLoadMore && visiblePosts.length < posts.length && (
-        <div className="tw-ml-2">
+        <div className="ml-2">
           <LinkButton onClick={() => setLimit((limit) => limit + showLimit)}>
             {loadMoreText}
           </LinkButton>
