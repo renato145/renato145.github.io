@@ -13,7 +13,7 @@ const HeaderLink = ({ children, ...props }) => (
 
 export const Navigation = () => {
   return (
-    <nav className="flex flex-wrap items-center px-6 py-3 bg-gray-300">
+    <nav className="flex flex-wrap items-baseline px-6 py-3 bg-gray-300">
       <HeaderLink to={`/`}>Home</HeaderLink>
       <HeaderLink to={`/blog`}>Blog</HeaderLink>
       <HeaderLink to={`/experiments`}>Experiments</HeaderLink>
