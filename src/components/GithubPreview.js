@@ -26,7 +26,7 @@ export const GithubPreview = ({ data, ...props }) => {
             )}
           </div>
           <div className="text-xl font-semibold">{name}</div>
-          <TagList tags={tags} />
+          <TagList className="text-xs" tags={tags} />
           <div className="mt-1">{description}</div>
           <div className="mt-4 flex flex-wrap justify-between">
             {url && (

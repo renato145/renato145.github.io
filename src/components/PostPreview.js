@@ -13,10 +13,11 @@ export const PostPreview = ({ node, ...props }) => {
           {postTitle}
         </Link>
       </div>
-      <p className="text-xs text-gray-600">
-        {node.frontmatter.date}
-        <TagList tags={tags} prefix=" - " />
-      </p>
+      <div className="flex text-xs text-gray-600">
+        <p>{node.frontmatter.date}</p>
+        <p className="px-1">-</p>
+        <TagList tags={tags} />
+      </div>
       <p
         className="mt-1"
         dangerouslySetInnerHTML={{
