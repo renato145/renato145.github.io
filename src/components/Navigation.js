@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 const HeaderLink = ({ children, ...props }) => (
   <Link
-    className="mr-6 text-gray-600 hover:text-gray-800"
-    activeClassName="text-lg font-bold"
+    className="flex-1 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
+    activeClassName="font-semibold bg-gray-100"
     {...props}
   >
     {children}
@@ -12,52 +12,51 @@ const HeaderLink = ({ children, ...props }) => (
 );
 
 export const Navigation = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClick = (show) => {
+    console.log('asdasd');
+    setShow(v => show ?? !v);
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", () => setShow(true));
+  }, []);
+
   return (
-    <nav className="flex flex-wrap items-baseline px-6 py-3 bg-gray-300">
-      <HeaderLink to={`/`}>Home</HeaderLink>
-      <HeaderLink to={`/blog`}>Blog</HeaderLink>
-      <HeaderLink to={`/experiments`}>Experiments</HeaderLink>
-      <HeaderLink to={`/about`}>About</HeaderLink>
-      <HeaderLink to={`/search`}>Search</HeaderLink>
-      <HeaderLink to={`/tags`}>Tags</HeaderLink>
+    <nav className="flex flex-wrap items-baseline bg-gray-300">
+      <div className="hidden md:block py-2 flex items-stretch">
+        <HeaderLink to={`/`}>Home</HeaderLink>
+        <HeaderLink to={`/blog`}>Blog</HeaderLink>
+        <HeaderLink to={`/experiments`}>Experiments</HeaderLink>
+        <HeaderLink to={`/about`}>About</HeaderLink>
+        <HeaderLink to={`/search`}>Search</HeaderLink>
+        <HeaderLink to={`/tags`}>Tags</HeaderLink>
+      </div>
+      <div className="relative md:hidden ml-2">
+        <button
+          className="p-2 bg-opacity-0 hover:bg-opacity-0 active:bg-opacity-0 focus:shadow-none text-gray-600 hover:text-gray-800"
+          onClick={handleClick}
+        >
+          <svg
+            className="h-6 w-6 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+        {show && (
+          <div className="absolute z-10 left-0 flex flex-col w-48 bg-gray-300 border border-gray-400 shadow-xl">
+            <HeaderLink to={`/`}>Home</HeaderLink>
+            <HeaderLink to={`/blog`}>Blog</HeaderLink>
+            <HeaderLink to={`/experiments`}>Experiments</HeaderLink>
+            <HeaderLink to={`/about`}>About</HeaderLink>
+            <HeaderLink to={`/search`}>Search</HeaderLink>
+            <HeaderLink to={`/tags`}>Tags</HeaderLink>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
-
-// export const XXXNavigations = () => {
-//   return (
-//     <>
-//     <Navbar collapseOnSelect bg="light" expand="lg">
-//       {/* <Navbar collapseOnSelect bg='dark' expand='lg' variant='dark' fixed='top'> */}
-//       {/* <Link to={`/`} className='navbar-brand' >Home</Link> */}
-//       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//       <Navbar.Collapse id="basic-navbar-nav">
-//         <Nav className="mr-auto">
-//           <Link to={`/`} className="nav-link" activeClassName="active">
-//             Home
-//           </Link>
-//           <Link to={`/blog`} className="nav-link" activeClassName="active">
-//             Blog
-//           </Link>
-//           <Link
-//             to={`/experiments`}
-//             className="nav-link"
-//             activeClassName="active"
-//           >
-//             Experiments
-//           </Link>
-//           <Link to={`/about`} className="nav-link" activeClassName="active">
-//             About
-//           </Link>
-//           <Link to={`/search`} className="nav-link" activeClassName="active">
-//             Search
-//           </Link>
-//           <Link to={`/tags`} className="nav-link" activeClassName="active">
-//             Tags
-//           </Link>
-//         </Nav>
-//       </Navbar.Collapse>
-//     </Navbar>
-//     </>
-//   );
-// };

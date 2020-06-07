@@ -65,7 +65,7 @@ export const SearchGraph = () => {
       }
     `
   ).siteSearchIndex.index;
-  const { ref: viewRef, height: viewHeight, width: viewWidth } = useDimensions();
+  const { ref: viewRef, width: viewWidth } = useDimensions();
   const ref = useRef();
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });
   const [results, setResults] = useState([]);

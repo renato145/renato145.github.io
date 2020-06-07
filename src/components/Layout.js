@@ -18,7 +18,7 @@ export const Layout = ({
       ? { title: location.pathname.split('/').reverse()[1] }
       : headerConfig;
   return (
-    <div className="container flex flex-col mx-auto pb-2 bg-white border shadow-md min-h-screen-98">
+    <div className="container flex flex-col mx-auto pb-2 bg-white shadow-md min-h-screen-98">
       <header>
         <SEO title={seo.title} description={seo.description} />
         <Navigation />
