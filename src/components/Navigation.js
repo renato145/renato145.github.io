@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'gatsby';
 
 const HeaderLink = ({ children, ...props }) => (
@@ -14,15 +14,6 @@ const HeaderLink = ({ children, ...props }) => (
 export const Navigation = () => {
   const [show, setShow] = useState(false);
 
-  const handleClick = (show) => {
-    console.log('asdasd');
-    setShow(v => show ?? !v);
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", () => setShow(true));
-  }, []);
-
   return (
     <nav className="flex flex-wrap items-baseline bg-gray-300">
       <div className="hidden md:block py-2 flex items-stretch">
@@ -36,7 +27,7 @@ export const Navigation = () => {
       <div className="relative md:hidden ml-2">
         <button
           className="p-2 bg-opacity-0 hover:bg-opacity-0 active:bg-opacity-0 focus:shadow-none text-gray-600 hover:text-gray-800"
-          onClick={handleClick}
+          onClick={() => setShow((v) => !v)}
         >
           <svg
             className="h-6 w-6 fill-current"
@@ -47,14 +38,20 @@ export const Navigation = () => {
           </svg>
         </button>
         {show && (
-          <div className="absolute z-10 left-0 flex flex-col w-48 bg-gray-300 border border-gray-400 shadow-xl">
-            <HeaderLink to={`/`}>Home</HeaderLink>
-            <HeaderLink to={`/blog`}>Blog</HeaderLink>
-            <HeaderLink to={`/experiments`}>Experiments</HeaderLink>
-            <HeaderLink to={`/about`}>About</HeaderLink>
-            <HeaderLink to={`/search`}>Search</HeaderLink>
-            <HeaderLink to={`/tags`}>Tags</HeaderLink>
-          </div>
+          <>
+            <button
+              className="fixed top-0 bottom-0 left-0 right-0 w-full h-full bg-black hover:bg-black active:bg-black focus:shadow-none opacity-25"
+              onClick={() => setShow(false)}
+            />
+            <div className="absolute z-10 left-0 flex flex-col w-48 bg-gray-300 border border-gray-400 shadow-xl">
+              <HeaderLink to={`/`} onClick={() => setShow(false)}>Home</HeaderLink>
+              <HeaderLink to={`/blog`} onClick={() => setShow(false)}>Blog</HeaderLink>
+              <HeaderLink to={`/experiments`} onClick={() => setShow(false)}>Experiments</HeaderLink>
+              <HeaderLink to={`/about`} onClick={() => setShow(false)}>About</HeaderLink>
+              <HeaderLink to={`/search`} onClick={() => setShow(false)}>Search</HeaderLink>
+              <HeaderLink to={`/tags`} onClick={() => setShow(false)}>Tags</HeaderLink>
+            </div>
+          </>
         )}
       </div>
     </nav>
