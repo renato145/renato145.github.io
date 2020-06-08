@@ -1,5 +1,18 @@
-blockquote {
+.postContent {
+  @apply mt-4 leading-relaxed;
+}
+
+.postContent * {
+  @apply mt-3;
+}
+
+.postContent h1,h2,h3,h4,h5 {
+  @apply mt-6 !important;
+}
+
+.postContent blockquote {
   padding: 0 1em;
   color: #6a737d;
   border-left: .25em solid #dfe2e5;
 }
+

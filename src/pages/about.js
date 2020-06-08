@@ -12,15 +12,18 @@ const news = [
   },
 ];
 
-const ListItem = ({ children, ...props }) => (
-  <div {...props}>
-    <div className="flex">
-      <p className="block mr-1">&bull;</p>
-      <div>
-        {children}
-      </div>
-    </div>
-  </div>
+const Publication = ({ authors, title, conference, doi, ...props }) => (
+  <li {...props}>
+    {authors} <span className="font-medium">“{title}”</span> {conference}
+    {doi && (
+      <>
+      {' DOI: '}
+      <a href={ `https://doi.org/${doi}` } target="_black">
+        {doi}
+      </a>
+      </>
+    )}
+  </li>
 );
 
 const About = ({ data, location }) => {
@@ -53,45 +56,31 @@ const About = ({ data, location }) => {
         </p>
 
         <h3 className="mt-8 font-medium">News</h3>
-        <ul>
+
+        <ul className="mt-2">
           {news.map(({ text, date }, i) => (
-            <ListItem key={i} className="mt-2 ml-2">
+            <li key={i}>
               {moment(date, 'YYYYMM').format('MMM YYYY')}: {text}
-            </ListItem>
+            </li>
           ))}
         </ul>
 
         <h3 className="mt-8 font-medium">Publications</h3>
-        <ListItem className="mt-2 ml-2">
-          Renato Hermoza and Ivan Sipiran.
-          <span className="font-medium">
-            {' '}
-            “3D Reconstruction of Incomplete Archaeological Objects Using a
-            Generative Adversarial Network.”{' '}
-          </span>
-          Proceedings of Computer Graphics International 2018 (CGI 2018). ACM,
-          New York, NY, USA, 5-11. DOI:{' '}
-          <a href="https://doi.org/10.1145/3208159.3208173" target="_black">
-            10.1145/3208159.3208173
-          </a>
-        </ListItem>
-        <ListItem className="mt-2 ml-2">
-          E. Garcia, R. Hermoza, C. B. Castanon, L. Cano, M. Castillo and C.
-          Castanñeda,
-          <span className="font-medium">
-            {' '}
-            "Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using
-            Deep Learning,"{' '}
-          </span>
-          2017 IEEE 30th International Symposium on Computer-Based Medical
-          Systems (CBMS), Thessaloniki, 2017, pp. 200-204. doi:{' '}
-          <a
-            href="https://ieeexplore.ieee.org/abstract/document/8104187"
-            target="_black"
-          >
-            10.1109/CBMS.2017.94
-          </a>
-        </ListItem>
+
+        <ol className="mt-2">
+          <Publication
+            authors="Renato Hermoza and Ivan Sipiran."
+            title="3D Reconstruction of Incomplete Archaeological Objects Using a Generative Adversarial Network."
+            conference="Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11."
+            doi="10.1145/3208159.3208173"
+          />
+          <Publication
+            authors="E. Garcia, R. Hermoza, C. B. Castanon, L. Cano, M. Castillo and C. Castanñeda."
+            title="Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning,"
+            conference="2017 IEEE 30th International Symposium on Computer-Based Medical Systems (CBMS), Thessaloniki, 2017, pp. 200-204."
+            doi="10.1109/CBMS.2017.94"
+          />
+        </ol>
 
       </div>
     </Layout>

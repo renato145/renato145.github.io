@@ -26,7 +26,7 @@ export const Navigation = () => {
       </div>
       <div className="relative md:hidden ml-2">
         <button
-          className="p-2 bg-opacity-0 hover:bg-opacity-0 active:bg-opacity-0 focus:shadow-none text-gray-600 hover:text-gray-800"
+          className="px-2 py-3 bg-opacity-0 hover:bg-opacity-0 active:bg-opacity-0 focus:shadow-none text-gray-600 hover:text-gray-800"
           onClick={() => setShow((v) => !v)}
         >
           <svg

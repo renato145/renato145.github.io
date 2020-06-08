@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-export const PostFooter = ({ previous, next }) => {
+export const PostFooter = ({ previous, next, ...props }) => {
   return (
-    <div className='flex justify-between'>
+    <div {...props}>
       <div>
       {previous && (
           <Link to={previous.fields.slug} rel='prev'>

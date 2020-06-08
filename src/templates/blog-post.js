@@ -21,17 +21,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       }}
       tags={frontmatter.tags}
     >
-      <article>
+
+      <div className="postContent">
         <MDXRenderer>{body}</MDXRenderer>
-      </article>
+      </div>
 
       <PostFooter
+        className="mt-4 flex flex-wrap justify-between"
         previous={previous}
         next={next}
       />
 
       <Comments />
-
     </Layout>
   );
 };
