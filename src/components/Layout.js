@@ -27,7 +27,6 @@ export const Layout = ({
       <main className="flex-1 px-6 mt-2">
         {title && (
           <Header
-            location={location}
             title={title}
             description={description}
             tags={tags}
