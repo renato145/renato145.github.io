@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout } from '../components/Layout';
 import styled from 'styled-components';
 
@@ -7,6 +7,21 @@ const Wrapper = styled.div.attrs({
 })``;
 
 const TestPage = ({ location }) => {
+  const [wasm, setWasm] = useState();
+
+  const loadWasm = async () => {
+    try {
+      const wasm = await import('game-of-life');
+      setWasm(wasm);
+    } catch (err) {
+      console.error(`Unexpected error in loadWasm. [Message: ${err.message}]`);
+    }
+  };
+
+  useEffect(() => {
+    loadWasm();
+  }, []);
+
   return (
     <Layout
       location={location}
@@ -15,7 +30,10 @@ const TestPage = ({ location }) => {
       headerConfig={{ title: 'header' }}
     >
       <Wrapper>This is a test</Wrapper>
-      <button className="text-lg px-8 py-2 mt-3 rounded bg-gray-400 hover:bg-black hover:text-white">
+      <button
+        className="text-lg px-8 py-2 mt-3 rounded bg-gray-400 hover:bg-black hover:text-white"
+        onClick={() => wasm.greet('asd')}
+      >
         Success
       </button>
     </Layout>
