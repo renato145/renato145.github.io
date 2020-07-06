@@ -2,17 +2,20 @@
   @apply mt-4 leading-relaxed;
 }
 
-.postContent * {
+.postContent > * {
   @apply mt-3;
 }
 
-.postContent h1,h2,h3,h4,h5 {
+.postContent > h1,
+.postContent > h2,
+.postContent > h3,
+.postContent > h4,
+.postContent > h5 {
   @apply mt-6 !important;
 }
 
 .postContent blockquote {
   padding: 0 1em;
   color: #6a737d;
-  border-left: .25em solid #dfe2e5;
+  border-left: 0.25em solid #dfe2e5;
 }
-
