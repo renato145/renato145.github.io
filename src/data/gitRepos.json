@@ -9,6 +9,16 @@
     "tags": ["javascript", "threejs"]
   },
   {
+    "name": "game-of-life",
+    "showName": "Game of Life (wasm)",
+    "tags": ["javascript", "react", "wasm", "rust", "tailwind"]
+  },
+  {
+    "name": "wasm_template",
+    "showName": "Wasm Template",
+    "tags": ["javascript", "react", "wasm", "rust", "tailwind"]
+  },
+  {
     "name": "covid2019",
     "tags": ["reactjs", "javascript", "visualization", "covid2019", "d3"]
   },
