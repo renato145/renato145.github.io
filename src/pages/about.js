@@ -17,10 +17,10 @@ const Publication = ({ authors, title, conference, doi, ...props }) => (
     {authors} <span className="font-medium">“{title}”</span> {conference}
     {doi && (
       <>
-      {' DOI: '}
-      <a href={ `https://doi.org/${doi}` } target="_black">
-        {doi}
-      </a>
+        {' DOI: '}
+        <a href={`https://doi.org/${doi}`} target="_black" rel="noopener">
+          {doi}
+        </a>
       </>
     )}
   </li>
@@ -81,7 +81,6 @@ const About = ({ data, location }) => {
             doi="10.1109/CBMS.2017.94"
           />
         </ol>
-
       </div>
     </Layout>
   );

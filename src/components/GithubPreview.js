@@ -9,7 +9,7 @@ export const GithubPreview = ({ data, ...props }) => {
     <div {...props}>
       <div className="w-full p-1 transition duration-150 rounded border shadow-sm hover:shadow-md">
         {imgUrl && (
-          <a href={homepageUrl || url} target="_black">
+          <a href={homepageUrl || url} target="_black" rel="noopener">
             <img className="" src={imgUrl} alt={name} />
           </a>
         )}
@@ -30,12 +30,12 @@ export const GithubPreview = ({ data, ...props }) => {
           <div className="mt-1">{description}</div>
           <div className="mt-4 flex flex-wrap justify-between">
             {url && (
-              <a href={url} target="_black">
+              <a href={url} target="_black" rel="noopener">
                 Go to code
               </a>
             )}
             {homepageUrl && (
-              <a href={homepageUrl} target="_black">
+              <a href={homepageUrl} target="_black" rel="noopener">
                 View
               </a>
             )}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const Footer = ({...props}) => {
+export const Footer = ({ ...props }) => {
   const { mail, social } = useStaticQuery(
     graphql`
       query {
@@ -27,12 +27,20 @@ export const Footer = ({...props}) => {
             <a href={`mailto:${mail}`}>{mail}</a>
           </div>
           <div className="px-4">
-            <a href={`https://twitter.com/${social.twitter}`} target="_black">
+            <a
+              href={`https://twitter.com/${social.twitter}`}
+              target="_black"
+              rel="noopener"
+            >
               Twitter
             </a>
           </div>
           <div className="px-4">
-            <a href={`https://github.com/${social.github}`} target="_black">
+            <a
+              href={`https://github.com/${social.github}`}
+              target="_black"
+              rel="noopener"
+            >
               GitHub
             </a>
           </div>
