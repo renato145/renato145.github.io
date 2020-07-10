@@ -11,12 +11,12 @@
   {
     "name": "game-of-life",
     "showName": "Game of Life (wasm)",
-    "tags": ["javascript", "react", "wasm", "rust", "tailwind"]
+    "tags": ["javascript", "react", "webassembly", "rust", "tailwind"]
   },
   {
     "name": "wasm_template",
     "showName": "Wasm Template",
-    "tags": ["javascript", "react", "wasm", "rust", "tailwind"]
+    "tags": ["javascript", "react", "webassembly", "rust", "tailwind"]
   },
   {
     "name": "covid2019",
