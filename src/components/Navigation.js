@@ -16,7 +16,7 @@ export const Navigation = () => {
 
   return (
     <nav className="flex flex-wrap items-baseline bg-gray-300">
-      <div className="hidden md:flex py-2 items-stretch">
+      <div className="hidden md:block py-2 items-stretch">
         <HeaderLink to={`/`}>Home</HeaderLink>
         <HeaderLink to={`/blog`}>Blog</HeaderLink>
         <HeaderLink to={`/experiments`}>Experiments</HeaderLink>

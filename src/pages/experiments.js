@@ -12,7 +12,7 @@ const ExperimentIndex = ({ location }) => {
       description='Playground, experiments, random codes...'
       headerConfig={{ title }}
     >
-      <Experiments />
+      <Experiments showLimit={9} />
     </Layout>
   );
 };

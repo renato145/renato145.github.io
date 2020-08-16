@@ -14,7 +14,7 @@ const BlogIndex = ({ data, location }) => {
       // description={title}
       headerConfig={{ title }}
     >
-      <Posts posts={posts} />
+      <Posts posts={posts} showLimit={9} />
     </Layout>
   );
 };
