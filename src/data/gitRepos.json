@@ -1,5 +1,9 @@
 [
   {
+    "name": "RpSalWeaklyDet",
+    "tags": ["pytorch", "medical-image", "machine-learning", "python"]
+  },
+  {
     "name": "fastexplorer",
     "tags": ["fastai", "reactjs", "javascript", "visualization", "sockets"]
   },
