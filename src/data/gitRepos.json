@@ -1,7 +1,7 @@
 [
   {
     "name": "RpSalWeaklyDet",
-    "tags": ["pytorch", "medical-image", "machine-learning", "python"]
+    "tags": ["pytorch", "medical-imaging", "machine-learning", "python"]
   },
   {
     "name": "fastexplorer",
