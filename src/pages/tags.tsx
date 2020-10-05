@@ -4,7 +4,7 @@ import { ascending } from 'd3';
 import moment from 'moment';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from '../components/Layout';
-import { useGitRepos } from '../components/useGitRepos';
+import { useGitRepos } from '../hooks/useGitRepos';
 import './tags.css';
 import { MdxAllNodes } from '../components/Types';
 

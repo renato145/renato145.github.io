@@ -20,7 +20,7 @@ const Index: React.FC<Props> = ({ data, location }) => {
       description={description}
       headerConfig={{ title: 'Home' }}
     >
-      <Posts posts={posts} title />
+      <Posts posts={posts} autoLoadMore={false} title />
       <hr className="mt-6" />
       <Experiments className="mt-6" title />
     </Layout>

@@ -19,7 +19,7 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
       // description={title}
       headerConfig={{ title }}
     >
-      <Posts posts={posts} showLimit={9} />
+      <Posts posts={posts} showLimit={3} />
     </Layout>
   );
 };

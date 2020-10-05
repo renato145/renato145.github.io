@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Utterances = forwardRef<HTMLDivElement, Props>(
-  ({ repo }, ref: React.RefObject<HTMLDivElement>) => {
+  ({ repo }, ref: any ) => {
     const [status, setStatus] = useState('pending');
 
     useEffect(() => {
