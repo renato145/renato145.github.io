@@ -3,7 +3,15 @@ import { GithubPreview } from './GithubPreview';
 import { LinkButton } from './LinkButton';
 import { useGitRepos } from './useGitRepos';
 
-export const Experiments = ({
+interface Props {
+  title?: boolean;
+  showLimit?: number;
+  showLoadMore?: boolean;
+  loadMoreText?: string;
+  tag: string;
+}
+
+export const Experiments: React.FC<Props> = ({
   title = false,
   showLimit = 6,
   showLoadMore = true,
@@ -20,7 +28,11 @@ export const Experiments = ({
       {title && <h2 className="font-medium">Experiments</h2>}
       <div className="mt-2 flex flex-wrap items-stretch">
         {visibleRepos.map((repo, i) => (
-          <GithubPreview key={i} data={repo} className="flex flex-auto p-2 md:max-w-1/2 xl:max-w-1/3" />
+          <GithubPreview
+            key={i}
+            data={repo}
+            className="flex flex-auto p-2 md:max-w-1/2 xl:max-w-1/3"
+          />
         ))}
       </div>
       {showLoadMore && visibleRepos.length < gitRepos.length && (

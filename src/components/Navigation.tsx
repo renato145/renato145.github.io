@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { GatsbyLinkProps, Link } from 'gatsby';
 
-const HeaderLink = ({ children, ...props }) => (
+const HeaderLink: React.FC<Omit<GatsbyLinkProps<{}>, 'ref'>> = ({ children, ...props }) => (
   <Link
     className="flex-1 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
     activeClassName="font-semibold bg-gray-100"
@@ -11,7 +11,7 @@ const HeaderLink = ({ children, ...props }) => (
   </Link>
 );
 
-export const Navigation = () => {
+export const Navigation: React.FC = () => {
   const [show, setShow] = useState(false);
 
   return (

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { GraphqlSite } from './graphqlTypes';
 
-export const Footer = ({ ...props }) => {
-  const { mail, social } = useStaticQuery(
+export const Footer: React.FC = ({ ...props }) => {
+  const { mail, social } = useStaticQuery<GraphqlSite>(
     graphql`
       query {
         site {

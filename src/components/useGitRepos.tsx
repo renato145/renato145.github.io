@@ -1,12 +1,20 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useMemo } from 'react';
 import { unCamelCase, singleSpace, titleCase } from './utils';
+import { GraphqlGithubAll, GraphqlGit, GraphqlRepo } from './graphqlTypes';
 
-const formatName = (name) =>
+const formatName: (string) => string  = (name) =>
   titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
 
-export const useGitRepos = ({ tag, name }) => {
-  const data = useStaticQuery(
+interface Props {
+  tag?: string;
+  name?: string;
+};
+
+type RepoInfo = GraphqlGit & GraphqlRepo;
+
+export const useGitRepos = ({ tag, name }: Props) => {
+  const data = useStaticQuery<GraphqlGithubAll>(
     graphql`
       query {
         allGitReposJson {
@@ -39,7 +47,7 @@ export const useGitRepos = ({ tag, name }) => {
   const allRepos = data.github.repositoryOwner.repositories.nodes;
   const gitRepos = data.allGitReposJson.nodes;
 
-  const repos = useMemo(() => {
+  const repos: RepoInfo[] = useMemo(() => {
     let data = [];
     gitRepos.forEach((d) => {
       if (name && d.name !== name) return;
