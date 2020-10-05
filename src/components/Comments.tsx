@@ -2,9 +2,13 @@ import React, { useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Utterances from './Utterances';
 
-export const Comments = () => {
+type GitProps = {
+  site: { siteMetadata: { git: string } };
+};
+
+export const Comments: React.FC = () => {
   const ref = useRef();
-  const repo = useStaticQuery(
+  const repo = useStaticQuery<GitProps>(
     graphql`
       query {
         site {
@@ -18,7 +22,7 @@ export const Comments = () => {
 
   return (
     <div className="mt-6">
-      <Utterances repo={repo} ref={ref}/>
+      <Utterances repo={repo} ref={ref} />
     </div>
   );
 };

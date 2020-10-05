@@ -1,7 +1,13 @@
 import React from 'react';
 import { TagList } from './TagList';
 
-export const Header = ({ title, description, tags }) => {
+interface Props {
+  title: string,
+  description: string,
+  tags: string[]
+}
+
+export const Header: React.FC<Props> = ({ title, description, tags }) => {
   return (
     <header>
       <div>

@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
-export const TagList = ({ tags, className, ...props }) => {
+interface Props {
+  tags: string[],
+  className?: string,
+};
+
+export const TagList: React.FC<Props> = ({ tags, className, ...props }) => {
   if (tags === null || typeof tags === 'undefined') return <></>;
 
-  if (tags.lenght === 0) return <></>;
+  if (tags.length === 0) return <></>;
 
   return (
     <div {...props}>

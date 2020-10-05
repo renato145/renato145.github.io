@@ -5,9 +5,9 @@ require('dotenv').config({
   path: `.env.${activeEnv}`,
 });
 
-const fs = require(`fs`);
+// const fs = require(`fs`);
 const fetch = require(`node-fetch`);
-const { buildClientSchema, getAuthorizationToken } = require(`graphql`);
+// const { buildClientSchema, getAuthorizationToken } = require(`graphql`);
 const { createHttpLink } = require(`apollo-link-http`);
 
 module.exports = {
