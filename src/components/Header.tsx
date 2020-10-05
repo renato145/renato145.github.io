@@ -2,9 +2,9 @@ import React from 'react';
 import { TagList } from './TagList';
 
 interface Props {
-  title: string,
-  description: string,
-  tags: string[]
+  title: string;
+  description?: string;
+  tags?: string[];
 }
 
 export const Header: React.FC<Props> = ({ title, description, tags }) => {
@@ -13,7 +13,7 @@ export const Header: React.FC<Props> = ({ title, description, tags }) => {
       <div>
         <h1 className="font-medium">{title}</h1>
         <div className="pl-2 flex text-gray-600 text-sm">
-          <p>{description}</p>
+          {description && <p>{description}</p>}
           {tags && (
             <>
               <p className="px-1">-</p>

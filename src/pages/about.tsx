@@ -1,7 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React, { HTMLProps } from 'react';
+import { graphql, PageProps } from 'gatsby';
 import moment from 'moment';
 import { Layout } from '../components/Layout';
+import { GraphqlSite } from '../components/Types';
 
 const news = [
   { date: '201811', text: 'Started Phd at the University of Adelaide.' },
@@ -12,7 +13,20 @@ const news = [
   },
 ];
 
-const Publication = ({ authors, title, conference, doi, ...props }) => (
+interface PublicationProps extends HTMLProps<HTMLLIElement> {
+  authors: string;
+  title: string;
+  conference: string;
+  doi: string;
+}
+
+const Publication: React.FC<PublicationProps> = ({
+  authors,
+  title,
+  conference,
+  doi,
+  ...props
+}) => (
   <li {...props}>
     {authors} <span className="font-medium">“{title}”</span> {conference}
     {doi && (
@@ -26,7 +40,11 @@ const Publication = ({ authors, title, conference, doi, ...props }) => (
   </li>
 );
 
-const About = ({ data, location }) => {
+interface Props extends PageProps {
+  data: GraphqlSite;
+}
+
+const About: React.FC<Props> = ({ data, location }) => {
   const title = 'About';
   const { author, mail } = data.site.siteMetadata;
 

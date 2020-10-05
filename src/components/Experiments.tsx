@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { HTMLProps, useState } from 'react';
 import { GithubPreview } from './GithubPreview';
 import { LinkButton } from './LinkButton';
 import { useGitRepos } from './useGitRepos';
-import { HTMLProps } from './utils'
 
 interface Props extends Omit<HTMLProps<HTMLDivElement>, "title"> {
   title?: boolean;
   showLimit?: number;
   showLoadMore?: boolean;
   loadMoreText?: string;
-  tag: string;
+  tag?: string;
 }
 
 export const Experiments: React.FC<Props> = ({

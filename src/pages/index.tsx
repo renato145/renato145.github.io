@@ -1,10 +1,15 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { Posts } from '../components/Posts';
 import { Experiments } from '../components/Experiments';
+import { GraphqlSite, MdxAllNodes } from '../components/Types';
 
-const Index = ({ data, location }) => {
+interface Props extends PageProps {
+  data: GraphqlSite & MdxAllNodes;
+}
+
+const Index: React.FC<Props> = ({ data, location }) => {
   const { title, description } = data.site.siteMetadata;
   const posts = data.allMdx.edges;
 

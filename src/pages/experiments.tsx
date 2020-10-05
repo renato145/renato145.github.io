@@ -1,8 +1,9 @@
 import React from 'react';
 import { Layout } from '../components/Layout';
 import { Experiments } from '../components/Experiments';
+import { PageProps } from 'gatsby';
 
-const ExperimentIndex = ({ location }) => {
+const ExperimentIndex: React.FC<PageProps> = ({ location }) => {
   const title = 'Experiments';
 
   return (

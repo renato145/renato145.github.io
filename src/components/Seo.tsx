@@ -7,13 +7,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProps } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface Props {
-  description: string;
-  lang: string;
-  meta: any[];
+  description?: string;
+  lang?: string;
+  meta?: any[];
   title: string;
 }
 

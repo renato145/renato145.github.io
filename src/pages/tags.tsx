@@ -1,18 +1,23 @@
 import React, { useMemo } from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, PageProps } from 'gatsby';
 import { ascending } from 'd3';
 import moment from 'moment';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from '../components/Layout';
 import { useGitRepos } from '../components/useGitRepos';
 import './tags.css';
+import { MdxAllNodes } from '../components/Types';
 
-const formatDate = (date) =>
+const formatDate = (date: string) =>
   moment(date).calendar(null, {
     sameElse: 'MMMM DD, YYYY',
   });
 
-const Tags = ({ data, location }) => {
+interface Props extends PageProps {
+  data: MdxAllNodes;
+}
+
+const Tags: React.FC<Props> = ({ data, location }) => {
   const title = 'Tags';
   const blogData = data.allMdx.edges;
   const gitData = useGitRepos({});
@@ -57,14 +62,14 @@ const Tags = ({ data, location }) => {
                 {tagsContent[tag]['blog'].length > 0 && (
                   <>
                     <li>
-                      <p className="tag-type">Blog posts</p>
+                      <p className="tag-type text-gray-700">Blog posts</p>
                       <ul>
                         {tagsContent[tag]['blog'].map(({ node }, i) => (
                           <li key={i} className="tag-line">
                             <Link to={node.fields.slug}>
                               {node.frontmatter.title || node.fields.slug}
                             </Link>
-                            <small className="text-muted">
+                            <small className="text-gray-600">
                               {formatDate(node.frontmatter.date)}
                             </small>
                           </li>
@@ -76,14 +81,14 @@ const Tags = ({ data, location }) => {
                 {tagsContent[tag]['git'].length > 0 && (
                   <>
                     <li>
-                      <p className="tag-type">Github repos</p>
+                      <p className="tag-type text-gray-700">Github repos</p>
                       <ul>
                         {tagsContent[tag]['git'].map(
                           ({ url, name, updatedAt }, i) => (
                             <li key={i} className="tag-line">
                               <a href={url}>{name}</a>
                               {updatedAt && (
-                                <small className="text-muted">
+                                <small className="text-gray-600">
                                   {formatDate(updatedAt)}
                                 </small>
                               )}

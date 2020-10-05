@@ -1,7 +1,8 @@
-import React from 'react';
-import { HTMLProps } from './utils'
+import React, { HTMLProps } from 'react';
 
-export const LinkButton: React.FC<HTMLProps<HTMLButtonElement>> = ({ children, ...props }) => (
+interface Props extends Omit<HTMLProps<HTMLButtonElement>, "className" | "type"> {};
+
+export const LinkButton: React.FC<Props> = ({ children, ...props }) => (
   <button
     className="p-0 bg-opacity-0 hover:bg-opacity-0 active:bg-opacity-0 focus:shadow-none text-blue-600 hover:text-blue-800"
     {...props}

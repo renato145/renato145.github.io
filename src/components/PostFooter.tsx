@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import { Link } from 'gatsby';
+import { MdxNode } from './Types';
 
-export const PostFooter = ({ previous, next, ...props }) => {
+interface Props extends HTMLProps<HTMLDivElement> {
+  previous?: MdxNode;
+  next?: MdxNode;
+}
+
+export const PostFooter: React.FC<Props> = ({ previous, next, ...props }) => {
   return (
     <div {...props}>
       <div>

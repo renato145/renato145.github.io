@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import { Link } from 'gatsby';
 import { TagList } from './TagList';
+import { MdxNode } from './Types';
 
-export const PostPreview = ({ node, ...props }) => {
+interface Props extends HTMLProps<HTMLDivElement> {
+  node: MdxNode;
+}
+
+export const PostPreview: React.FC<Props> = ({ node, ...props }) => {
   const postTitle = node.frontmatter.title || node.fields.slug;
   const tags = node.frontmatter.tags;
 

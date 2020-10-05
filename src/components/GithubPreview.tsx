@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import moment from 'moment';
 import { TagList } from './TagList';
+import { RepoInfo } from './Types';
 
-export const GithubPreview = ({ data, ...props }) => {
+interface Props extends Omit<HTMLProps<HTMLDivElement>, "data"> {
+  data: RepoInfo;
+}
+
+export const GithubPreview: React.FC<Props> = ({ data, ...props }) => {
   const { homepageUrl, url, imgUrl, name, tags, description, updatedAt } = data;
 
   return (

@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useMemo } from 'react';
 import { unCamelCase, singleSpace, titleCase } from './utils';
-import { GraphqlGithubAll, GraphqlGit, GraphqlRepo } from './graphqlTypes';
+import { GraphqlGithubAll, RepoInfo } from './Types';
 
 const formatName: (string) => string  = (name) =>
   titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
@@ -10,8 +10,6 @@ interface Props {
   tag?: string;
   name?: string;
 };
-
-type RepoInfo = GraphqlGit & GraphqlRepo;
 
 export const useGitRepos = ({ tag, name }: Props) => {
   const data = useStaticQuery<GraphqlGithubAll>(

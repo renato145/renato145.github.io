@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '../components/Seo';
 
-const CV = () => {
+const CV: React.FC = () => {
   return (
     <div
       className="mx-auto bg-white p-8"

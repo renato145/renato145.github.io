@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { HTMLProps, useState } from 'react';
 import { PostPreview } from './PostPreview';
 import { LinkButton } from './LinkButton';
+import { MdxNode, NodesOf } from './Types';
 
-export const Posts = ({
+interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
+  title?: boolean;
+  showLimit?: number;
+  showLoadMore?: boolean;
+  loadMoreText?: string;
+  posts: NodesOf<MdxNode>;
+}
+
+export const Posts: React.FC<Props> = ({
   title = false,
   showLimit = 6,
   showLoadMore = true,
@@ -17,9 +26,12 @@ export const Posts = ({
     <div {...props}>
       {title && <h2 className="font-medium">Posts</h2>}
       <div className="mt-2 flex flex-wrap">
-        {visiblePosts.map(({ node }, i) => (
-          <PostPreview node={node} key={node.fields.slug} className="w-full lg:w-1/2 mb-4" />
-          // <PostPreview node={node} key={node.fields.slug} className="w-full lg:max-w-sm mb-4" />
+        {visiblePosts.map(({ node }) => (
+          <PostPreview
+            node={node}
+            key={node.fields.slug}
+            className="w-full lg:w-1/2 mb-4"
+          />
         ))}
       </div>
       {showLoadMore && visiblePosts.length < posts.length && (

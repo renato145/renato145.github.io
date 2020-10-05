@@ -1,9 +1,14 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { Posts } from '../components/Posts';
+import { MdxAllNodes } from '../components/Types';
 
-const BlogIndex = ({ data, location }) => {
+interface Props extends PageProps {
+  data: MdxAllNodes;
+}
+
+const BlogIndex: React.FC<Props> = ({ data, location }) => {
   const title = 'Blog';
   const posts = data.allMdx.edges;
 

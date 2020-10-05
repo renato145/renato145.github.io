@@ -26,7 +26,7 @@ export type GraphqlRepo = {
 export type GraphqlRepos = {
   allGitReposJson: {
     nodes: GraphqlRepo[];
-  }
+  };
 };
 
 export type GraphqlGit = {
@@ -43,9 +43,53 @@ export type GraphqlGitAll = {
     repositoryOwner: {
       repositories: {
         nodes: GraphqlGit[];
-      }
-    }
-  }
+      };
+    };
+  };
 };
 
 export type GraphqlGithubAll = GraphqlRepos & GraphqlGitAll;
+
+export type RepoInfo = GraphqlGit &
+  GraphqlRepo & {
+    imgUrl?: string;
+  };
+
+export type MdxNode = {
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    description: string;
+    tags: string[];
+    title: string;
+    date: string;
+  };
+  headings: {
+    depth: number;
+    value: string;
+  };
+  excerpt: string;
+  tableOfContents: {
+    items: {
+      url: string;
+      title: string;
+    }[];
+  };
+  timeToRead: number;
+  wordCount: {
+    paragraphs: number;
+    sentences: number;
+    words: number;
+  };
+};
+
+export type NodesOf<T> = {
+  node: T;
+}[];
+
+export type MdxAllNodes = {
+  allMdx: {
+    edges: NodesOf<MdxNode>;
+  };
+};

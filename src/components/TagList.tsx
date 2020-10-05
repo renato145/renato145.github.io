@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
-import { HTMLProps } from './utils';
 
 interface Props extends HTMLProps<HTMLDivElement> {
   tags: string[],

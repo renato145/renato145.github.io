@@ -1,8 +1,13 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { Layout } from '../components/Layout';
+import { GraphqlSite } from '../components/Types';
 
-const DefaultPage = ({ data, location }) => {
+interface Props extends PageProps {
+  data: GraphqlSite;
+}
+
+const DefaultPage: React.FC<Props> = ({ data, location }) => {
   const title = data.site.siteMetadata.title;
 
   return (

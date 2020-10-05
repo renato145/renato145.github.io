@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GraphqlSite } from './graphqlTypes';
-import { HTMLProps } from './utils';
+import { GraphqlSite } from './Types';
 
 export const Footer: React.FC<HTMLProps<HTMLDivElement>> = ({ ...props }) => {
   const { mail, social } = useStaticQuery<GraphqlSite>(

@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-export const UpArrow = () => {
+export const UpArrow: React.FC = () => {
   const [show, setShow] = useState(false);
 
   const onScroll = useCallback(() => {
