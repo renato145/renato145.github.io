@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { GithubPreview } from './GithubPreview';
 import { LinkButton } from './LinkButton';
 import { useGitRepos } from './useGitRepos';
+import { HTMLProps } from './utils'
 
-interface Props {
+interface Props extends Omit<HTMLProps<HTMLDivElement>, "title"> {
   title?: boolean;
   showLimit?: number;
   showLoadMore?: boolean;

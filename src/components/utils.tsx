@@ -1,3 +1,5 @@
+export type HTMLProps<T> = React.DetailedHTMLProps<React.HTMLAttributes<T>, T>;
+
 export const unCamelCase: (string) => string = (str) =>
   str.replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, '$1 $2').toLowerCase();
 

@@ -67,7 +67,7 @@ export const Search = () => {
                     </Link>
                   )}
                 </div>
-                <TagList tags={tags} className="text-xs" />
+                <TagList tags={tags} linkClassName="text-xs" />
                 <p className="mt-1 transition duration-200 ease-out text-gray-700 hover:text-gray-900">
                   {isRepo ? 'Github repository.' : description}
                 </p>
