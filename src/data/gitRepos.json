@@ -1,5 +1,9 @@
 [
   {
+    "name": "ContrastiveLoss",
+    "tags": ["pytorch", "machine-learning", "python"]
+  },
+  {
     "name": "RpSalWeaklyDet",
     "tags": ["pytorch", "medical-imaging", "machine-learning", "python"]
   },
@@ -102,7 +106,7 @@
   },
   {
     "name": "stn",
-    "showName": "STN",
+    "showName": "Spatial Transformer Network",
     "tags": ["pytorch", "machine-learning", "python"]
   },
   { "name": "peru-stats", "tags": ["python", "data-scrapping"] },
