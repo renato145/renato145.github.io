@@ -4,7 +4,7 @@ import Utterances from './Utterances';
 import { GraphqlSite } from './Types';
 
 export const Comments: React.FC = () => {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   const repo = useStaticQuery<GraphqlSite>(
     graphql`
       query {
