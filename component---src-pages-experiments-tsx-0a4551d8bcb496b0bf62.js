@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{"4cGv":function(e,t,n){"use strict";n.r(t);var i=n("q1tI"),o=n.n(i),a=n("soUV"),r=n("WAtL");t.default=function(e){var t=e.location;return o.a.createElement(a.a,{location:t,title:"Experiments",description:"Playground, experiments, random codes...",headerConfig:{title:"Experiments"}},o.a.createElement(r.a,{showLimit:9}))}}}]);
+//# sourceMappingURL=component---src-pages-experiments-tsx-0a4551d8bcb496b0bf62.js.map
