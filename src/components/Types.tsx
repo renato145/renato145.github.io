@@ -93,3 +93,15 @@ export type MdxAllNodes = {
     edges: NodesOf<MdxNode>;
   };
 };
+
+export type Publication = {
+  authors: string;
+  conference: string;
+  doi: string;
+  title: string;
+  year: number;
+};
+
+export type PublicationsAll = {
+  allPublicationsJson: { nodes: Publication[] };
+};

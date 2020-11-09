@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useMemo } from 'react';
 import { unCamelCase, singleSpace, titleCase } from '../components/utils';
-import { GraphqlGithubAll, GraphqlRepo, RepoInfo } from '../components/Types';
+import { GraphqlGithubAll, RepoInfo } from '../components/Types';
 
 const formatName: (string) => string  = (name) =>
   titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));

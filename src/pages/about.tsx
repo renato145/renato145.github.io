@@ -3,6 +3,7 @@ import { graphql, PageProps } from 'gatsby';
 import moment from 'moment';
 import { Layout } from '../components/Layout';
 import { GraphqlSite } from '../components/Types';
+import { usePublications } from '../hooks/usePublications';
 
 const news = [
   { date: '201811', text: 'Started Phd at the University of Adelaide.' },
@@ -47,6 +48,7 @@ interface Props extends PageProps {
 const About: React.FC<Props> = ({ data, location }) => {
   const title = 'About';
   const { author, mail } = data.site.siteMetadata;
+  const publications = usePublications();
 
   return (
     <Layout
@@ -86,18 +88,9 @@ const About: React.FC<Props> = ({ data, location }) => {
         <h3 className="mt-8 font-medium">Publications</h3>
 
         <ol className="mt-2">
-          <Publication
-            authors="Renato Hermoza and Ivan Sipiran."
-            title="3D Reconstruction of Incomplete Archaeological Objects Using a Generative Adversarial Network."
-            conference="Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11."
-            doi="10.1145/3208159.3208173"
-          />
-          <Publication
-            authors="E. Garcia, R. Hermoza, C. B. Castanon, L. Cano, M. Castillo and C. Castanñeda."
-            title="Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning,"
-            conference="2017 IEEE 30th International Symposium on Computer-Based Medical Systems (CBMS), Thessaloniki, 2017, pp. 200-204."
-            doi="10.1109/CBMS.2017.94"
-          />
+          {publications.map((o) => (
+            <Publication {...o} />
+          ))}
         </ol>
       </div>
     </Layout>

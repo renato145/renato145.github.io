@@ -1,5 +1,6 @@
 import React, { HTMLProps } from 'react';
 import SEO from '../components/Seo';
+import { usePublications } from '../hooks/usePublications';
 
 interface PublicationProps extends HTMLProps<HTMLLIElement> {
   authors: string;
@@ -29,6 +30,8 @@ const Publication: React.FC<PublicationProps> = ({
 );
 
 const CV: React.FC = () => {
+  const publications = usePublications();
+
   return (
     <div
       className="mx-auto bg-gray-100 shadow-outline p-8"
@@ -113,19 +116,10 @@ Pontificia Universidad Católica del Perú	07/2018 –  10/2018
 <div>
   <p>Publications</p>
         <ol>
-          <Publication
-            authors="Renato Hermoza and Ivan Sipiran."
-            title="3D Reconstruction of Incomplete Archaeological Objects Using a Generative Adversarial Network."
-            conference="Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11."
-            doi="10.1145/3208159.3208173"
-          />
-          <Publication
-            authors="E. Garcia, R. Hermoza, C. B. Castanon, L. Cano, M. Castillo and C. Castanñeda."
-            title="Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning,"
-            conference="2017 IEEE 30th International Symposium on Computer-Based Medical Systems (CBMS), Thessaloniki, 2017, pp. 200-204."
-            doi="10.1109/CBMS.2017.94"
-          />
-          </ol>
+          {publications.map((o) => (
+            <Publication {...o} />
+          ))}
+        </ol>
 </div>
 
       <div>
