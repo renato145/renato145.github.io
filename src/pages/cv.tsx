@@ -1,40 +1,148 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import SEO from '../components/Seo';
+
+interface PublicationProps extends HTMLProps<HTMLLIElement> {
+  authors: string;
+  title: string;
+  conference: string;
+  doi: string;
+}
+
+const Publication: React.FC<PublicationProps> = ({
+  authors,
+  title,
+  conference,
+  doi,
+  ...props
+}) => (
+  <li {...props}>
+    {authors} <span className="font-medium">“{title}”</span> {conference}
+    {doi && (
+      <>
+        {' DOI: '}
+        <a href={`https://doi.org/${doi}`} target="_black" rel="noopener">
+          {doi}
+        </a>
+      </>
+    )}
+  </li>
+);
 
 const CV: React.FC = () => {
   return (
     <div
-      className="mx-auto bg-white p-8"
+      className="mx-auto bg-gray-100 shadow-outline p-8"
       style={{ width: '21cm', height: '29.7cm' }}
     >
       <SEO title="CV" description="My CV" />
 
       <p>Renato Hermoza Aragonés</p>
-      <div>mail / location / git</div>
+      <p>renato.hermoza@pucp.edu.pe</p>
+      <p>https://renato145.github.io/</p>
 
       <div>
         <p>Education</p>
-        <p>...</p>
+        <p>
+          The University of Adelaide 2018 2022 (expected) Australia PhD. in
+          Medical Image Analysis, Computer Vision and Machine Learning
+        </p>
+        <p>
+          Pontificia Universidad Católica del Perú 2016 2017 Perú Master in
+          Informatics - Mention in Computer Science
+        </p>
+        <p>
+          Universidad San Martín de Porres 2005 2011 Perú Bachelor in Computing
+          and Systems Engineering
+        </p>
       </div>
 
       <div>
         <p>Resume</p>
-        <p>...</p>
+        <p>
+          Second year PhD. student at the University of Adelaide with main
+          research interests in the fields of computer vision, machine learning
+          and data visualization.
+        </p>
       </div>
 
       <div>
-        <p>Experience</p>
-        <p>...</p>
+        <p>Professional Experience</p>
+        <p>
+TechStart (Data Scientist)	01/2018 –  06/2018
+    • Apply machine learning models to process demographic and business data to aid business in finding optimal locations for their stores.
+    • Extract and preprocess business data.
+    • Data visualization and build interactive dashboards.
+    • Development and validation of machine learning models.
+
+EASY TAXI (Data Scientist)	11/2015 –  08/2017
+    • Extract and visualize business data.
+    • Develop machine learning models for marketing and operation optimization.
+
+GMD (System Administrator)	04/2012 – 12/2014
+Oxinet (IT Consultant)	08/2011 – 03/2012
+        </p>
       </div>
+
+      <div>
+        <p>Teaching Experience</p>
+        <p>
+The University of Adelaide	07/2019 –  12/2019
+    • Tutor assistance for the course “Foundations of Computer Science”.
+
+Pontificia Universidad Católica del Perú	07/2018 –  10/2018
+    • Taught the first 6 weeks of: “Advanced Techniques in Data Mining and Intelligent Systems”, in the Master in Informatics program.
+    • Taught: “Deep Learning Training Course”, a two weeks training course.</p>
+      </div>
+
+    <div>
+      <p>Conferences Attended</p>
+      <p>
+    • Iberoamerican Congress On Pattern Recognition (CIARP 2016) – Perú, Pontifical Catholic University of Perú.
+    • Machine Learning Summer School 2016 – Perú, Catholic University San Pablo.
+      </p>
+    </div>
+
+    <div>
+      <p>Presentations</p>
+      <p>
+            • Deep Learning Mini-Course. Present at Workshop on Artificial Intelligence and Machine Learning Applications 2017 – Perú, Pontifical Catholic University of Perú.
+    • Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning. Poster session presented at the 30th ΙΕΕΕ International Symposium on Computer-Based Medical Systems - Greece, Aristotle University of Thessaloniki.
+      </p>
+    </div>
+
+<div>
+  <p>Publications</p>
+        <ol>
+          <Publication
+            authors="Renato Hermoza and Ivan Sipiran."
+            title="3D Reconstruction of Incomplete Archaeological Objects Using a Generative Adversarial Network."
+            conference="Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11."
+            doi="10.1145/3208159.3208173"
+          />
+          <Publication
+            authors="E. Garcia, R. Hermoza, C. B. Castanon, L. Cano, M. Castillo and C. Castanñeda."
+            title="Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning,"
+            conference="2017 IEEE 30th International Symposium on Computer-Based Medical Systems (CBMS), Thessaloniki, 2017, pp. 200-204."
+            doi="10.1109/CBMS.2017.94"
+          />
+          </ol>
+</div>
 
       <div>
         <p>Knowledge</p>
-        <p>...</p>
+        <p>
+          Knowledge and active research of the current state of the art on deep
+          learning and computer vision. Advance skill on Python, building
+          reusable APIs, web servers and open software development. Experience
+          building data visualization and interactive dashboards using Python
+         and JavaScript (React, D3, Threejs). Typescript Rust WebAssembly.
+        </p>
       </div>
 
       <div>
-        <p>More things</p>
-        <p>...</p>
+        <p>Language</p>
+        <p>Spanish (native)</p>
+        <p>English</p>
       </div>
     </div>
   );
