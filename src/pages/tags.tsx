@@ -5,8 +5,8 @@ import moment from 'moment';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from '../components/Layout';
 import { useGitRepos } from '../hooks/useGitRepos';
-import './tags.css';
 import { MdxAllNodes } from '../components/Types';
+import './tags.css';
 
 const formatDate = (date: string) =>
   moment(date).calendar(null, {

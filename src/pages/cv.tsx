@@ -2,6 +2,7 @@ import React, { HTMLProps } from 'react';
 import SEO from '../components/Seo';
 import { usePublications } from '../hooks/usePublications';
 import { Publication as PublicationType } from '../components/Types';
+import './cv.css';
 
 interface PublicationProps
   extends Omit<HTMLProps<HTMLLIElement>, 'title'>,
@@ -33,7 +34,7 @@ const CV: React.FC = () => {
 
   return (
     <div
-      className="mx-auto bg-gray-100 shadow-outline p-8"
+      className="mx-auto bg-gray-100 p-8"
       style={{ width: '21cm', height: '29.7cm' }}
     >
       <SEO title="CV" description="My CV" />
