@@ -2,7 +2,10 @@ import React, { HTMLProps } from 'react';
 import { graphql, PageProps } from 'gatsby';
 import moment from 'moment';
 import { Layout } from '../components/Layout';
-import { GraphqlSite } from '../components/Types';
+import {
+  GraphqlSite,
+  Publication as PublicationType,
+} from '../components/Types';
 import { usePublications } from '../hooks/usePublications';
 
 const news = [
@@ -14,12 +17,9 @@ const news = [
   },
 ];
 
-interface PublicationProps extends HTMLProps<HTMLLIElement> {
-  authors: string;
-  title: string;
-  conference: string;
-  doi: string;
-}
+interface PublicationProps
+  extends Omit<HTMLProps<HTMLLIElement>, 'title'>,
+    PublicationType {}
 
 const Publication: React.FC<PublicationProps> = ({
   authors,

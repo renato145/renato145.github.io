@@ -1,13 +1,12 @@
 import React, { HTMLProps } from 'react';
 import SEO from '../components/Seo';
 import { usePublications } from '../hooks/usePublications';
+import { Publication as PublicationType } from '../components/Types';
 
-interface PublicationProps extends HTMLProps<HTMLLIElement> {
-  authors: string;
-  title: string;
-  conference: string;
-  doi: string;
-}
+interface PublicationProps
+  extends Omit<HTMLProps<HTMLLIElement>, 'title'>,
+    PublicationType {}
+
 
 const Publication: React.FC<PublicationProps> = ({
   authors,
