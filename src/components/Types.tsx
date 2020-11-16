@@ -94,6 +94,15 @@ export type MdxAllNodes = {
   };
 };
 
+export type NewsItem = {
+  date: string;
+  text: string;
+};
+
+export type NewsAll = {
+  allNewsJson: { nodes: NewsItem[] };
+};
+
 export type Publication = {
   authors: string;
   conference: string;

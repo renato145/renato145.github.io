@@ -1,17 +1,14 @@
 import React, { useMemo } from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
 import { ascending } from 'd3';
-import moment from 'moment';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from '../components/Layout';
 import { useGitRepos } from '../hooks/useGitRepos';
 import { MdxAllNodes } from '../components/Types';
+import { formatRelativeDate } from '../utils';
 import './tags.css';
 
-const formatDate = (date: string) =>
-  moment(date).calendar(null, {
-    sameElse: 'MMMM DD, YYYY',
-  });
+const formatDate = (date: string) => formatRelativeDate(new Date(date), 'MMMM dd, yyyy');
 
 interface Props extends PageProps {
   data: MdxAllNodes;

@@ -1,21 +1,13 @@
 import React, { HTMLProps } from 'react';
 import { graphql, PageProps } from 'gatsby';
-import moment from 'moment';
 import { Layout } from '../components/Layout';
+import { formatYMDate } from '../utils';
 import {
   GraphqlSite,
   Publication as PublicationType,
 } from '../components/Types';
 import { usePublications } from '../hooks/usePublications';
-
-const news = [
-  { date: '201811', text: 'Started Phd at the University of Adelaide.' },
-  {
-    date: '201807',
-    text:
-      'Finished MS in computer science at the Pontificia Universidad Catolica del Perú.',
-  },
-];
+import { useNews } from '../hooks/useNews';
 
 interface PublicationProps
   extends Omit<HTMLProps<HTMLLIElement>, 'title'>,
@@ -48,6 +40,7 @@ interface Props extends PageProps {
 const About: React.FC<Props> = ({ data, location }) => {
   const title = 'About';
   const { author, mail } = data.site.siteMetadata;
+  const news = useNews();
   const publications = usePublications();
 
   return (
@@ -80,7 +73,7 @@ const About: React.FC<Props> = ({ data, location }) => {
         <ul className="mt-2">
           {news.map(({ text, date }, i) => (
             <li key={i}>
-              {moment(date, 'YYYYMM').format('MMM YYYY')}: {text}
+              {formatYMDate(date)}: {text}
             </li>
           ))}
         </ul>
@@ -88,7 +81,7 @@ const About: React.FC<Props> = ({ data, location }) => {
         <h3 className="mt-8 font-medium">Publications</h3>
 
         <ol className="mt-2">
-          {publications.map((o,i) => (
+          {publications.map((o, i) => (
             <Publication key={i} {...o} />
           ))}
         </ol>

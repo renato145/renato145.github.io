@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useMemo } from 'react';
-import { unCamelCase, singleSpace, titleCase } from '../components/utils';
+import { unCamelCase, singleSpace, titleCase } from '../utils';
 import { GraphqlGithubAll, RepoInfo } from '../components/Types';
 
 const formatName: (string) => string  = (name) =>

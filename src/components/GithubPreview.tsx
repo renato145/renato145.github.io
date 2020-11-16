@@ -1,9 +1,9 @@
 import React, { HTMLProps } from 'react';
-import moment from 'moment';
 import { TagList } from './TagList';
 import { RepoInfo } from './Types';
+import { formatRelativeDate } from '../utils';
 
-interface Props extends Omit<HTMLProps<HTMLDivElement>, "data"> {
+interface Props extends Omit<HTMLProps<HTMLDivElement>, 'data'> {
   data: RepoInfo;
 }
 
@@ -24,9 +24,7 @@ export const GithubPreview: React.FC<Props> = ({ data, ...props }) => {
             {updatedAt && (
               <small className="text-gray-600">
                 Last updated:{' '}
-                {moment(updatedAt).calendar(null, {
-                  sameElse: 'DD/MM/YYYY',
-                })}
+                {formatRelativeDate(new Date(updatedAt), 'dd/MM/yyyy')}
               </small>
             )}
           </div>

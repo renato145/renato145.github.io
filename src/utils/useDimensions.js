@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState, useMemo } from 'react';
 import { ResizeObserver } from '@juggle/resize-observer';
 
+// TODO: replace this
 export const useDimensions = () => {
   const ref = useRef();
   const [width, setWidth] = useState(0);
