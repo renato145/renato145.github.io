@@ -11,6 +11,7 @@ export const useExperience = () => {
             position
             dateIn
             dateOut
+            details
           }
         }
       }

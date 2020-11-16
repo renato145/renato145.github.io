@@ -3,11 +3,14 @@ import SEO from '../components/Seo';
 import { usePublications } from '../hooks/usePublications';
 import { useExperience } from '../hooks/useExperience';
 import { useEducation } from '../hooks/useEducation';
+import { useTeaching } from '../hooks/useTeaching';
 import {
   Publication as PublicationType,
   Education as EducationType,
   Experience as ExperienceType,
+  Teaching as TeachingType,
 } from '../components/Types';
+import { formatYMDate } from '../utils';
 
 const Page: React.FC<HTMLProps<HTMLDivElement>> = ({ children, ...props }) => (
   <div
@@ -48,7 +51,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="font-medium text-lg">{university}</p>
-      <p className="text-gray-600">{`${yearIn}-${yearOut}${
+      <p className="text-gray-600">{`${yearIn} - ${yearOut}${
         pending ? ' (expected)' : ''
       }`}</p>
     </div>
@@ -58,12 +61,62 @@ const EducationItem: React.FC<EducationItemProps> = ({
 
 interface ExperienceProps extends HTMLProps<HTMLDivElement>, ExperienceType {}
 
-const Experience: React.FC<ExperienceProps> = ({ place, position, dateIn, dateOut}) => (
-  <div>
-    <p>{place}</p>
-    <p>{position}</p>
-    <p>{dateIn}</p>
-    <p>{dateOut}</p>
+const Experience: React.FC<ExperienceProps> = ({
+  place,
+  position,
+  dateIn,
+  dateOut,
+  details,
+  className,
+  ...props
+}) => (
+  <div className={`w-full ${className ?? ''}`} {...props}>
+    <div className="flex justify-between">
+      <p>
+        {place} <span>({position})</span>
+      </p>
+      <p className="text-gray-600">
+        {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
+      </p>
+    </div>
+    {details.length > 0 && (
+      <ul className="pl-4">
+        {details.map((o, i) => (
+          <li className="text-sm" key={i}>
+            {o}
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+);
+
+interface TeachingProps extends HTMLProps<HTMLDivElement>, TeachingType {}
+
+const Teaching: React.FC<TeachingProps> = ({
+  place,
+  dateIn,
+  dateOut,
+  details,
+  className,
+  ...props
+}) => (
+  <div className={`w-full ${className ?? ''}`} {...props}>
+    <div className="flex justify-between">
+      <p>{place}</p>
+      <p className="text-gray-600">
+        {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
+      </p>
+    </div>
+    {details.length > 0 && (
+      <ul className="pl-4">
+        {details.map((o, i) => (
+          <li className="text-sm" key={i}>
+            {o}
+          </li>
+        ))}
+      </ul>
+    )}
   </div>
 );
 
@@ -95,6 +148,7 @@ const CV: React.FC = () => {
   const publications = usePublications();
   const experience = useExperience();
   const education = useEducation();
+  const teaching = useTeaching();
 
   return (
     <div className="bg-gray-700">
@@ -110,7 +164,7 @@ const CV: React.FC = () => {
         <div className="mt-4">
           <Section title="Resume" />
           <p>
-            Second year PhD. student at the University of Adelaide with main
+            Final year PhD. student at the University of Adelaide with main
             research interests in the fields of computer vision, machine
             learning and data visualization.
           </p>
@@ -126,8 +180,42 @@ const CV: React.FC = () => {
         <div className="mt-4">
           <Section title="Professional Experience" />
           {experience.map((o, i) => (
-            <Experience key={i} {...o} />
+            <Experience key={i} className="mt-2" {...o} />
           ))}
+        </div>
+
+        <div className="mt-4">
+          <Section title="Teaching Experience" />
+          {teaching.map((o, i) => (
+            <Teaching key={i} className="mt-2" {...o} />
+          ))}
+        </div>
+
+        <div className="mt-4">
+          <Section title="Publications" />
+          <ul>
+            {publications.map((o, i) => (
+              <Publication key={i} className="mt-1 text-sm" {...o} />
+            ))}
+          </ul>
+        </div>
+      </Page>
+
+      <Page>
+        <div className="mt-4">
+          <Section title="Conference Attended" />
+        </div>
+
+        <div className="mt-4">
+          <Section title="Presentations" />
+        </div>
+
+        <div className="mt-4">
+          <Section title="Skills" />
+        </div>
+
+        <div className="mt-4">
+          <Section title="Languages" />
         </div>
       </Page>
     </div>
@@ -135,35 +223,6 @@ const CV: React.FC = () => {
 };
 
 export default CV;
-
-//       <div>
-//         <p>Professional Experience</p>
-//         <p>
-// TechStart (Data Scientist)	01/2018 –  06/2018
-//     • Apply machine learning models to process demographic and business data to aid business in finding optimal locations for their stores.
-//     • Extract and preprocess business data.
-//     • Data visualization and build interactive dashboards.
-//     • Development and validation of machine learning models.
-
-// EASY TAXI (Data Scientist)	11/2015 –  08/2017
-//     • Extract and visualize business data.
-//     • Develop machine learning models for marketing and operation optimization.
-
-// GMD (System Administrator)	04/2012 – 12/2014
-// Oxinet (IT Consultant)	08/2011 – 03/2012
-//         </p>
-//       </div>
-
-//       <div>
-//         <p>Teaching Experience</p>
-//         <p>
-// The University of Adelaide	07/2019 –  12/2019
-//     • Tutor assistance for the course “Foundations of Computer Science”.
-
-// Pontificia Universidad Católica del Perú	07/2018 –  10/2018
-//     • Taught the first 6 weeks of: “Advanced Techniques in Data Mining and Intelligent Systems”, in the Master in Informatics program.
-//     • Taught: “Deep Learning Training Course”, a two weeks training course.</p>
-//       </div>
 
 //     <div>
 //       <p>Conferences Attended</p>
@@ -183,11 +242,6 @@ export default CV;
 
 // <div>
 //   <p>Publications</p>
-//         <ol>
-//           {publications.map((o, i) => (
-//             <Publication key={i} {...o} />
-//           ))}
-//         </ol>
 // </div>
 
 //       <div>

@@ -120,10 +120,22 @@ export type Experience = {
   position: string;
   dateIn: string;
   dateOut: string;
+  details: string[];
 };
 
 export type ExperienceAll = {
   allExperienceJson: { nodes: Experience[] };
+};
+
+export type Teaching = {
+  place: string;
+  dateIn: string;
+  dateOut: string;
+  details: string[];
+}
+
+export type TeachingAll = {
+  allTeachingJson: { nodes: Teaching[] };
 };
 
 export type Education = {
