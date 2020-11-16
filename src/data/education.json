@@ -1,0 +1,26 @@
+[
+  {
+    "university": "The University of Adelaide",
+    "yearIn": 2018,
+    "yearOut": 2021,
+    "country": "Australia",
+    "degree": "PhD. in Medical Image Analysis, Computer Vision and Machine Learning",
+    "pending": true
+  },
+  {
+    "university": "Pontificia Universidad Católica del Perú",
+    "yearIn": 2016,
+    "yearOut": 2017,
+    "country": "Perú",
+    "degree": "Master in Informatics - Mention in Computer Science",
+    "pending": false
+  },
+  {
+    "university": "Universidad San Martín de Porres",
+    "yearIn": 2005,
+    "yearOut": 2011,
+    "country": "Perú",
+    "degree": "Bachelor in Computing and Systems Engineering",
+    "pending": false
+  }
+]

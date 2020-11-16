@@ -1,5 +1,19 @@
 [
   {
+    "authors": "R. Hermoza, G. Maicas, J. C. Nascimento, and G. Carneiro.",
+    "title": "Region Proposals for Saliency Map Refinement for Weakly-Supervised Disease Localisation and Classification.",
+    "conference": "Medical Image Computing and Computer Assisted Intervention – MICCAI 2020, Cham, 2020, pp. 539–549.",
+    "doi": "10.1007/978-3-030-59725-2_52",
+    "year": 2020
+  },
+  {
+    "authors": "M. Hasani-Shoreh, R. H. Aragonés, and F. Neumann.",
+    "title": "Neural networks in evolutionary dynamic constrained optimization: computational cost and benefits.",
+    "conference": "Proceedings of the 24th European Conference on Artificial Intelligence (ECAI 2020)",
+    "doi": "10.3233/FAIA200103",
+    "year": 2020
+  },
+  {
     "authors": "Renato Hermoza and Ivan Sipiran.",
     "title": "3D Reconstruction of Incomplete Archaeological Objects Using a Generative Adversarial Network.",
     "conference": "Proceedings of Computer Graphics International 2018 (CGI 2018). ACM, New York, NY, USA, 5-11.",

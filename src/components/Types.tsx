@@ -105,3 +105,27 @@ export type Publication = {
 export type PublicationsAll = {
   allPublicationsJson: { nodes: Publication[] };
 };
+
+export type Experience = {
+  place: string;
+  position: string;
+  dateIn: string;
+  dateOut: string;
+};
+
+export type ExperienceAll = {
+  allExperienceJson: { nodes: Experience[] };
+};
+
+export type Education = {
+  university: string;
+  degree: string;
+  yearIn: number;
+  yearOut: number;
+  country: string;
+  pending?: boolean;
+};
+
+export type EducationAll = {
+  allEducationJson: { nodes: Education[] };
+};

@@ -88,8 +88,8 @@ const About: React.FC<Props> = ({ data, location }) => {
         <h3 className="mt-8 font-medium">Publications</h3>
 
         <ol className="mt-2">
-          {publications.map((o) => (
-            <Publication {...o} />
+          {publications.map((o,i) => (
+            <Publication key={i} {...o} />
           ))}
         </ol>
       </div>
