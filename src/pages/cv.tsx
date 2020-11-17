@@ -11,10 +11,11 @@ import {
   Teaching as TeachingType,
 } from '../components/Types';
 import { formatYMDate } from '../utils';
+import { Navigation } from '../components/Navigation';
 
 const Page: React.FC<HTMLProps<HTMLDivElement>> = ({ children, ...props }) => (
   <div
-    className="mx-auto bg-gray-100 px-8 py-4"
+    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-gray-100"
     style={{
       width: '21cm',
       height: '29.7cm',
@@ -151,8 +152,11 @@ const CV: React.FC = () => {
   const teaching = useTeaching();
 
   return (
-    <div className="bg-gray-700">
+    <div className="bg-gray-700 pb-1 print:pb-0">
       <SEO title="CV" description="My CV" />
+      <div style={{ width: '21cm' }} className="mx-auto print:hidden">
+        <Navigation />
+      </div>
       <Page>
         <div className="text-center leading-tight">
           <p className="text-2xl font-medium">Renato Hermoza Aragonés</p>
@@ -190,32 +194,55 @@ const CV: React.FC = () => {
             <Teaching key={i} className="mt-2" {...o} />
           ))}
         </div>
+              </Page>
 
+      <Page>
         <div className="mt-4">
           <Section title="Publications" />
           <ul>
             {publications.map((o, i) => (
               <Publication key={i} className="mt-1 text-sm" {...o} />
-            ))}
+              ))}
           </ul>
         </div>
-      </Page>
 
-      <Page>
         <div className="mt-4">
           <Section title="Conference Attended" />
+          <p>
+            Iberoamerican Congress On Pattern Recognition (CIARP 2016) – Perú,
+            Pontifical Catholic University of Perú. Machine Learning Summer
+            School 2016 – Perú, Catholic University San Pablo.
+          </p>
         </div>
 
         <div className="mt-4">
           <Section title="Presentations" />
+          <p>
+            Deep Learning Mini-Course. Present at Workshop on Artificial
+            Intelligence and Machine Learning Applications 2017 – Perú,
+            Pontifical Catholic University of Perú. Automatic Lymphocyte
+            Detection on Gastric Cancer IHC Images Using Deep Learning. Poster
+            session presented at the 30th ΙΕΕΕ International Symposium on
+            Computer-Based Medical Systems - Greece, Aristotle University of
+            Thessaloniki.
+          </p>
         </div>
 
         <div className="mt-4">
           <Section title="Skills" />
+          <p>
+            Knowledge and active research of the current state of the art on
+            deep learning and computer vision. Advance skill on Python, building
+            reusable APIs, web servers and open software development. Experience
+            building data visualization and interactive dashboards using Python
+            and JavaScript (React, D3, Threejs). Typescript Rust WebAssembly.
+          </p>
         </div>
 
         <div className="mt-4">
           <Section title="Languages" />
+          <p>Spanish (native)</p>
+          <p>English</p>
         </div>
       </Page>
     </div>
@@ -223,41 +250,3 @@ const CV: React.FC = () => {
 };
 
 export default CV;
-
-//     <div>
-//       <p>Conferences Attended</p>
-//       <p>
-//     • Iberoamerican Congress On Pattern Recognition (CIARP 2016) – Perú, Pontifical Catholic University of Perú.
-//     • Machine Learning Summer School 2016 – Perú, Catholic University San Pablo.
-//       </p>
-//     </div>
-
-//     <div>
-//       <p>Presentations</p>
-//       <p>
-//             • Deep Learning Mini-Course. Present at Workshop on Artificial Intelligence and Machine Learning Applications 2017 – Perú, Pontifical Catholic University of Perú.
-//     • Automatic Lymphocyte Detection on Gastric Cancer IHC Images Using Deep Learning. Poster session presented at the 30th ΙΕΕΕ International Symposium on Computer-Based Medical Systems - Greece, Aristotle University of Thessaloniki.
-//       </p>
-//     </div>
-
-// <div>
-//   <p>Publications</p>
-// </div>
-
-//       <div>
-//         <p>Knowledge</p>
-//         <p>
-//           Knowledge and active research of the current state of the art on deep
-//           learning and computer vision. Advance skill on Python, building
-//           reusable APIs, web servers and open software development. Experience
-//           building data visualization and interactive dashboards using Python
-//          and JavaScript (React, D3, Threejs). Typescript Rust WebAssembly.
-//         </p>
-//       </div>
-
-//       <div>
-//         <p>Language</p>
-//         <p>Spanish (native)</p>
-//         <p>English</p>
-//       </div>
-//     </Page>

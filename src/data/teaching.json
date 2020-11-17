@@ -2,9 +2,10 @@
   {
     "place": "The University of Adelaide",
     "dateIn": "201907",
-    "dateOut": "201912",
+    "dateOut": "202006",
     "details": [
-      "Tutor assistance for the course “Foundations of Computer Science”"
+      "Tutor for “Foundations of Computer Science” with python.",
+      "Tutor for “Foundations of Computer Science” with java."
     ]
   },
   {
@@ -12,8 +13,8 @@
     "dateIn": "201807",
     "dateOut": "201810",
     "details": [
-      "Taught the first 6 weeks of: “Advanced Techniques in Data Mining and Intelligent Systems”, in the Master in Informatics program.",
-      "Taught: “Deep Learning Training Course”, a two weeks training course.</p>"
+      "Lecturer for “Advanced Techniques in Data Mining and Intelligent Systems”, Master in Informatics program.",
+      "Taught “Deep Learning Training Course”, a two weeks training course."
     ]
   }
 ]

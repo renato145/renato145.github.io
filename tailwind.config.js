@@ -3,6 +3,9 @@ module.exports = {
   purge: ['./src/**/*.js', './src/**/*.tsx'],
   theme: {
     extend: {
+      screens: {
+        'print': {'raw': 'print'}
+      },
       minHeight: {
         'screen-50': "50vh",
         'screen-95': "95vh",
