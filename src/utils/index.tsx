@@ -17,8 +17,8 @@ export const contains = (object, query) => {
   return object.indexOf(query) > -1;
 };
 
-export const formatYMDate = (date: string) =>
-  format(parse(date, 'yyyyMM', new Date()), 'MMM yyyy');
+export const formatYMDate = (date: string, dateFormat='MMM yyyy') =>
+  format(parse(date, 'yyyyMM', new Date()), dateFormat);
 
 export const formatRelativeDate = (date: Date, dateFormat: string) => {
   const baseDate = new Date();

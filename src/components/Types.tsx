@@ -103,6 +103,10 @@ export type NewsAll = {
   allNewsJson: { nodes: NewsItem[] };
 };
 
+export type PresentationsAll = {
+  allPresentationsJson: { nodes: NewsItem[] };
+};
+
 export type Publication = {
   authors: string;
   conference: string;

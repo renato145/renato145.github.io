@@ -15,7 +15,7 @@ import { Navigation } from '../components/Navigation';
 
 const Page: React.FC<HTMLProps<HTMLDivElement>> = ({ children, ...props }) => (
   <div
-    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-gray-100"
+    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-gray-100 shadow-2xl print:shadow-none"
     style={{
       width: '21cm',
       height: '29.7cm',
@@ -34,7 +34,8 @@ interface SectionProps extends HTMLProps<HTMLDivElement> {
 
 const Section: React.FC<SectionProps> = ({ title, ...props }) => (
   <div {...props}>
-    <p className="text-xl font-extrabold">{title}</p>
+    <p className="text-2xl font-extrabold">{title}</p>
+    <div className="border-b-4 border-gray-400" />
   </div>
 );
 
@@ -52,7 +53,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="font-medium text-lg">{university}</p>
-      <p className="text-gray-600">{`${yearIn} - ${yearOut}${
+      <p className="text-gray-600 text-sm">{`${yearIn} - ${yearOut}${
         pending ? ' (expected)' : ''
       }`}</p>
     </div>
@@ -76,7 +77,7 @@ const Experience: React.FC<ExperienceProps> = ({
       <p>
         {place} <span>({position})</span>
       </p>
-      <p className="text-gray-600">
+      <p className="text-gray-600 text-sm">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
@@ -105,7 +106,7 @@ const Teaching: React.FC<TeachingProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p>{place}</p>
-      <p className="text-gray-600">
+      <p className="text-gray-600 text-sm">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
@@ -152,97 +153,95 @@ const CV: React.FC = () => {
   const teaching = useTeaching();
 
   return (
-    <div className="bg-gray-700 pb-1 print:pb-0">
+    <div className="bg-gray-500 pb-1 print:pb-0">
       <SEO title="CV" description="My CV" />
       <div style={{ width: '21cm' }} className="mx-auto print:hidden">
         <Navigation />
       </div>
       <Page>
-        <div className="text-center leading-tight">
-          <p className="text-2xl font-medium">Renato Hermoza Aragonés</p>
-          <a href="renato.hermoza@pucp.edu.pe" target="_black" rel="noopener">
-            renato.hermoza@pucp.edu.pe
-          </a>
+        <div className="mt-8 text-center leading-tight">
+          <p className="text-3xl font-semibold">Renato Hermoza Aragonés</p>
+          <div className="flex mt-1 justify-center">
+            <a
+              href="https://renato145.github.io/"
+              target="_black"
+              rel="noopener"
+            >
+              renato145.github.io
+            </a>
+            <p className="mx-2">•</p>
+            <a href="renato.hermoza@pucp.edu.pe" target="_black" rel="noopener">
+              renato.hermoza@pucp.edu.pe
+            </a>
+          </div>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-10">
           <Section title="Resume" />
-          <p>
+          <p className="mt-2">
             Final year PhD. student at the University of Adelaide with main
             research interests in the fields of computer vision, machine
             learning and data visualization.
           </p>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-8">
           <Section title="Education" />
           {education.map((o, i) => (
             <EducationItem key={i} className="mt-2" {...o} />
           ))}
         </div>
 
-        <div className="mt-4">
+        <div className="mt-8">
           <Section title="Professional Experience" />
           {experience.map((o, i) => (
             <Experience key={i} className="mt-2" {...o} />
           ))}
         </div>
 
-        <div className="mt-4">
+        <div className="mt-8">
           <Section title="Teaching Experience" />
           {teaching.map((o, i) => (
             <Teaching key={i} className="mt-2" {...o} />
           ))}
         </div>
-              </Page>
+      </Page>
 
       <Page>
-        <div className="mt-4">
+        <div className="mt-8">
           <Section title="Publications" />
-          <ul>
+          <ul className="mt-2">
             {publications.map((o, i) => (
-              <Publication key={i} className="mt-1 text-sm" {...o} />
-              ))}
+              <Publication key={i} className="mt-1" {...o} />
+            ))}
           </ul>
         </div>
 
-        <div className="mt-4">
-          <Section title="Conference Attended" />
-          <p>
-            Iberoamerican Congress On Pattern Recognition (CIARP 2016) – Perú,
-            Pontifical Catholic University of Perú. Machine Learning Summer
-            School 2016 – Perú, Catholic University San Pablo.
-          </p>
-        </div>
-
-        <div className="mt-4">
-          <Section title="Presentations" />
-          <p>
-            Deep Learning Mini-Course. Present at Workshop on Artificial
-            Intelligence and Machine Learning Applications 2017 – Perú,
-            Pontifical Catholic University of Perú. Automatic Lymphocyte
-            Detection on Gastric Cancer IHC Images Using Deep Learning. Poster
-            session presented at the 30th ΙΕΕΕ International Symposium on
-            Computer-Based Medical Systems - Greece, Aristotle University of
-            Thessaloniki.
-          </p>
-        </div>
-
-        <div className="mt-4">
+        <div className="mt-8">
           <Section title="Skills" />
-          <p>
+          <p className="mt-2">
             Knowledge and active research of the current state of the art on
-            deep learning and computer vision. Advance skill on Python, building
-            reusable APIs, web servers and open software development. Experience
-            building data visualization and interactive dashboards using Python
-            and JavaScript (React, D3, Threejs). Typescript Rust WebAssembly.
+            deep learning and computer vision.
+          </p>
+          <p className="mt-1">
+            Advance skill on Python, building reusable APIs, web servers and
+            open software development.
+          </p>
+          <p className="mt-1">
+            Experience building data visualization and interactive dashboards
+            using Python and JavaScript (React, D3, Threejs).
+          </p>
+          <p className="mt-1">
+            Programming languages: Python, JS/Typescript, Rust and Julia.
           </p>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-8">
           <Section title="Languages" />
-          <p>Spanish (native)</p>
-          <p>English</p>
+          <ul className="mt-2">
+            <li>Spanish (native)</li>
+            <li>English (fluent)</li>
+          </ul>
         </div>
       </Page>
     </div>
