@@ -43,6 +43,7 @@
     "gatsby-transformer-sharp": "^2.7.0",
     "lodash": "^4.17.20",
     "postcss": "^8.1.8",
+    "prism-themes": "^1.5.0",
     "prismjs": "^1.22.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -79,6 +80,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b master",
+    "gh-pages": "gh-pages -d public -b master"
   }
 }

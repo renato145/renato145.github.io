@@ -1,7 +1,7 @@
 module.exports = {
   // prefix: 'tw-',
   purge: {
-    mode: 'all',
+    // mode: 'all',
     content: ['./src/**/*.js', './src/**/*.tsx', './src/**/*.css'],
   },
   darkMode: false, // or 'media' or 'class'
