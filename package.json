@@ -13,6 +13,7 @@
     "@mdx-js/mdx": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
     "@types/react-helmet": "^6.1.0",
+    "autoprefixer": "^10.0.2",
     "babel-plugin-styled-components": "^1.11.1",
     "d3": "^6.2.0",
     "date-fns": "^2.16.1",
@@ -40,6 +41,7 @@
     "gatsby-transformer-json": "^2.6.0",
     "gatsby-transformer-sharp": "^2.7.0",
     "lodash": "^4.17.20",
+    "postcss": "^8.1.8",
     "prismjs": "^1.22.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -56,7 +58,7 @@
   "devDependencies": {
     "gh-pages": "^3.1.0",
     "prettier": "^2.2.0",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^2.0.1"
   },
   "homepage": "https://renato145.github.io",
   "keywords": [

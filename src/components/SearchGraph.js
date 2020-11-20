@@ -153,7 +153,7 @@ export const SearchGraph = () => {
         Go back to normal search
       </Link>
       <input
-        class="mt-1 mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal"
+        class="mt-1 mb-2 bg-white focus:outline-none focus:ring border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal"
         type="text"
         placeholder="Search something"
         onChange={search}
