@@ -52,30 +52,30 @@ const About: React.FC<Props> = ({ data, location }) => {
       // description={title}
       headerConfig={{ title }}
     >
-      <div className="px-2 leading-relaxed">
-        <p className="mt-4">
+      <div className="prose max-w-none">
+        <p>
           Hi! this is {author}. I'm a second year PhD student at the University
           of Adelaide, my work focuses on applying machine learning to medical
           images and currently working on weakly supervised localization.
         </p>
 
-        <p className="mt-2">
+        <p>
           Things I'm interested in no particular order: machine learning: data
           visualization, optimization, simulation, open source...
         </p>
 
-        <p className="mt-2">
+        <p>
           I'm always up to apply my knowledge on impactful and social projects.
           If you are interested in doing a collaboration, send me a mail:{' '}
           <a href={`mailto:${mail}`}>{mail}</a>.
         </p>
 
-        <p className="mt-6">
+        <p>
           You can find my CV <Link to={`/cv`}>here</Link>.
         </p>
 
-        <h3 className="mt-8 font-medium">News</h3>
-        <ul className="mt-2">
+        <h2>News</h2>
+        <ul>
           {news.map(({ text, date }, i) => (
             <li key={i}>
               {formatYMDate(date, 'MMMM yyyy')}: {text}
@@ -83,15 +83,15 @@ const About: React.FC<Props> = ({ data, location }) => {
           ))}
         </ul>
 
-        <h3 className="mt-8 font-medium">Publications</h3>
-        <ul className="mt-2">
+        <h2>Publications</h2>
+        <ul>
           {publications.map((o, i) => (
             <Publication key={i} {...o} />
           ))}
         </ul>
 
-        <h3 className="mt-8 font-medium">Presentations</h3>
-        <ul className="mt-2">
+        <h2>Presentations</h2>
+        <ul>
           {presentations.map(({text}, i) => (
             <li key={i}>{text}</li>
           ))}

@@ -1,16 +1,19 @@
 module.exports = {
   // prefix: 'tw-',
-  purge: ['./src/**/*.js', './src/**/*.tsx', './src/**/*.css'],
+  purge: {
+    mode: 'all',
+    content: ['./src/**/*.js', './src/**/*.tsx', './src/**/*.css'],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       screens: {
-        'print': {'raw': 'print'}
+        print: { raw: 'print' },
       },
       minHeight: {
-        'screen-50': "50vh",
-        'screen-95': "95vh",
-        'screen-98': "98vh",
+        'screen-50': '50vh',
+        'screen-95': '95vh',
+        'screen-98': '98vh',
       },
       maxWidth: {
         '1/2': '50%',
@@ -158,10 +161,23 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
-    }
+    },
+    // typography: {
+    //   default: {
+    //     css: {
+    //       color: '#333',
+    //       a: {
+    //         color: '#3182ce',
+    //         '&:hover': {
+    //           color: '#2c5282',
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

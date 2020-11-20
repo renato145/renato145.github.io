@@ -82,7 +82,7 @@ const Experience: React.FC<ExperienceProps> = ({
       </p>
     </div>
     {details.length > 0 && (
-      <ul className="pl-4">
+      <ul className="pl-4 list-outside ml-4 list-disc">
         {details.map((o, i) => (
           <li className="text-sm" key={i}>
             {o}
@@ -111,7 +111,7 @@ const Teaching: React.FC<TeachingProps> = ({
       </p>
     </div>
     {details.length > 0 && (
-      <ul className="pl-4">
+      <ul className="pl-4 list-outside ml-4 list-disc">
         {details.map((o, i) => (
           <li className="text-sm" key={i}>
             {o}
@@ -210,7 +210,7 @@ const CV: React.FC = () => {
       <Page>
         <div className="mt-8">
           <Section title="Publications" />
-          <ul className="mt-2">
+          <ul className="mt-2 list-outside ml-4 list-disc">
             {publications.map((o, i) => (
               <Publication key={i} className="mt-1" {...o} />
             ))}
@@ -238,7 +238,7 @@ const CV: React.FC = () => {
 
         <div className="mt-8">
           <Section title="Languages" />
-          <ul className="mt-2">
+          <ul className="mt-2 list-outside ml-4 list-disc">
             <li>Spanish (native)</li>
             <li>English (fluent)</li>
           </ul>
