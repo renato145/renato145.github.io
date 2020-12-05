@@ -43,6 +43,19 @@ module.exports = {
         '10/12': '83.333333%',
         '11/12': '91.666667%',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.900'),
+            a: {
+              color: theme('colors.blue.600'),
+              '&:hover': {
+                color: theme('colors.blue.800'),
+              },
+            },
+          },
+        },
+      }),
     },
     colors: {
       transparent: 'transparent',
@@ -162,19 +175,6 @@ module.exports = {
         900: '#702459',
       },
     },
-    // typography: {
-    //   default: {
-    //     css: {
-    //       color: '#333',
-    //       a: {
-    //         color: '#3182ce',
-    //         '&:hover': {
-    //           color: '#2c5282',
-    //         },
-    //       },
-    //     },
-    //   },
-    // },
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
