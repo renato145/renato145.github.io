@@ -1,5 +1,14 @@
 [
   {
+    "name": "peru_news",
+    "tags": ["peru", "data-scrapping", "git-actions", "git-scrapping", "rust"]
+  },
+  {
+    "name": "const-peru",
+    "showName": "Constitución política del Perú",
+    "tags": ["peru", "reactjs", "javascript", "visualization"]
+  },
+  {
     "name": "ContrastiveLoss",
     "tags": ["pytorch", "machine-learning", "python"]
   },
@@ -19,12 +28,12 @@
   {
     "name": "game-of-life",
     "showName": "Game of Life (wasm)",
-    "tags": ["javascript", "react", "webassembly", "rust", "tailwind"]
+    "tags": ["javascript", "reactjs", "webassembly", "rust", "tailwind"]
   },
   {
     "name": "wasm_template",
     "showName": "Wasm Template",
-    "tags": ["javascript", "react", "webassembly", "rust", "tailwind"]
+    "tags": ["javascript", "reactjs", "webassembly", "rust", "tailwind"]
   },
   {
     "name": "covid2019",
@@ -109,7 +118,7 @@
     "showName": "Spatial Transformer Network",
     "tags": ["pytorch", "machine-learning", "python"]
   },
-  { "name": "peru-stats", "tags": ["python", "data-scrapping"] },
+  { "name": "peru-stats", "tags": ["peru", "python", "data-scrapping"] },
   { "name": "bayesian-opt", "tags": ["pytorch", "machine-learning", "python"] },
   {
     "name": "waimlap2017",
