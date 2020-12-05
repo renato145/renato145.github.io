@@ -20,12 +20,14 @@
 <url> <loc>https://renato145.github.io/tags/threejs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/visualization/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/webassembly/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://renato145.github.io/tags/data-scrapping/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://renato145.github.io/tags/git-actions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://renato145.github.io/tags/git-scrapping/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/pytorch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/machine-learning/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/medical-imaging/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/fastai/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/sockets/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://renato145.github.io/tags/react/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/tailwind/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/covid-2019/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/d-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -35,7 +37,6 @@
 <url> <loc>https://renato145.github.io/tags/graph-neural-networks/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/utilities/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/simulation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://renato145.github.io/tags/data-scrapping/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/tutorial/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/tensorflow/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/gan/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
