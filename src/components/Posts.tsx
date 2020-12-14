@@ -1,9 +1,8 @@
-import React, { HTMLProps, useCallback, useEffect, useState } from 'react';
+import React, { HTMLProps, useCallback, useRef, useState } from 'react';
 import { PostPreview } from './PostPreview';
 import { LinkButton } from './LinkButton';
 import { MdxNode, NodesOf } from './Types';
-import { useOnScrollEnd } from '../hooks/useOnScrollEnd';
-import { useOnNoScrollLoad } from '../hooks/useOnNoScrollLoad';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
   title?: boolean;
@@ -28,9 +27,8 @@ export const Posts: React.FC<Props> = ({
   const increaseLimit = useCallback(() => {
     if (limit < posts.length) setLimit((limit) => limit + showLimit);
   }, [posts.length, showLimit]);
-
-  useOnNoScrollLoad(increaseLimit, limit);
-  if (autoLoadMore) useOnScrollEnd(increaseLimit);
+  const ref = useRef<HTMLDivElement>(null);
+  useIntersectionObserver({ target: ref, onIntersect: increaseLimit, enabled: autoLoadMore });
 
   return (
     <div {...props}>
@@ -45,8 +43,8 @@ export const Posts: React.FC<Props> = ({
         ))}
       </div>
       {showLoadMore && visiblePosts.length < posts.length && (
-        <div className="mt-0 ml-2">
-          <LinkButton onClick={() => setLimit((limit) => limit + showLimit)}>
+        <div ref={ref} className="mt-0 ml-2">
+          <LinkButton onClick={increaseLimit}>
             {loadMoreText}
           </LinkButton>
         </div>
