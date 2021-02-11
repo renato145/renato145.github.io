@@ -47,7 +47,6 @@
 <url> <loc>https://renato145.github.io/experiments/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://renato145.github.io/searchGraph/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/testPage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
