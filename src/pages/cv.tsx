@@ -232,7 +232,7 @@ const CV: React.FC = () => {
             using Python and JavaScript (React, D3, Threejs).
           </p>
           <p className="mt-1">
-            Programming languages: Python, JS/Typescript, Rust and Julia.
+            Programming languages: Python, Rust and JS/Typescript.
           </p>
         </div>
 
