@@ -74,7 +74,7 @@ const Experience: React.FC<ExperienceProps> = ({
 }) => (
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
-      <p>
+      <p className="font-medium">
         {place} <span>({position})</span>
       </p>
       <p className="text-gray-600 text-sm">
@@ -105,7 +105,7 @@ const Teaching: React.FC<TeachingProps> = ({
 }) => (
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
-      <p>{place}</p>
+      <p className="font-medium">{place}</p>
       <p className="text-gray-600 text-sm">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
@@ -224,15 +224,19 @@ const CV: React.FC = () => {
             deep learning and computer vision.
           </p>
           <p className="mt-1">
-            Advance skill on Python, building reusable APIs, web servers and
-            open software development.
+            Advance skill on Python building data pipelines, machine learning
+            models, web servers and open software development.
+          </p>
+          <p className="mt-1">
+            Experience using Rust for CLI applications, web APIs, Python
+            bindings and high-performance use cases like data pipelines.
           </p>
           <p className="mt-1">
             Experience building data visualization and interactive dashboards
             using Python and JavaScript (React, D3, Threejs).
           </p>
           <p className="mt-1">
-            Programming languages: Python, Rust and JS/Typescript.
+            Main programming languages: Python, Rust and JS/Typescript.
           </p>
         </div>
 

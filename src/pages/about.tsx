@@ -56,7 +56,8 @@ const About: React.FC<Props> = ({ data, location }) => {
         <p>
           Hi! this is {author}. I'm a second year PhD student at the University
           of Adelaide, my work focuses on applying machine learning to medical
-          images and currently working on weakly supervised localization.
+          images and currently working on survival prediction and weakly
+          supervised localization.
         </p>
 
         <p>
@@ -92,7 +93,7 @@ const About: React.FC<Props> = ({ data, location }) => {
 
         <h2>Presentations</h2>
         <ul>
-          {presentations.map(({text}, i) => (
+          {presentations.map(({ text }, i) => (
             <li key={i}>{text}</li>
           ))}
         </ul>
