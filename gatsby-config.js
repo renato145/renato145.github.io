@@ -89,6 +89,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
@@ -126,7 +127,7 @@ module.exports = {
             slug: (node) => node.fields.slug,
           },
           GitReposJson: {
-            title: (node) => node.showName ? node.showName : node.name,
+            title: (node) => (node.showName ? node.showName : node.name),
             name: (node) => node.name,
             tags: (node) => node.tags,
           },

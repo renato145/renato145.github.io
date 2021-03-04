@@ -26,7 +26,7 @@ export const useGitRepos = ({ tag, name }: Props) => {
           repositoryOwner(login: "renato145") {
             repositories(
               last: 100
-              orderBy: { field: UPDATED_AT, direction: DESC }
+              orderBy: { field: UPDATED_AT, direction: ASC }
             ) {
               nodes {
                 name
