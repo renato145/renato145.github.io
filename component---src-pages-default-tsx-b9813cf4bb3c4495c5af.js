@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{lIG1:function(t,e,a){"use strict";a.r(e);var i=a("q1tI"),n=a.n(i),o=a("soUV");e.default=function(t){var e=t.data,a=t.location,i=e.site.siteMetadata.title;return n.a.createElement(o.a,{location:a,title:i,description:"some description",headerConfig:{title:"header"}})}}}]);
-//# sourceMappingURL=component---src-pages-default-tsx-b9813cf4bb3c4495c5af.js.map
