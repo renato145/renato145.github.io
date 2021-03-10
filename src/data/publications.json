@@ -9,8 +9,15 @@
   {
     "authors": "M. Hasani-Shoreh, R. H. Aragonés, and F. Neumann.",
     "title": "Neural networks in evolutionary dynamic constrained optimization: computational cost and benefits.",
-    "conference": "Proceedings of the 24th European Conference on Artificial Intelligence (ECAI 2020)",
+    "conference": "Proceedings of the 24th European Conference on Artificial Intelligence (ECAI 2020).",
     "doi": "10.3233/FAIA200103",
+    "year": 2020
+  },
+  {
+    "authors": "M. Hasani-Shoreh, R. H. Aragonés, and F. Neumann.",
+    "title": "Using Neural Networks and Diversifying Differential Evolution for Dynamic Optimisation.",
+    "conference": "2020 IEEE Symposium Series on Computational Intelligence (SSCI), Canberra, ACT, Australia, 2020, pp. 289-296.",
+    "doi": "10.1109/SSCI47803.2020.9308154",
     "year": 2020
   },
   {
@@ -28,3 +35,4 @@
     "year": 2017
   }
 ]
+
