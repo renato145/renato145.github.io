@@ -1,4 +1,8 @@
 [
+  { "name": "preference_opt",
+    "showName": "Preference optimization",
+    "tags": ["typescript", "reactjs", "wasm", "rust", "tailwind", "machine-learning"]
+  },
   {
     "name": "peru_news",
     "tags": ["peru", "data-scrapping", "git-actions", "git-scrapping", "rust"]
@@ -6,7 +10,7 @@
   {
     "name": "const-peru",
     "showName": "Constitución política del Perú",
-    "tags": ["peru", "reactjs", "javascript", "visualization"]
+    "tags": ["peru", "reactjs", "typescript", "visualization"]
   },
   {
     "name": "ContrastiveLoss",
@@ -28,12 +32,12 @@
   {
     "name": "game-of-life",
     "showName": "Game of Life (wasm)",
-    "tags": ["javascript", "reactjs", "webassembly", "rust", "tailwind"]
+    "tags": ["javascript", "reactjs", "wasm", "rust", "tailwind"]
   },
   {
     "name": "wasm_template",
     "showName": "Wasm Template",
-    "tags": ["javascript", "reactjs", "webassembly", "rust", "tailwind"]
+    "tags": ["javascript", "reactjs", "wasm", "rust", "tailwind"]
   },
   {
     "name": "covid2019",
