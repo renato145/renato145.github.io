@@ -54,7 +54,7 @@ const About: React.FC<Props> = ({ data, location }) => {
     >
       <div className="prose max-w-none">
         <p>
-          Hi! this is {author}. I'm a second year PhD student at the University
+          Hi! this is {author}. I'm in the final year of PhD at the University
           of Adelaide, my work focuses on applying machine learning to medical
           images and currently working on survival prediction and weakly
           supervised localization.
