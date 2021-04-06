@@ -1,7 +1,26 @@
 [
-  { "name": "preference_opt",
+  {
+    "name": "matrix_profile",
+    "tags": [
+      "typescript",
+      "reactjs",
+      "wasm",
+      "rust",
+      "machine-learning",
+      "time-series"
+    ]
+  },
+  {
+    "name": "preference_opt",
     "showName": "Preference optimization",
-    "tags": ["typescript", "reactjs", "wasm", "rust", "tailwind", "machine-learning"]
+    "tags": [
+      "typescript",
+      "reactjs",
+      "wasm",
+      "rust",
+      "tailwind",
+      "machine-learning"
+    ]
   },
   {
     "name": "peru_news",
