@@ -22,6 +22,7 @@
 <url> <loc>https://renato145.github.io/tags/webassembly/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/typescript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/wasm/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://renato145.github.io/tags/simulation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/machine-learning/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/time-series/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/tailwind/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -39,7 +40,6 @@
 <url> <loc>https://renato145.github.io/tags/graphs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/graph-neural-networks/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/utilities/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://renato145.github.io/tags/simulation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/tutorial/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/tensorflow/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://renato145.github.io/tags/gan/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
