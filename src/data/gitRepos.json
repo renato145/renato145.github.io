@@ -1,5 +1,18 @@
 [
   {
+    "name": "abm_segregation",
+    "showName": "ABM: Segregation",
+    "tags": [
+      "typescript",
+      "reactjs",
+      "wasm",
+      "rust",
+      "threejs",
+      "simulation",
+      "3d"
+    ]
+  },
+  {
     "name": "matrix_profile",
     "tags": [
       "typescript",
