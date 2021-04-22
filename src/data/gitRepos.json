@@ -14,7 +14,13 @@
   },
   {
     "name": "posthocOS",
-    "tags": ["pytorch", "survival-prediction", "medical-imaging", "machine-learning", "python"]
+    "tags": [
+      "pytorch",
+      "survival-prediction",
+      "medical-imaging",
+      "machine-learning",
+      "python"
+    ]
   },
   {
     "name": "matrix_profile",
