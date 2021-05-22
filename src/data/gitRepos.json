@@ -1,5 +1,9 @@
 [
   {
+    "name": "twitter_utils",
+    "tags": ["rust", "data-scrapping", "zeromq"]
+  },
+  {
     "name": "abm_segregation",
     "showName": "ABM: Segregation",
     "tags": [
