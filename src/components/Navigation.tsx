@@ -44,14 +44,14 @@ const LINKS: [URL, string][] = [
 
 export const Navigation: React.FC = () => {
   return (
-    <nav className="flex flex-wrap items-baseline bg-gray-300">
-      <div className="hidden md:block py-2 items-stretch">
+    <nav className="flex flex-wrap bg-gray-300">
+      <div className="hidden md:flex">
         {LINKS.map(([url, text], i) => (
           <HeaderLink
             key={i}
             url={url}
             text={text}
-            className="flex-1 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
+            className="px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
           />
         ))}
       </div>
