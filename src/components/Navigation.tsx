@@ -51,7 +51,7 @@ export const Navigation: React.FC = () => {
             key={i}
             url={url}
             text={text}
-            className="px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
+            className="px-6 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
           />
         ))}
       </div>
