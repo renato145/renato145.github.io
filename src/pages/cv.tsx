@@ -181,7 +181,7 @@ const CV: React.FC = () => {
           <p className="mt-2">
             Final year PhD. student at the University of Adelaide with main
             research interests in the fields of computer vision, machine
-            learning and data visualization.
+            learning, data visualization and data ethics.
           </p>
         </div>
 
@@ -219,25 +219,27 @@ const CV: React.FC = () => {
 
         <div className="mt-8">
           <Section title="Skills" />
-          <p className="mt-2">
-            Knowledge and active research of the current state of the art on
-            deep learning and computer vision.
-          </p>
-          <p className="mt-1">
-            Advance skill on Python building data pipelines, machine learning
-            models, web servers and open software development.
-          </p>
-          <p className="mt-1">
-            Experience using Rust for CLI applications, web APIs, Python
-            bindings and high-performance use cases like data pipelines.
-          </p>
-          <p className="mt-1">
-            Experience building data visualization and interactive dashboards
-            using Python and JavaScript (React, D3, Threejs).
-          </p>
-          <p className="mt-1">
-            Main programming languages: Python, Rust and JS/Typescript.
-          </p>
+          <ul className="mt-1 list-outside ml-4 list-disc">
+            <li className="mt-1">
+              Knowledge and active research of the current state of the art on
+              deep learning and computer vision.
+            </li>
+            <li className="mt-1">
+              Advance skill on Python building data pipelines, machine learning
+              models, web servers and open software development.
+            </li>
+            <li className="mt-1">
+              Experience using Rust for CLI applications, web APIs, Python
+              bindings and high-performance use cases like data pipelines.
+            </li>
+            <li className="mt-1">
+              Experience building data visualization and interactive dashboards
+              using Python and JavaScript (React, D3, Threejs).
+            </li>
+            <li className="mt-1">
+              Main programming languages: Python, Rust and JS/Typescript.
+            </li>
+          </ul>
         </div>
 
         <div className="mt-8">
