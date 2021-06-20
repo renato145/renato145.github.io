@@ -1,5 +1,6 @@
 module.exports = {
   // prefix: 'tw-',
+  mode: 'jit',
   purge: {
     // mode: 'all',
     content: ['./src/**/*.js', './src/**/*.tsx', './src/**/*.css'],

@@ -72,7 +72,7 @@ export const Navigation: React.FC = () => {
               </svg>
             </Menu.Button>
             {open ? (
-              <div className="fixed top-0 bottom-0 left-0 right-0 w-full h-full bg-black opacity-20" />
+              <div className="fixed top-0 bottom-0 left-0 right-0 w-full h-full bg-black/20" />
             ) : null}
             <Transition
               show={open}
