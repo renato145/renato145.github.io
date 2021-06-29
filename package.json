@@ -81,6 +81,7 @@
     "graphql_test": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "cleanserve": "npm run clean && npm run build && npm run serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "justdeploy": "gatsby build",
