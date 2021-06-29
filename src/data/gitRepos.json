@@ -1,5 +1,9 @@
 [
   {
+    "name": "entidades_peru",
+    "tags": ["typescript", "reactjs", "visualization", "peru"]
+  },
+  {
     "name": "twitter_utils",
     "tags": ["rust", "data-scrapping", "zeromq"]
   },
