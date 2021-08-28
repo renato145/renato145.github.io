@@ -237,7 +237,7 @@ const CV: React.FC = () => {
               using Python and JavaScript (React, D3, Threejs).
             </li>
             <li className="mt-1">
-              Main programming languages: Python, Rust and JS/Typescript.
+              Main programming languages: Python, Rust, Julia and JS/Typescript.
             </li>
           </ul>
         </div>
