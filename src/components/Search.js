@@ -51,7 +51,7 @@ export const Search = () => {
             return (
               <div
                 key={id}
-                className="w-full lg:w-1/2 xl:w-1/3 px-4 py-3 rounded hover:bg-blue-100 transition duration-200 ease-out"
+                className="w-full lg:w-1/2 xl:w-1/3 px-4 py-3 rounded hover:bg-blue-100"
               >
                 <div>
                   {isRepo ? (
