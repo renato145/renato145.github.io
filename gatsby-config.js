@@ -99,6 +99,18 @@ module.exports = {
     //     trackingId: `UA-119996617-1`,
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Renato Hermoza`,
+        short_name: `Renato`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `content/assets/gatsby-icon.png`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
