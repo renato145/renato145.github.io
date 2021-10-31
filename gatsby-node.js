@@ -1,10 +1,11 @@
 const path = require(`path`);
-const _ = require('lodash');
+const { kebabCase } = require('lodash');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
+  // Define templates
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
   const tagTemplate = path.resolve('src/templates/tags.tsx');
 
@@ -43,7 +44,11 @@ exports.createPages = async ({ graphql, actions }) => {
   );
 
   if (result.errors) {
-    throw result.errors;
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      result.errors
+    );
+    return;
   }
 
   // Create blog posts pages.
@@ -71,7 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   tags.forEach((tag) => {
     createPage({
-      path: `/tags/${_.kebabCase(tag)}/`,
+      path: `/tags/${kebabCase(tag)}/`,
       component: tagTemplate,
       context: {
         tag: tag,
