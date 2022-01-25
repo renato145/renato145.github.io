@@ -17,7 +17,7 @@ export const TagList: React.FC<Props> = ({ tags, linkClassName, ...props }) => {
       {tags.sort().map((tag, i) => (
         <Link
           to={`/tags/${kebabCase(tag)}`}
-          className={`text-gray-600 hover:text-gray-800 ${ linkClassName ?? '' }`}
+          className={`text-gray-500 hover:text-gray-800 ${ linkClassName ?? '' }`}
           key={i}
         >
           {`${tag} `}

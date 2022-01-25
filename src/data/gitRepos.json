@@ -91,7 +91,7 @@
   },
   {
     "name": "covid2019",
-    "tags": ["reactjs", "javascript", "visualization", "covid2019", "d3"]
+    "tags": ["reactjs", "javascript", "visualization", "covid", "d3"]
   },
   {
     "name": "tfjs_test",

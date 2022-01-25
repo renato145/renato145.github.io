@@ -25,7 +25,7 @@ const HeaderLink: React.FC<HeaderLinkProps> = ({
 }) => (
   <Link
     className={className}
-    activeClassName="font-semibold bg-gray-100"
+    activeClassName="font-semibold bg-slate-50"
     to={url}
     {...props}
   >
@@ -44,14 +44,14 @@ const LINKS: [URL, string][] = [
 
 export const Navigation: React.FC = () => {
   return (
-    <nav className="flex flex-wrap bg-gray-300">
+    <nav className="flex flex-wrap bg-slate-200">
       <div className="hidden md:flex">
         {LINKS.map(([url, text], i) => (
           <HeaderLink
             key={i}
             url={url}
             text={text}
-            className="px-6 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
+            className="px-6 py-2 text-gray-500 hover:text-slate-700 hover:bg-slate-300"
           />
         ))}
       </div>
@@ -60,8 +60,8 @@ export const Navigation: React.FC = () => {
           <>
             <Menu.Button
               className={`px-2 py-3 ${
-                open ? 'bg-gray-400 text-gray-800' : 'bg-gray-300 text-gray-600'
-              } hover:bg-gray-400 active:bg-gray-400 focus:shadow-none hover:text-gray-800 focus:ring-0`}
+                open ? 'bg-slate-300 text-gray-800' : 'bg-slate-200 text-gray-500'
+              } hover:bg-slate-300 active:bg-slate-300 focus:shadow-none hover:text-gray-800 focus:ring-0`}
             >
               <svg
                 className="h-6 w-6 fill-current"
@@ -85,7 +85,7 @@ export const Navigation: React.FC = () => {
               leaveTo="opacity-0 scale-95"
             >
               <Menu.Items
-                className="absolute z-10 left-0 flex flex-col w-48 bg-gray-300 border border-gray-400 outline-none shadow-xl"
+                className="absolute z-10 left-0 flex flex-col w-48 bg-slate-200 border border-gray-400 outline-none shadow-xl"
                 static
               >
                 {LINKS.map(([url, text], i) => (
@@ -93,7 +93,7 @@ export const Navigation: React.FC = () => {
                     key={i}
                     url={url}
                     text={text}
-                    className="flex-1 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-400"
+                    className="flex-1 px-6 py-3 text-gray-500 hover:text-gray-800 hover:bg-slate-300"
                   />
                 ))}
               </Menu.Items>

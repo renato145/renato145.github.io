@@ -66,7 +66,7 @@ const Tags: React.FC<Props> = ({ data, location }) => {
                             <Link to={node.fields.slug}>
                               {node.frontmatter.title || node.fields.slug}
                             </Link>
-                            <small className="text-gray-600">
+                            <small className="text-gray-500">
                               {formatDate(node.frontmatter.date)}
                             </small>
                           </li>
@@ -85,7 +85,7 @@ const Tags: React.FC<Props> = ({ data, location }) => {
                             <li key={i} className="tag-line">
                               <a href={url}>{name}</a>
                               {updatedAt && (
-                                <small className="text-gray-600">
+                                <small className="text-gray-500">
                                   {formatDate(updatedAt)}
                                 </small>
                               )}

@@ -30,7 +30,7 @@ export const Layout: React.FC<Props> = ({
       ? { title: location.pathname.split('/').reverse()[1] }
       : headerConfig;
   return (
-    <div className="container xl:max-w-screen-xl flex flex-col mx-auto pb-2 bg-white shadow-md min-h-screen-98">
+    <div className="container xl:max-w-screen-xl flex flex-col mx-auto pb-2 bg-white shadow-md min-h-[98vh]">
       <header>
         <SEO title={seo.title} description={seo.description} />
         <Navigation />

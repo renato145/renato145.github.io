@@ -22,7 +22,7 @@ export const GithubPreview: React.FC<Props> = ({ data, ...props }) => {
         <div className="mt-0 px-3 pb-2">
           <div>
             {updatedAt && (
-              <small className="text-gray-600">
+              <small className="text-gray-500">
                 Last updated:{' '}
                 {formatRelativeDate(new Date(updatedAt), 'dd/MM/yyyy')}
               </small>

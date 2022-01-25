@@ -15,7 +15,7 @@ import { Navigation } from '../components/Navigation';
 
 const Page: React.FC<HTMLProps<HTMLDivElement>> = ({ children, ...props }) => (
   <div
-    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-gray-100 shadow-2xl print:shadow-none"
+    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-slate-50 shadow-2xl print:shadow-none"
     style={{
       width: '21cm',
       height: '29.7cm',
@@ -35,7 +35,7 @@ interface SectionProps extends HTMLProps<HTMLDivElement> {
 const Section: React.FC<SectionProps> = ({ title, ...props }) => (
   <div {...props}>
     <p className="text-2xl font-extrabold">{title}</p>
-    <div className="border-b-4 border-gray-400" />
+    <div className="border-b-4 border-slate-300" />
   </div>
 );
 
@@ -53,7 +53,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="font-medium text-lg">{university}</p>
-      <p className="text-gray-600 text-sm">{`${yearIn} - ${yearOut}${
+      <p className="text-gray-500 text-sm">{`${yearIn} - ${yearOut}${
         pending ? ' (expected)' : ''
       }`}</p>
     </div>
@@ -77,7 +77,7 @@ const Experience: React.FC<ExperienceProps> = ({
       <p className="font-medium">
         {place} <span>({position})</span>
       </p>
-      <p className="text-gray-600 text-sm">
+      <p className="text-gray-500 text-sm">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
@@ -106,7 +106,7 @@ const Teaching: React.FC<TeachingProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="font-medium">{place}</p>
-      <p className="text-gray-600 text-sm">
+      <p className="text-gray-500 text-sm">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
@@ -153,7 +153,7 @@ const CV: React.FC = () => {
   const teaching = useTeaching();
 
   return (
-    <div className="bg-gray-500 pb-1 print:pb-0">
+    <div className="bg-slate-400 pb-1 print:pb-0">
       <SEO title="CV" description="My CV" />
       <div style={{ width: '21cm' }} className="mx-auto print:hidden">
         <Navigation />

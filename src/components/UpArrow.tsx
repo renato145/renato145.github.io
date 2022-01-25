@@ -31,7 +31,7 @@ export const UpArrow: React.FC = () => {
         show ? 'fixed' : 'hidden',
         'bottom-0 right-0 mr-1 mb-4 sm:mr-6',
         'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 xl:w-18 xl:h-18',
-        'opacity-25 hover:opacity-50 bg-gray-700 hover:bg-gray-400 text-gray-200 hover:text-gray-700',
+        'opacity-25 hover:opacity-50 bg-slate-600 hover:bg-slate-300 text-gray-200 hover:text-gray-700',
         'shadow rounded-full transition-all duration-500',
       ].join(' ')}
     >

@@ -18,7 +18,7 @@ export const PostPreview: React.FC<Props> = ({ node, ...props }) => {
           {postTitle}
         </Link>
       </div>
-      <div className="flex text-xs text-gray-600 leading-normal">
+      <div className="flex text-xs text-gray-500 leading-normal">
         <p>{node.frontmatter.date}</p>
         <p className="px-1">-</p>
         <TagList tags={tags} />
