@@ -15,7 +15,7 @@ import { Navigation } from '../components/Navigation';
 
 const Page: React.FC<HTMLProps<HTMLDivElement>> = ({ children, ...props }) => (
   <div
-    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-slate-50 shadow-2xl print:shadow-none"
+    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-white shadow-2xl print:shadow-none"
     style={{
       width: '21cm',
       height: '29.7cm',
