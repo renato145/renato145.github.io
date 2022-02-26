@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { ascending } from 'd3';
 import { TagList } from './TagList';
 
-export const Search = () => {
+export const Search: React.FC = () => {
   const indexQuery = useStaticQuery(
     graphql`
       query SearchIndexQuery {
@@ -16,7 +16,9 @@ export const Search = () => {
     `
   ).siteSearchIndex.index;
   const [results, setResults] = useState([]);
-  const index = useMemo(() => Index.load(indexQuery), [indexQuery]);
+  console.log(indexQuery);
+  const index = useMemo(() => Index.load<any>(indexQuery), [indexQuery]);
+  console.log(index);
 
   const search = useCallback(
     (event) => {
@@ -32,9 +34,6 @@ export const Search = () => {
 
   return (
     <>
-      {/* <Link to="/searchGraph" className="text-xs">
-        Try search graph
-      </Link> */}
       <input
         className="mt-1 mb-2 block w-full appearance-none rounded border border-gray-300 bg-white py-2 px-4 leading-normal focus:outline-none focus:ring"
         type="text"
