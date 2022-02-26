@@ -12,7 +12,7 @@ export const Header: React.FC<Props> = ({ title, description, tags }) => {
     <header>
       <div>
         <h1 className="font-medium">{title}</h1>
-        <div className="pl-1 flex text-gray-500 text-sm">
+        <div className="flex pl-1 text-sm text-gray-500">
           {description && <p>{description}</p>}
           {tags && (
             <>

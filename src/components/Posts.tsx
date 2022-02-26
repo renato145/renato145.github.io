@@ -28,7 +28,11 @@ export const Posts: React.FC<Props> = ({
     if (limit < posts.length) setLimit((limit) => limit + showLimit);
   }, [posts.length, showLimit]);
   const ref = useRef<HTMLDivElement>(null);
-  useIntersectionObserver({ target: ref, onIntersect: increaseLimit, enabled: autoLoadMore });
+  useIntersectionObserver({
+    target: ref,
+    onIntersect: increaseLimit,
+    enabled: autoLoadMore,
+  });
 
   return (
     <div {...props}>
@@ -38,15 +42,13 @@ export const Posts: React.FC<Props> = ({
           <PostPreview
             node={node}
             key={node.fields.slug}
-            className="w-full lg:w-1/2 mb-4"
+            className="mb-4 w-full lg:w-1/2"
           />
         ))}
       </div>
       {showLoadMore && visiblePosts.length < posts.length && (
         <div ref={ref} className="mt-0 ml-2">
-          <LinkButton onClick={increaseLimit}>
-            {loadMoreText}
-          </LinkButton>
+          <LinkButton onClick={increaseLimit}>{loadMoreText}</LinkButton>
         </div>
       )}
       {posts.length === 0 && <div>...</div>}

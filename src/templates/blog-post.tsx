@@ -20,8 +20,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       }}
       tags={frontmatter.tags}
     >
-
-      <article className="mt-4 prose max-w-none">
+      <article className="prose mt-4 max-w-none">
         <MDXRenderer>{body}</MDXRenderer>
       </article>
 

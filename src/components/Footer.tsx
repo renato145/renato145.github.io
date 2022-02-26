@@ -23,7 +23,7 @@ export const Footer: React.FC<HTMLProps<HTMLDivElement>> = ({ ...props }) => {
     <div {...props}>
       <footer className="w-full">
         <hr />
-        <div className="mt-2 flex flex-wrap flex-col sm:flex-row items-center justify-center">
+        <div className="mt-2 flex flex-col flex-wrap items-center justify-center sm:flex-row">
           <div className="px-4">
             <a href={`mailto:${mail}`}>{mail}</a>
           </div>

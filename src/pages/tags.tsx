@@ -8,7 +8,8 @@ import { MdxAllNodes } from '../components/Types';
 import { formatRelativeDate } from '../utils';
 import './tags.css';
 
-const formatDate = (date: string) => formatRelativeDate(new Date(date), 'MMMM dd, yyyy');
+const formatDate = (date: string) =>
+  formatRelativeDate(new Date(date), 'MMMM dd, yyyy');
 
 interface Props extends PageProps {
   data: MdxAllNodes;
@@ -41,7 +42,7 @@ const Tags: React.FC<Props> = ({ data, location }) => {
       <h3 className="mt-2 font-medium">Content</h3>
       <div className="ml-2 mt-1 flex flex-wrap">
         {allTags.map((tag) => (
-          <p className="w-full lg:w-1/2 xl:w-1/3 text-lg" key={tag}>
+          <p className="w-full text-lg lg:w-1/2 xl:w-1/3" key={tag}>
             <span className="mr-1 text-base">&bull;</span>
             <a href={`#${tag}`}>{tag}</a>
           </p>

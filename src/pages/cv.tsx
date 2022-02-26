@@ -15,7 +15,7 @@ import { Navigation } from '../components/Navigation';
 
 const Page: React.FC<HTMLProps<HTMLDivElement>> = ({ children, ...props }) => (
   <div
-    className="mx-auto mb-4 print:mb-0 px-8 py-4 bg-white shadow-2xl print:shadow-none"
+    className="mx-auto mb-4 bg-white px-8 py-4 shadow-2xl print:mb-0 print:shadow-none"
     style={{
       width: '21cm',
       height: '29.7cm',
@@ -52,8 +52,8 @@ const EducationItem: React.FC<EducationItemProps> = ({
 }) => (
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
-      <p className="font-medium text-lg">{university}</p>
-      <p className="text-gray-500 text-sm">{`${yearIn} - ${yearOut}${
+      <p className="text-lg font-medium">{university}</p>
+      <p className="text-sm text-gray-500">{`${yearIn} - ${yearOut}${
         pending ? ' (expected)' : ''
       }`}</p>
     </div>
@@ -77,12 +77,12 @@ const Experience: React.FC<ExperienceProps> = ({
       <p className="font-medium">
         {place} <span>({position})</span>
       </p>
-      <p className="text-gray-500 text-sm">
+      <p className="text-sm text-gray-500">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
     {details.length > 0 && (
-      <ul className="pl-4 list-outside ml-4 list-disc">
+      <ul className="ml-4 list-outside list-disc pl-4">
         {details.map((o, i) => (
           <li className="text-sm" key={i}>
             {o}
@@ -106,12 +106,12 @@ const Teaching: React.FC<TeachingProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="font-medium">{place}</p>
-      <p className="text-gray-500 text-sm">
+      <p className="text-sm text-gray-500">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
     {details.length > 0 && (
-      <ul className="pl-4 list-outside ml-4 list-disc">
+      <ul className="ml-4 list-outside list-disc pl-4">
         {details.map((o, i) => (
           <li className="text-sm" key={i}>
             {o}
@@ -161,7 +161,7 @@ const CV: React.FC = () => {
       <Page>
         <div className="mt-8 text-center leading-tight">
           <p className="text-3xl font-semibold">Renato Hermoza Aragonés</p>
-          <div className="flex mt-1 justify-center">
+          <div className="mt-1 flex justify-center">
             <a
               href="https://renato145.github.io/"
               target="_black"
@@ -210,7 +210,7 @@ const CV: React.FC = () => {
       <Page>
         <div className="mt-8">
           <Section title="Publications" />
-          <ul className="mt-2 list-outside ml-4 list-disc">
+          <ul className="mt-2 ml-4 list-outside list-disc">
             {publications.map((o, i) => (
               <Publication key={i} className="mt-1" {...o} />
             ))}
@@ -219,7 +219,7 @@ const CV: React.FC = () => {
 
         <div className="mt-8">
           <Section title="Skills" />
-          <ul className="mt-1 list-outside ml-4 list-disc">
+          <ul className="mt-1 ml-4 list-outside list-disc">
             <li className="mt-1">
               Knowledge and active research of the current state of the art on
               deep learning and computer vision.
@@ -244,7 +244,7 @@ const CV: React.FC = () => {
 
         <div className="mt-8">
           <Section title="Languages" />
-          <ul className="mt-2 list-outside ml-4 list-disc">
+          <ul className="mt-2 ml-4 list-outside list-disc">
             <li>Spanish (native)</li>
             <li>English (fluent)</li>
           </ul>

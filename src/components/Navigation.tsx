@@ -51,17 +51,19 @@ export const Navigation: React.FC = () => {
             key={i}
             url={url}
             text={text}
-            className="px-6 py-2 text-gray-500 hover:text-slate-700 hover:bg-slate-300"
+            className="px-6 py-2 text-gray-500 hover:bg-slate-300 hover:text-slate-700"
           />
         ))}
       </div>
-      <Menu as="div" className="relative md:hidden ml-2">
+      <Menu as="div" className="relative ml-2 md:hidden">
         {({ open }) => (
           <>
             <Menu.Button
               className={`px-2 py-3 ${
-                open ? 'bg-slate-300 text-gray-800' : 'bg-slate-200 text-gray-500'
-              } hover:bg-slate-300 active:bg-slate-300 focus:shadow-none hover:text-gray-800 focus:ring-0`}
+                open
+                  ? 'bg-slate-300 text-gray-800'
+                  : 'bg-slate-200 text-gray-500'
+              } hover:bg-slate-300 hover:text-gray-800 focus:shadow-none focus:ring-0 active:bg-slate-300`}
             >
               <svg
                 className="h-6 w-6 fill-current"
@@ -72,7 +74,7 @@ export const Navigation: React.FC = () => {
               </svg>
             </Menu.Button>
             {open ? (
-              <div className="fixed top-0 bottom-0 left-0 right-0 w-full h-full bg-black/20" />
+              <div className="fixed top-0 bottom-0 left-0 right-0 h-full w-full bg-black/20" />
             ) : null}
             <Transition
               show={open}
@@ -85,7 +87,7 @@ export const Navigation: React.FC = () => {
               leaveTo="opacity-0 scale-95"
             >
               <Menu.Items
-                className="absolute z-10 left-0 flex flex-col w-48 bg-slate-200 border border-gray-400 outline-none shadow-xl"
+                className="absolute left-0 z-10 flex w-48 flex-col border border-gray-400 bg-slate-200 shadow-xl outline-none"
                 static
               >
                 {LINKS.map(([url, text], i) => (
@@ -93,7 +95,7 @@ export const Navigation: React.FC = () => {
                     key={i}
                     url={url}
                     text={text}
-                    className="flex-1 px-6 py-3 text-gray-500 hover:text-gray-800 hover:bg-slate-300"
+                    className="flex-1 px-6 py-3 text-gray-500 hover:bg-slate-300 hover:text-gray-800"
                   />
                 ))}
               </Menu.Items>

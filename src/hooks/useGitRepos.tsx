@@ -1,15 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useMemo } from 'react';
 import { unCamelCase, singleSpace, titleCase } from '../utils';
-import { GraphqlGithubAll, RepoInfo } from '../components/Types';
+import { GraphqlGit, GraphqlGithubAll, RepoInfo } from '../components/Types';
 
-const formatName: (string) => string  = (name) =>
+const formatName: (string) => string = (name) =>
   titleCase(singleSpace(unCamelCase(name.replace(/[-_]/g, ' '))));
 
 interface Props {
   tag?: string;
   name?: string;
-};
+}
 
 export const useGitRepos = ({ tag, name }: Props) => {
   const data = useStaticQuery<GraphqlGithubAll>(
@@ -50,7 +50,9 @@ export const useGitRepos = ({ tag, name }: Props) => {
     gitRepos.forEach((d) => {
       if (name && d.name !== name) return;
       if (tag && d.tags.indexOf(tag) === -1) return;
-      const repoInfo = { ...allRepos.find((o) => o.name === d.name) };
+      const repoInfo = {
+        ...allRepos.find((o) => o.name === d.name),
+      } as GraphqlGit;
       const repo = Object.assign(repoInfo, d);
       const url = repo['openGraphImageUrl'];
       if (url.indexOf('https://repository-images') > -1) repo['imgUrl'] = url;

@@ -12,7 +12,7 @@ export const GithubPreview: React.FC<Props> = ({ data, ...props }) => {
 
   return (
     <div {...props}>
-      <div className="w-full p-1 rounded border shadow-sm hover:shadow-xl">
+      <div className="w-full rounded border p-1 shadow-sm hover:shadow-xl">
         {imgUrl && (
           <a href={homepageUrl || url} target="_black" rel="noopener">
             <img className="" src={imgUrl} alt={name} />

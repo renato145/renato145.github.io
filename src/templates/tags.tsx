@@ -25,7 +25,7 @@ const TagsTemplate = ({ pageContext, data, location }) => {
 export default TagsTemplate;
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query ($tag: String) {
     allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

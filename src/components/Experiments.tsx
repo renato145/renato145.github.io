@@ -38,7 +38,7 @@ export const Experiments: React.FC<Props> = ({
   return (
     <div {...props}>
       {title && <h2 className="font-medium">Experiments</h2>}
-      <div className="mt-2 grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="mt-2 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {visibleRepos.map((repo, i) => (
           <GithubPreview key={i} data={repo} className="flex" />
         ))}

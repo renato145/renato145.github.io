@@ -136,7 +136,7 @@ export type Teaching = {
   dateIn: string;
   dateOut: string;
   details: string[];
-}
+};
 
 export type TeachingAll = {
   allTeachingJson: { nodes: Teaching[] };

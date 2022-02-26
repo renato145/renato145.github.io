@@ -36,7 +36,7 @@ export const Search = () => {
         Try search graph
       </Link> */}
       <input
-        className="mt-1 mb-2 bg-white focus:outline-none focus:ring border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal"
+        className="mt-1 mb-2 block w-full appearance-none rounded border border-gray-300 bg-white py-2 px-4 leading-normal focus:outline-none focus:ring"
         type="text"
         placeholder="Search something"
         onChange={search}
@@ -51,7 +51,7 @@ export const Search = () => {
             return (
               <div
                 key={id}
-                className="w-full lg:w-1/2 xl:w-1/3 px-4 py-3 rounded hover:bg-blue-100"
+                className="w-full rounded px-4 py-3 hover:bg-blue-100 lg:w-1/2 xl:w-1/3"
               >
                 <div>
                   {isRepo ? (
@@ -68,7 +68,7 @@ export const Search = () => {
                   )}
                 </div>
                 <TagList tags={tags} linkClassName="text-xs" />
-                <p className="mt-1 transition duration-200 ease-out text-gray-700 hover:text-gray-900">
+                <p className="mt-1 text-gray-700 transition duration-200 ease-out hover:text-gray-900">
                   {isRepo ? 'Github repository.' : description}
                 </p>
               </div>

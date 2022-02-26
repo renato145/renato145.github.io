@@ -17,11 +17,12 @@ export const contains = (object, query) => {
   return object.indexOf(query) > -1;
 };
 
-export const formatYMDate = (date: string, dateFormat='MMM yyyy') =>
+export const formatYMDate = (date: string, dateFormat = 'MMM yyyy') =>
   format(parse(date, 'yyyyMM', new Date()), dateFormat);
 
 export const formatRelativeDate = (date: Date, dateFormat: string) => {
   const baseDate = new Date();
   return Math.abs(differenceInDays(date, baseDate)) < 6
     ? formatRelative(date, baseDate)
-    : format(date, dateFormat)};
+    : format(date, dateFormat);
+};

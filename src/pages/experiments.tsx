@@ -10,7 +10,7 @@ const ExperimentIndex: React.FC<PageProps> = ({ location }) => {
     <Layout
       location={location}
       title={title}
-      description='Playground, experiments, random codes...'
+      description="Playground, experiments, random codes..."
       headerConfig={{ title }}
     >
       <Experiments showLimit={9} />

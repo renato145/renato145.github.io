@@ -5,9 +5,9 @@ import { Header } from './Header';
 import { Content } from './Content';
 import { Footer } from './Footer';
 import { UpArrow } from './UpArrow';
-import { PageProps} from 'gatsby'
+import { PageProps } from 'gatsby';
 
-interface Props extends Pick<PageProps, "location"> {
+interface Props extends Pick<PageProps, 'location'> {
   title: string;
   description?: string;
   headerConfig?: {
@@ -30,13 +30,13 @@ export const Layout: React.FC<Props> = ({
       ? { title: location.pathname.split('/').reverse()[1] }
       : headerConfig;
   return (
-    <div className="container xl:max-w-screen-xl flex flex-col mx-auto pb-2 bg-white shadow-md min-h-[98vh]">
+    <div className="container mx-auto flex min-h-[98vh] flex-col bg-white pb-2 shadow-md xl:max-w-screen-xl">
       <header>
         <SEO title={seo.title} description={seo.description} />
         <Navigation />
       </header>
 
-      <main className="flex-1 px-6 mt-2">
+      <main className="mt-2 flex-1 px-6">
         {title && (
           <Header title={title} description={description} tags={tags} />
         )}

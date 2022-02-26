@@ -11,7 +11,7 @@ const SearchPage: React.FC<PageProps> = ({ location }) => {
       location={location}
       title=""
       // description="some description"
-      headerConfig={{ title}}
+      headerConfig={{ title }}
     >
       <Search />
     </Layout>

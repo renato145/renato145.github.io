@@ -14,11 +14,14 @@ export const PostPreview: React.FC<Props> = ({ node, ...props }) => {
   return (
     <div {...props}>
       <div>
-        <Link to={node.fields.slug} className="text-xl font-medium leading-normal">
+        <Link
+          to={node.fields.slug}
+          className="text-xl font-medium leading-normal"
+        >
           {postTitle}
         </Link>
       </div>
-      <div className="flex text-xs text-gray-500 leading-normal">
+      <div className="flex text-xs leading-normal text-gray-500">
         <p>{node.frontmatter.date}</p>
         <p className="px-1">-</p>
         <TagList tags={tags} />
