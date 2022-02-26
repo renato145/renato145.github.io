@@ -16,9 +16,7 @@ export const Search: React.FC = () => {
     `
   ).siteSearchIndex.index;
   const [results, setResults] = useState([]);
-  console.log(indexQuery);
   const index = useMemo(() => Index.load<any>(indexQuery), [indexQuery]);
-  console.log(index);
 
   const search = useCallback(
     (event) => {
