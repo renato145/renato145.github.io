@@ -229,15 +229,21 @@ const CV: React.FC = () => {
               models, web servers and open software development.
             </li>
             <li className="mt-1">
-              Experience using Rust for CLI applications, web APIs, Python
-              bindings and high-performance use cases like data pipelines.
+              Experience using Rust for CLI applications, backend servers, web
+              scrapping, WebAssembly, Python bindings and high-performance use
+              cases like data pipelines.
             </li>
             <li className="mt-1">
               Experience building data visualization and interactive dashboards
               using Python and JavaScript (React, D3, Threejs).
             </li>
             <li className="mt-1">
-              Main programming languages: Python, Rust, Julia and JS/Typescript.
+              <span className="font-medium">Main programming languages:</span>{' '}
+              Python, Rust, Julia and JS/Typescript.
+            </li>
+            <li className="mt-1">
+              <span className="font-medium">Additional skills:</span> message
+              queues (Kafka, RabbitMQ, ZeroMQ), spatial data (PostGIS).
             </li>
           </ul>
         </div>
