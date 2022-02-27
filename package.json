@@ -85,7 +85,6 @@
     "cleanserve": "npm run clean && npm run build && npm run serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "gatsby build && gh-pages -d public -b master",
-    "justdeploy": "gatsby build",
     "gh-pages": "gh-pages -d public -b master"
   }
 }
