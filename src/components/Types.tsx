@@ -122,6 +122,7 @@ export type PublicationsAll = {
 export type Experience = {
   place: string;
   position: string;
+  country: string;
   dateIn: string;
   dateOut: string;
   details: string[];

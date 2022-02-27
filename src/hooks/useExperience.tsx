@@ -9,6 +9,7 @@ export const useExperience = () => {
           nodes {
             place
             position
+            country
             dateIn
             dateOut
             details

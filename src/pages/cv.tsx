@@ -35,7 +35,7 @@ interface SectionProps extends HTMLProps<HTMLDivElement> {
 const Section: React.FC<SectionProps> = ({ title, ...props }) => (
   <div {...props}>
     <p className="text-2xl font-extrabold">{title}</p>
-    <div className="border-b-4 border-slate-300" />
+    <div className="border-b-4 border-slate-300 shadow" />
   </div>
 );
 
@@ -53,7 +53,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="text-lg font-medium">{university}</p>
-      <p className="text-sm text-gray-500">{`${yearIn} - ${yearOut}${
+      <p className="text-sm font-medium text-gray-500">{`${yearIn} - ${yearOut}${
         pending ? ' (expected)' : ''
       }`}</p>
     </div>
@@ -66,6 +66,7 @@ interface ExperienceProps extends HTMLProps<HTMLDivElement>, ExperienceType {}
 const Experience: React.FC<ExperienceProps> = ({
   place,
   position,
+  country,
   dateIn,
   dateOut,
   details,
@@ -75,9 +76,10 @@ const Experience: React.FC<ExperienceProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="font-medium">
-        {place} <span>({position})</span>
+        {place} | {position}{' '}
+        <span className="text-sm  text-gray-500">({country})</span>
       </p>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm font-medium text-gray-500">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
@@ -106,7 +108,7 @@ const Teaching: React.FC<TeachingProps> = ({
   <div className={`w-full ${className ?? ''}`} {...props}>
     <div className="flex justify-between">
       <p className="font-medium">{place}</p>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm font-medium text-gray-500">
         {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
       </p>
     </div>
@@ -155,11 +157,11 @@ const CV: React.FC = () => {
   return (
     <div className="bg-slate-400 pb-1 print:pb-0">
       <SEO title="CV" description="My CV" />
-      <div style={{ width: '21cm' }} className="mx-auto print:hidden">
+      <div className="mx-auto w-[21cm] print:hidden">
         <Navigation />
       </div>
       <Page>
-        <div className="mt-8 text-center leading-tight">
+        <div className="mt-7 text-center leading-tight">
           <p className="text-3xl font-semibold">Renato Hermoza Aragonés</p>
           <div className="mt-1 flex justify-center">
             <a
@@ -178,7 +180,7 @@ const CV: React.FC = () => {
 
         <div className="mt-10">
           <Section title="Resume" />
-          <p className="mt-2">
+          <p className="mt-2 px-1 text-justify">
             Final year PhD. student at the University of Adelaide with main
             research interests in the fields of computer vision, machine
             learning, data visualization and data ethics.
@@ -188,21 +190,21 @@ const CV: React.FC = () => {
         <div className="mt-8">
           <Section title="Education" />
           {education.map((o, i) => (
-            <EducationItem key={i} className="mt-2" {...o} />
+            <EducationItem key={i} className="mt-2 px-1 text-justify" {...o} />
           ))}
         </div>
 
         <div className="mt-8">
           <Section title="Professional Experience" />
           {experience.map((o, i) => (
-            <Experience key={i} className="mt-2" {...o} />
+            <Experience key={i} className="mt-2 px-1 text-justify" {...o} />
           ))}
         </div>
 
         <div className="mt-8">
           <Section title="Teaching Experience" />
           {teaching.map((o, i) => (
-            <Teaching key={i} className="mt-2" {...o} />
+            <Teaching key={i} className="mt-2 px-1 text-justify" {...o} />
           ))}
         </div>
       </Page>
@@ -210,16 +212,16 @@ const CV: React.FC = () => {
       <Page>
         <div className="mt-8">
           <Section title="Publications" />
-          <ul className="mt-2 ml-4 list-outside list-disc">
+          <ul className="mt-2 ml-4 list-outside list-disc px-1">
             {publications.map((o, i) => (
-              <Publication key={i} className="mt-1" {...o} />
+              <Publication key={i} className="mt-1 text-justify" {...o} />
             ))}
           </ul>
         </div>
 
         <div className="mt-8">
           <Section title="Skills" />
-          <ul className="mt-1 ml-4 list-outside list-disc">
+          <ul className="mt-1 ml-4 list-outside list-disc px-1 text-justify">
             <li className="mt-1">
               Knowledge and active research of the current state of the art on
               deep learning and computer vision.

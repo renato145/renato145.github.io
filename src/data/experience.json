@@ -2,6 +2,7 @@
   {
     "place": "Complexica",
     "position": "Machine Learning Scientist",
+    "country": "Australia",
     "dateIn": "202107",
     "dateOut": "202111",
     "details": [
@@ -11,6 +12,7 @@
   {
     "place": "TechStart",
     "position": "Data Scientist",
+    "country": "Perú",
     "dateIn": "201801",
     "dateOut": "201806",
     "details": [
@@ -21,6 +23,7 @@
   {
     "place": "Easy Taxi",
     "position": "Data Scientist",
+    "country": "Perú",
     "dateIn": "201511",
     "dateOut": "201708",
     "details": [
@@ -31,6 +34,7 @@
   {
     "place": "GMD",
     "position": "System Administrator",
+    "country": "Perú",
     "dateIn": "201204",
     "dateOut": "201412",
     "details": []
@@ -38,6 +42,7 @@
   {
     "place": "Oxinet",
     "position": "IT Consultant",
+    "country": "Perú",
     "dateIn": "201108",
     "dateOut": "201203",
     "details": []
