@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-tags-tsx",
-    "path": "/tags/webassembly/",
-    "result": {"data":{"allMdx":{"edges":[{"node":{"fields":{"slug":"/blog/2020-07-10-exploring-wasm/"},"frontmatter":{"date":"July 10, 2020","title":"Exploring WebAssembly","description":"An exploration of WebAssembly with Rust.","tags":["javascript","webassembly","rust"]}}}]}},"pageContext":{"tag":"webassembly"}},
-    "staticQueryHashes": ["1692296710","2845909689","559075325"]}
