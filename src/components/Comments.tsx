@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Utterances from './Utterances';
-import { GraphqlSite } from './Types';
+import { GraphqlSite } from '../Types';
 
 export const Comments: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);

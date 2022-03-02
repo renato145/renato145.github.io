@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { Posts } from '../components/Posts';
 import { Experiments } from '../components/Experiments';
-import { GraphqlSite, MdxAllNodes } from '../components/Types';
+import { GraphqlSite, MdxAllNodes } from '../Types';
 
 interface Props extends PageProps {
   data: GraphqlSite & MdxAllNodes;

@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { EducationAll } from '../components/Types';
+import { EducationAll } from '../Types';
 
 export const useEducation = () => {
   const education = useStaticQuery<EducationAll>(

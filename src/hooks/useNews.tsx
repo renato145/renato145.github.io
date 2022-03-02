@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { NewsAll } from '../components/Types';
+import { NewsAll } from '../Types';
 
 export const useNews = () => {
   const news = useStaticQuery<NewsAll>(

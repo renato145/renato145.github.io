@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { Posts } from '../components/Posts';
-import { MdxAllNodes } from '../components/Types';
+import { MdxAllNodes } from '../Types';
 
 interface Props extends PageProps {
   data: MdxAllNodes;

@@ -1,6 +1,6 @@
 import React, { HTMLProps } from 'react';
 import { Link } from 'gatsby';
-import { MdxNode } from './Types';
+import { MdxNode } from '../Types';
 
 interface Props extends HTMLProps<HTMLDivElement> {
   previous?: MdxNode;

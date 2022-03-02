@@ -5,7 +5,7 @@ import { formatYMDate } from '../utils';
 import {
   GraphqlSite,
   Publication as PublicationType,
-} from '../components/Types';
+} from '../Types';
 import { usePublications } from '../hooks/usePublications';
 import { useNews } from '../hooks/useNews';
 import { usePresentations } from '../hooks/usePresentations';

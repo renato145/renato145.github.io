@@ -1,7 +1,7 @@
 import React, { HTMLProps, useCallback, useRef, useState } from 'react';
 import { PostPreview } from './PostPreview';
 import { LinkButton } from './LinkButton';
-import { MdxNode, NodesOf } from './Types';
+import { MdxNode, NodesOf } from '../Types';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {

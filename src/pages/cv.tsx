@@ -9,7 +9,7 @@ import {
   Education as EducationType,
   Experience as ExperienceType,
   Teaching as TeachingType,
-} from '../components/Types';
+} from '../Types';
 import { formatYMDate } from '../utils';
 import { Navigation } from '../components/Navigation';
 

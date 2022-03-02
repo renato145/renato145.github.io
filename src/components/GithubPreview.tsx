@@ -1,6 +1,6 @@
 import React, { HTMLProps } from 'react';
 import { TagList } from './TagList';
-import { RepoInfo } from './Types';
+import { RepoInfo } from '../Types';
 import { formatRelativeDate } from '../utils';
 
 interface Props extends Omit<HTMLProps<HTMLDivElement>, 'data'> {

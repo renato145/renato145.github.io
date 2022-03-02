@@ -4,7 +4,7 @@ import { ascending } from 'd3';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from '../components/Layout';
 import { useGitRepos } from '../hooks/useGitRepos';
-import { MdxAllNodes } from '../components/Types';
+import { MdxAllNodes } from '../Types';
 import { formatRelativeDate } from '../utils';
 import './tags.css';
 

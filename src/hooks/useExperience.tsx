@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { ExperienceAll } from '../components/Types';
+import { ExperienceAll } from '../Types';
 
 export const useExperience = () => {
   const experience = useStaticQuery<ExperienceAll>(

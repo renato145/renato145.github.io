@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { Layout } from '../components/Layout';
-import { GraphqlSite } from '../components/Types';
+import { GraphqlSite } from '../Types';
 
 interface Props extends PageProps {
   data: GraphqlSite;
