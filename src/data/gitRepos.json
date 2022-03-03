@@ -1,5 +1,9 @@
 [
   {
+    "name": "sudoku-solver",
+    "tags": ["rust", "graph-search"]
+  },
+  {
     "name": "entidades_peru",
     "tags": ["typescript", "reactjs", "visualization", "peru"]
   },
