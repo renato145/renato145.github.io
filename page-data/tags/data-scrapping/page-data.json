@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-tags-tsx",
-    "path": "/tags/data-scrapping/",
-    "result": {"data":{"allMdx":{"edges":[]}},"pageContext":{"tag":"data-scrapping"}},
-    "staticQueryHashes": ["1692296710","2845909689","559075325"]}
+{"componentChunkName":"component---src-templates-tags-tsx","path":"/tags/data-scrapping/","result":{"data":{"allMdx":{"edges":[]}},"pageContext":{"tag":"data-scrapping"}},"staticQueryHashes":["1692296710","2845909689","559075325"]}

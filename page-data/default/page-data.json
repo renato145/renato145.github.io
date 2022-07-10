@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-default-tsx",
-    "path": "/default/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Renato Hermoza"}}},"pageContext":{}},
-    "staticQueryHashes": ["2845909689","559075325"]}
+{"componentChunkName":"component---src-pages-default-tsx","path":"/default/","result":{"data":{"site":{"siteMetadata":{"title":"Renato Hermoza"}}},"pageContext":{}},"staticQueryHashes":["2845909689","559075325"]}

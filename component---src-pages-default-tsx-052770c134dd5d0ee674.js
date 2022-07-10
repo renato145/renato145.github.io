@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrenato_hermoza=self.webpackChunkrenato_hermoza||[]).push([[795],{4007:function(e,t,a){a.r(t);var i=a(7294),n=a(9664);t.default=function(e){var t=e.data,a=e.location,r=t.site.siteMetadata.title;return i.createElement(n.A,{location:a,title:r,description:"some description",headerConfig:{title:"header"}})}}}]);
+//# sourceMappingURL=component---src-pages-default-tsx-052770c134dd5d0ee674.js.map
