@@ -1,5 +1,9 @@
 [
   {
+    "name": "evolution_simulation",
+    "tags": ["rust", "simulation", "wasm"]
+  },
+  {
     "name": "sudoku-solver",
     "tags": ["rust", "graph-search"]
   },
