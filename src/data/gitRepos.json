@@ -1,5 +1,9 @@
 [
   {
+    "name": "interactive_class",
+    "tags": ["rust", "sockets", "svelte", "teaching"]
+  },
+  {
     "name": "evolution_simulation",
     "tags": ["rust", "simulation", "wasm"]
   },
