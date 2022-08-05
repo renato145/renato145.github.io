@@ -10,7 +10,7 @@ module.exports = {
     title: `Renato Hermoza`,
     author: `Renato Hermoza`,
     shortName: `Renato`,
-    mail: `renato.hermoza@pucp.edu.pe`,
+    mail: `rhermoza145@gmail.com`,
     description: `Personal portfolio | Blog`,
     siteUrl: `https://renato145.github.io`,
     git: `renato145/renato145.github.io`,

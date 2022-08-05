@@ -2,10 +2,7 @@ import React, { HTMLProps } from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
 import { Layout } from '../components/Layout';
 import { formatYMDate } from '../utils';
-import {
-  GraphqlSite,
-  Publication as PublicationType,
-} from '../Types';
+import { GraphqlSite, Publication as PublicationType } from '../Types';
 import { usePublications } from '../hooks/usePublications';
 import { useNews } from '../hooks/useNews';
 import { usePresentations } from '../hooks/usePresentations';
@@ -54,27 +51,22 @@ const About: React.FC<Props> = ({ data, location }) => {
     >
       <div className="prose max-w-none">
         <p>
-          Hi! this is {author}. I'm in the final year of PhD at the University
-          of Adelaide, my work focuses on applying machine learning to medical
-          images and currently working on survival prediction and weakly
-          supervised localization.
+          Hi! this is {author}. I have PhD on Machine Learning from the
+          University of Adelaide (waiting for graduation), my work focused on
+          applying machine learning to medical images, survival prediction and
+          weakly supervised localization. My main research interests are in the
+          fields of machine learning, optimization, simulation and data
+          visualization. I enjoy building interactive systems to allow domain
+          experts to explore complex machine learning and optimization systems.
         </p>
-
-        <p>
-          Things I'm interested in no particular order: machine learning: data
-          visualization, optimization, simulation, open source...
-        </p>
-
         <p>
           I'm always up to apply my knowledge on impactful and social projects.
           If you are interested in doing a collaboration, send me a mail:{' '}
           <a href={`mailto:${mail}`}>{mail}</a>.
         </p>
-
         <p>
           You can find my CV <Link to={`/cv`}>here</Link>.
         </p>
-
         <h2>News</h2>
         <ul>
           {news.map(({ text, date }, i) => (
@@ -83,14 +75,12 @@ const About: React.FC<Props> = ({ data, location }) => {
             </li>
           ))}
         </ul>
-
         <h2>Publications</h2>
         <ul>
           {publications.map((o, i) => (
             <Publication key={i} {...o} />
           ))}
         </ul>
-
         <h2>Presentations</h2>
         <ul>
           {presentations.map(({ text }, i) => (

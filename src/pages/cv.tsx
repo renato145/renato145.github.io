@@ -54,10 +54,15 @@ const EducationItem: React.FC<EducationItemProps> = ({
     <div className="flex justify-between">
       <p className="text-lg font-medium">{university}</p>
       <p className="text-sm font-medium text-gray-500">{`${yearIn} - ${yearOut}${
-        pending ? ' (expected)' : ''
+        pending ? '*' : ''
       }`}</p>
     </div>
     <p>{degree}</p>
+    {pending ? (
+      <p className="text-xs text-gray-500">
+        *: Thesis submitted, waiting for graduation.
+      </p>
+    ) : null}
   </div>
 );
 
@@ -172,18 +177,20 @@ const CV: React.FC = () => {
               renato145.github.io
             </a>
             <p className="mx-2">•</p>
-            <a href="renato.hermoza@pucp.edu.pe" target="_black" rel="noopener">
-              renato.hermoza@pucp.edu.pe
+            <a href="rhermoza145@gmail.com" target="_black" rel="noopener">
+              rhermoza145@gmail.com
             </a>
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-8">
           <Section title="Resume" />
           <p className="mt-2 px-1 text-justify">
-            Final year PhD. student at the University of Adelaide with main
-            research interests in the fields of computer vision, machine
-            learning, data visualization and data ethics.
+            PhD. on Machine Learning at the University of Adelaide. My main
+            research interests are in the fields of machine learning,
+            optimization, simulation and data visualization. I enjoy building
+            interactive systems to allow domain experts to explore complex
+            machine learning and optimization systems.
           </p>
         </div>
 
@@ -231,13 +238,13 @@ const CV: React.FC = () => {
               models, web servers and open software development.
             </li>
             <li className="mt-1">
-              Experience using Rust for CLI applications, backend servers, web
-              scrapping, WebAssembly, Python bindings and high-performance use
-              cases like data pipelines.
+              Experience using Rust for simulation, CLI applications, backend
+              servers, web scrapping, WebAssembly, Python bindings and
+              high-performance use cases like data pipelines.
             </li>
             <li className="mt-1">
               Experience building data visualization and interactive dashboards
-              using Python and JavaScript (React, D3, Threejs).
+              using Python and Typescript (Svelte, React, D3, Threejs).
             </li>
             <li className="mt-1">
               <span className="font-medium">Main programming languages:</span>{' '}
