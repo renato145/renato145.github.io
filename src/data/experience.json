@@ -1,5 +1,12 @@
 [
   {
+    "place": "Kashin",
+    "position": "Chief Scientist",
+    "country": "Perú",
+    "dateIn": "202207",
+    "details": []
+  },
+  {
     "place": "Complexica",
     "position": "Machine Learning Scientist",
     "country": "Australia",

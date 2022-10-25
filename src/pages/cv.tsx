@@ -85,7 +85,8 @@ const Experience: React.FC<ExperienceProps> = ({
         <span className="text-sm  text-gray-500">({country})</span>
       </p>
       <p className="text-sm font-medium text-gray-500">
-        {formatYMDate(dateIn)} - {formatYMDate(dateOut)}
+        {formatYMDate(dateIn)} -{' '}
+        {dateOut === null ? 'ongoing' : formatYMDate(dateOut)}
       </p>
     </div>
     {details.length > 0 && (

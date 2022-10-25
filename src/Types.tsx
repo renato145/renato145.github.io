@@ -124,7 +124,7 @@ export type Experience = {
   position: string;
   country: string;
   dateIn: string;
-  dateOut: string;
+  dateOut: string | null;
   details: string[];
 };
 
