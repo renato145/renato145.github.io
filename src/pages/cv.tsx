@@ -15,10 +15,8 @@ import { Navigation } from '../components/Navigation';
 
 const Page: React.FC<HTMLProps<HTMLDivElement>> = ({ children, ...props }) => (
   <div
-    className="mx-auto mb-4 bg-white px-8 py-4 shadow-2xl print:mb-0 print:shadow-none"
+    className="mx-auto mb-4 w-[21cm] bg-white px-8 py-4 shadow-2xl print:mb-0 print:h-[29.7cm] print:shadow-none"
     style={{
-      width: '21cm',
-      height: '29.7cm',
       pageBreakAfter: 'always',
       pageBreakInside: 'avoid',
     }}
@@ -232,7 +230,7 @@ const CV: React.FC = () => {
           <ul className="mt-1 ml-4 list-outside list-disc px-1 text-justify">
             <li className="mt-1">
               Knowledge and active research of the current state of the art on
-              deep learning and computer vision.
+              deep learning.
             </li>
             <li className="mt-1">
               Advance skill on Python building data pipelines, machine learning
