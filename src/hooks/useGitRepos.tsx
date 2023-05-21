@@ -54,7 +54,7 @@ export const useGitRepos = ({ tag, name }: Props) => {
         ...allRepos.find((o) => o.name === d.name),
       } as GraphqlGit;
       const repo = Object.assign(repoInfo, d);
-      const url = repo['openGraphImageUrl'];
+      const url = repo['openGraphImageUrl'] ?? '';
       if (url.indexOf('https://repository-images') > -1) repo['imgUrl'] = url;
       repo['name'] = repo['showName']
         ? repo['showName']

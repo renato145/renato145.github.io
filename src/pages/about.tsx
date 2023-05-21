@@ -52,17 +52,20 @@ const About: React.FC<Props> = ({ data, location }) => {
       <div className="prose max-w-none">
         <p>
           Hi! this is {author}. I have PhD on Machine Learning from the
-          University of Adelaide (waiting for graduation), my work focused on
-          applying machine learning to medical images, survival prediction and
-          weakly supervised localization. My main research interests are in the
-          fields of machine learning, optimization, simulation and data
-          visualization. I enjoy building interactive systems to allow domain
-          experts to explore complex machine learning and optimization systems.
+          University of Adelaide, my work focused on applying machine learning
+          to medical images, survival prediction and weakly supervised
+          localization. My main research interests are in the fields of machine
+          learning, optimization, simulation and data visualization. I enjoy
+          building interactive systems for domain experts to explore complex
+          machine learning and optimization systems.
         </p>
         <p>
-          I'm always up to apply my knowledge on impactful and social projects.
-          If you are interested in doing a collaboration, send me a mail:{' '}
-          <a href={`mailto:${mail}`}>{mail}</a>.
+          Would you like to talk about Python, Rust adoption, machine learning?
+          You can schedule 30 min talk{' '}
+          <a href="https://calendly.com/renato_hermoza/30min" target="_black" rel="noopener">
+            here
+          </a>{' '}
+          or send me a mail to <a href={`mailto:${mail}`}>{mail}</a>.
         </p>
         <p>
           You can find my CV <Link to={`/cv`}>here</Link>.
